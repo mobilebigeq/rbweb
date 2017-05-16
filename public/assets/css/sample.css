@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+.mediaSection { padding-top:0; }
+.mediaSection h2 { padding-bottom:30px;  }
+.mediaSection h3 { padding:10px 0 20px 0; background:url(../images/media-head-top.jpg) left 0px no-repeat; color: #773996; font-family: "dinrg"; font-size: 36px; }
+.mediaSection h3 .viewAll { display:inline-block; }
+.mediaSection h3 .viewAll { font-size:18px; padding:0 20px; background:#3d2979; margin-left:30px; height:36px; border-radius:18px; line-height:36px; color:#FFF;  }
+.mediaSection h4 { font-size:20px; color:#5f2160;  }
+
+.mediaSection .PressReleases { padding-top:15px; padding-bottom:15px; }
+.mediaSection .PressReleases .PressReleasesBox { padding-left:100px; position:relative; margin-bottom:30px; }
+.mediaSection .PressReleases .PressReleasesBox p { font-size:14px; }
+.mediaSection .PressReleases .PressReleasesBox .dateBox { width:70px; height:90px; border-radius:10px; border:1px solid #c2c2c2; position:absolute; left:15px; top:10px; text-align:center; padding-top:5px; overflow:hidden; }
+.mediaSection .PressReleases .PressReleasesBox .dateBox .month { font-size:13px;font-family: "dinrg"; height:15px; }
+.mediaSection .PressReleases .PressReleasesBox .dateBox .date { font-size:42px; background: -webkit-linear-gradient(left, #773996, #ec1c24); -webkit-background-clip: text;     -webkit-text-fill-color: transparent; color: rgb(123, 56, 145); font-family: 'DINNextRoundedLTW01'; height:45px; line-height:45px;  }
+.mediaSection .PressReleases .PressReleasesBox .dateBox .year { font-size:13px; background:#3d2979; line-height:25px; font-family: 'DINNextRoundedLTW01'; height:25px; color:#ffffff; }
+.mediaSection .readMore {display:inline-block; font-size:18px; background:url(../images/readMore.png) no-repeat; margin:15px 0; width:37px; text-align:center; line-height:37px; width:129px; font-family: "dinrg"; color:#3d2979;  }
+.mediaSection .PressClips { padding-top:15px; padding-bottom:15px; }
+.mediaSection .PressClips .pressClipsBox {text-align:center; margin-bottom:30px;}
+.mediaSection .PressClips .pressClipsBox .imageBox { max-width:320px; width:100%; padding:11px; background:url(../images/pressClips.png) no-repeat; background-size:cover; display:inline-block; margin-bottom:20px }
+.mediaSection .PressClips .pressClipsBox .imageBox img {}
+.mediaSection .PressClips .pressClipsBox h4 { font-size:18px;  font-family: "dinrg";  }
+.mediaSection .PressClips .pressClipsBox p span  { display:block; font-size:14px; font-family: "DINCond";  }
+.mediaSection .ViewArticle {display:inline-block; font-size:18px; background:url(../images/readMore.png) no-repeat; margin:15px 0; width:37px; text-align:center; line-height:37px; width:129px; font-family: "dinrg"; color:#3d2979;   }
+
+.mediaSection .MediaContactPolicy { }
+
+.mediaSection .MediaContactPolicy .csr { float:right; }
+.mediaSection .MediaContactPolicy ul { font-family: "dinrg"; margin:0; padding:0 0 0 15px; font-size:14px; list-style-type:lower-alpha; }
+.mediaSection .MediaContactPolicy ul li { margin-bottom:15px;}
+@media (max-width:992px) {
+		.mediaSection h3 { font-size:28px; }
+	}
+@media (max-width:768px) {
+		.mediaSection .MediaContactPolicy .csr { float:left; margin:20px 0; }
+		.mediaSection .MediaContactPolicy .img { margin-bottom:30px;}
+		.mediaSection h3 { font-size:22px; }
+	}
