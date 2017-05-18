@@ -34,6 +34,32 @@
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors') }}"><i class="fa fa-cog"></i> <span>Doctors</span></a></li>
               </ul>
           </li>
+
+
+
+          <li><a><i class="fa fa-cog"></i> <span>About</span></a>
+              <ul class="treeview-menu">
+
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality_Masters</span></a></li>
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/about') }}"><i class="fa fa-cog"></i> <span>About</span></a></li>
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare_service</span></a></li>
+                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief_Facilities</span></a></li>
+                  
+              </ul>
+          </li>
+
+
+
+          <li><a><i class="fa fa-cog"></i> <span>Speciality</span></a>
+              <ul class="treeview-menu">
+
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_specialities') }}"><i class="fa fa-cog"></i> <span>Our_Specialities</span></a></li>
+
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_speciality_features') }}"><i class="fa fa-cog"></i> <span>Our_Speciality_Features</span></a></li>
+                
+                  
+              </ul>
+          </li>
           <!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/tag') }}"><i class="fa fa-tag"></i> <span>Manage Tags</span></a></li> -->
 
           <!-- ======================================= -->
