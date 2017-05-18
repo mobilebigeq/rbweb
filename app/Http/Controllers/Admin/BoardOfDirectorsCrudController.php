@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\DoctorsRequest as StoreRequest;
-use App\Http\Requests\DoctorsRequest as UpdateRequest;
+use App\Http\Requests\BoardOfDirectorsRequest as StoreRequest;
+use App\Http\Requests\BoardOfDirectorsRequest as UpdateRequest;
 
-class DoctorsCrudController extends CrudController
+class BoardOfDirectorsCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class DoctorsCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Doctors');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/doctors');
-        $this->crud->setEntityNameStrings('doctors', 'doctors');
+        $this->crud->setModel('App\Models\BoardOfDirectors');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/boardofdirectors');
+        $this->crud->setEntityNameStrings('boardofdirectors', 'board_of_directors');
 
         /*
         |--------------------------------------------------------------------------
@@ -29,25 +29,6 @@ class DoctorsCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
-        $this->crud->addField([ // image
-            'label' => "Photo",
-            'name' => "photo",
-            'type' => 'image',
-            'upload' => true,
-            'crop' => true, // set to true to allow cropping, false to disable
-            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
-            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
-        ]);
-
-        $this->crud->addField([
-            'label' => 'Hospitals',
-            'type' => 'checklist',
-            'name' => 'hospitals',
-            'entity' => 'hospitals',
-            'attribute' => 'title',
-            'model' => 'App\Models\Hospitals',
-            'pivot' => true
-        ]);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -62,21 +43,6 @@ class DoctorsCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-        $this->crud->setColumnsDetails('photo', ['type'=>'image']);
-        // $this->crud->addColumn([
-        //     'type' => 'model_function',
-        //    'name' => 'Hospitals',
-        //    'function_name' => 'getHospitals'
-        //    ]);
-
-        $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Hospitals", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'hospitals', // the method that defines the relationship in your Model
-        'entity' => 'hospitals', // the method that defines the relationship in your Model
-        'attribute' => "title", // foreign key attribute that is shown to user
-        'model' => "App\Models\Hospitals", // foreign key model
-        ]);
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;

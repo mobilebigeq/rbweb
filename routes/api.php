@@ -25,7 +25,9 @@ $api->version('v1', function (Router $api) {
             $api->get('specialities', 'App\Api\V1\Controllers\SpecialitiesController@index');
             $api->get('doctors', 'App\Api\V1\Controllers\DoctorsController@index');
             $api->get('categories', 'App\Api\V1\Controllers\CategoriesController@index');
-    		$api->get('centers', 'App\Api\V1\Controllers\CentersController@index');
+            $api->get('centers', 'App\Api\V1\Controllers\CentersController@index');
+            $api->get('careers', 'App\Api\V1\Controllers\CareersController@index');
+    		$api->get('board', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');
     //     $api->put('movie/{id}', 'App\Api\V1\Controllers\MovieController@update');
     //     $api->delete('movie/{id}', 'App\Api\V1\Controllers\MovieController@destroy');

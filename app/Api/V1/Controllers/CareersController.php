@@ -4,17 +4,16 @@ namespace App\Api\V1\Controllers;
 
 use Illuminate\Http\Request;
 use JWTAuth;
-use App\Models\Doctors;
+use App\Models\Careers;
 use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 
-class DoctorsController extends Controller
+class CareersController extends Controller
 {
-    //
-	use Helpers;
+ 	use Helpers;
 
     public function index()
 	{
-	    return Doctors::with('hospitals')->get();
+	    return Careers::get();
 	}
 }

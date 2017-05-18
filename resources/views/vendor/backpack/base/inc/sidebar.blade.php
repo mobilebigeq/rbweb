@@ -34,6 +34,11 @@
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors') }}"><i class="fa fa-cog"></i> <span>Doctors</span></a></li>
               </ul>
           </li>
+          <li><a><i class="fa fa-cog"></i> <span>Others</span></a>
+              <ul class="treeview-menu">
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/boardofdirectors') }}"><i class="fa fa-cog"></i> <span>Board Of Directors</span></a></li>
+              </ul>
+          </li>
           <!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/tag') }}"><i class="fa fa-tag"></i> <span>Manage Tags</span></a></li> -->
 
           <!-- ======================================= -->

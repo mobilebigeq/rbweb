@@ -29,11 +29,26 @@ class Doctors extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function getHospitals() {
+        //$hospitals = array();
+        $hl = $this->hospitals;
+        var_dump($hl);
+        die();
+        foreach($hl as $h) {
+            $hospitals[] = $h->title;
+        }
+        return implode(',', $hospitals);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+
+    public function hospitals() {
+        return $this->belongsToMany('App\Models\Hospitals', 'doctor_hospitals', 'doctor_id', 'hospital_id');
+    }
 
     /*
     |--------------------------------------------------------------------------
