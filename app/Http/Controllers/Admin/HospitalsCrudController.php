@@ -29,6 +29,27 @@ class HospitalsCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
+// <<<<<<< HEAD
+// =======
+//         $this->crud->addField([
+//             'label'=>'home_highlights',
+//             'type'=>'select2',
+//             'name'=>'home_highlights',
+//             'entity'=>'highlights',
+//             'attribute'=>'title',
+//             'model'=>'App\Models\HomeHighlights'
+//             ]);
+
+//         $this->crud->addField([
+//             'label'=>'specialities',
+//             'type'=>'select2',
+//             'name'=>'specialities',
+//             'entity'=>'specialities',
+//             'attribute'=>'title',
+//             'model'=>'App\Models\Specialities',
+//             'pivot' => true
+//             ]);
+// >>>>>>> 258dac561037e9f621abfad2c07b292c32e676de
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -44,6 +65,20 @@ class HospitalsCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
 
+// <<<<<<< HEAD
+// =======
+        $this->crud->setColumnsDetails('specialities', [
+           // n-n relationship (with pivot table)
+           'label' => "Specialities", // Table column heading
+           'type' => "select_multiple",
+           'name' => 'specialities', // the method that defines the relationship in your Model
+           'entity' => 'specialities', // the method that defines the relationship in your Model
+           'attribute' => "title", // foreign key attribute that is shown to user
+           'model' => "App\Models\Specialities", // foreign key model
+           'pivot'=>true
+        ]);
+
+// >>>>>>> 258dac561037e9f621abfad2c07b292c32e676de
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
