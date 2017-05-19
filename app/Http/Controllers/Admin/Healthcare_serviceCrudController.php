@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
+
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\Healthcare_serviceRequest as StoreRequest;
 use App\Http\Requests\Healthcare_serviceRequest as UpdateRequest;
 
 class Healthcare_serviceCrudController extends CrudController
 {
+
     public function setup()
     {
 
@@ -47,6 +49,13 @@ class Healthcare_serviceCrudController extends CrudController
            'entity' => 'speciality_masters', // the method that defines the relationship in your Model
            'attribute' => 'speciality', // foreign key attribute that is shown to user
            'model' => "App\Models\Speciality_masters" // foreign key model
+            ]);
+
+        $this->crud->addField([
+            'name' => 'page',
+            'label' => "Page",
+            'type' => 'text',
+
             ]);
 
         // ------ CRUD FIELDS

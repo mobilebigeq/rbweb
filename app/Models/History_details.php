@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Healthcare_service extends Model
+class History_details extends Model
 {
     use CrudTrait;
 
@@ -15,11 +15,11 @@ class Healthcare_service extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'healthcare_service';
+    protected $table = 'history_details';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['image','title','description','speciality_masters_id','page'];
+     protected $fillable = ['date','image','title','description','link','page'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -28,11 +28,6 @@ class Healthcare_service extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-    public function speciality_masters()
-    {
-        return $this->hasMany('App\Speciality_masters');
-    }
-    
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +52,7 @@ class Healthcare_service extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
-    public function setImageAttribute($value)
+     public function setImageAttribute($value)
     {
         $attribute_name = "image";
         $disk = "uploads";

@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Api\V1\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-
+use Illuminate\Http\Request;
+use JWTAuth;
+use App\Models\Page_description;
+use Dingo\Api\Routing\Helpers;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\AboutRequest as StoreRequest;
@@ -11,6 +14,14 @@ use App\Http\Requests\AboutRequest as UpdateRequest;
 
 class AboutCrudController extends CrudController
 {
+
+    public function index() 
+    {
+
+    return About::get();
+
+    }
+
 
     public function setup()
     {

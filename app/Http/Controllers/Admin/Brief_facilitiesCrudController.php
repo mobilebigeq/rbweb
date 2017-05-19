@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
+
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\Brief_facilitiesRequest as StoreRequest;
 use App\Http\Requests\Brief_facilitiesRequest as UpdateRequest;
 
 class Brief_facilitiesCrudController extends CrudController
 {
+
     public function setup()
     {
 
@@ -68,16 +70,16 @@ class Brief_facilitiesCrudController extends CrudController
 
         //This is for the image column
         $this->crud->setColumnsDetails('image',['type'=>'image']);
-        $this->crud->removeColumn('speciality_masters_id');
+        // $this->crud->removeColumn('speciality_masters_id');
 
-         $this->crud->addColumn([
-            'label' => 'Speciality',
-           'type' => 'select2',
-           'name' => 'speciality_masters_id', // the db column for the foreign key
-           'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-           'attribute' => 'speciality', // foreign key attribute that is shown to user
-           'model' => "App\Models\Speciality_masters", // foreign key model
-            ]); 
+        //  $this->crud->addColumn([
+        //     'label' => 'Speciality',
+        //    'type' => 'select2',
+        //    'name' => 'speciality_masters_id', // the db column for the foreign key
+        //    'entity' => 'speciality_masters', // the method that defines the relationship in your Model
+        //    'attribute' => 'speciality', // foreign key attribute that is shown to user
+        //    'model' => "App\Models\Speciality_masters", // foreign key model
+        //     ]); 
        // $this->crud->setColumnsDetails('speciality_masters_id',['type'=>'name']);
 
         // ------ CRUD BUTTONS

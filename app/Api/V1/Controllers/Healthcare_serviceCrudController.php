@@ -1,16 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Api\V1\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-
+use Illuminate\Http\Request;
+use JWTAuth;
+use App\Models\Page_description;
+use Dingo\Api\Routing\Helpers;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\AboutRequest as StoreRequest;
-use App\Http\Requests\AboutRequest as UpdateRequest;
+use App\Http\Requests\Healthcare_serviceRequest as StoreRequest;
+use App\Http\Requests\Healthcare_serviceRequest as UpdateRequest;
 
-class AboutCrudController extends CrudController
+class Healthcare_serviceCrudController extends CrudController
 {
+
+    public function index() 
+    {
+
+    return Healthcare_service::get();
+
+    }
+
 
     public function setup()
     {
@@ -20,9 +31,9 @@ class AboutCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\About');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/about');
-        $this->crud->setEntityNameStrings('about', 'abouts');
+        $this->crud->setModel('App\Models\Healthcare_service');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/healthcare_service');
+        $this->crud->setEntityNameStrings('healthcare_service', 'healthcare_services');
 
         /*
         |--------------------------------------------------------------------------
@@ -32,8 +43,7 @@ class AboutCrudController extends CrudController
 
         $this->crud->setFromDb();
 
-
-        $this->crud->addField([ // image
+         $this->crud->addField([ // image
             'label' => "Image",
             'name' => "image",
             'type' => 'image',
@@ -51,12 +61,21 @@ class AboutCrudController extends CrudController
            'attribute' => 'speciality', // foreign key attribute that is shown to user
            'model' => "App\Models\Speciality_masters" // foreign key model
             ]);
+
+        $this->crud->addField([
+            'name' => 'page',
+            'label' => "Page",
+            'type' => 'text',
+
+            ]);
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
+         $this->crud->setColumnsDetails('image', ['type'=>'image']);
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
@@ -65,7 +84,6 @@ class AboutCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
 
-        $this->crud->setColumnsDetails('image', ['type'=>'image']);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

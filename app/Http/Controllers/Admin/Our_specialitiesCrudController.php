@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
+
 // VALIDATION: change the requests to match your own file names if you need form validation
 use App\Http\Requests\Our_specialitiesRequest as StoreRequest;
 use App\Http\Requests\Our_specialitiesRequest as UpdateRequest;
 
 class Our_specialitiesCrudController extends CrudController
 {
+
+
     public function setup()
     {
 

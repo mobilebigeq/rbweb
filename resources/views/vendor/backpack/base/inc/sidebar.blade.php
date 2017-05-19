@@ -60,6 +60,25 @@
                   
               </ul>
           </li>
+
+
+          <li><a><i class="fa fa-cog"></i> <span>About Us</span></a>
+              <ul class="treeview-menu">
+
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page_description') }}"><i class="fa fa-cog"></i> <span>Page Description</span></a></li>
+
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/what_we_do_details') }}"><i class="fa fa-cog"></i> <span>What_We_Do_Details</span></a></li>
+
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/md_message') }}"><i class="fa fa-cog"></i> <span>MD_Messages</span></a></li>
+
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/history_details') }}"><i class="fa fa-cog"></i> <span>History_Details</span></a></li>
+
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/awards_history') }}"><i class="fa fa-cog"></i> <span>Awards_history</span></a></li>
+
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/media_press_release') }}"><i class="fa fa-cog"></i> <span>Media_press_releases</span></a></li>
+                  
+              </ul>
+          </li>
           <!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/tag') }}"><i class="fa fa-tag"></i> <span>Manage Tags</span></a></li> -->
 
           <!-- ======================================= -->

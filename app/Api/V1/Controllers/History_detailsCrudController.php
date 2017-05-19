@@ -1,16 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Api\V1\Controllers;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-
+use Illuminate\Http\Request;
+use JWTAuth;
+use App\Models\Page_description;
+use Dingo\Api\Routing\Helpers;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\AboutRequest as StoreRequest;
-use App\Http\Requests\AboutRequest as UpdateRequest;
+use App\Http\Requests\History_detailsRequest as StoreRequest;
+use App\Http\Requests\History_detailsRequest as UpdateRequest;
 
-class AboutCrudController extends CrudController
+class History_detailsCrudController extends CrudController
 {
+
+    public function index() 
+    {
+
+    return History_details::get();
+
+    }
+
 
     public function setup()
     {
@@ -20,9 +31,9 @@ class AboutCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\About');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/about');
-        $this->crud->setEntityNameStrings('about', 'abouts');
+        $this->crud->setModel('App\Models\History_details');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/history_details');
+        $this->crud->setEntityNameStrings('history_details', 'history_details');
 
         /*
         |--------------------------------------------------------------------------
@@ -32,24 +43,24 @@ class AboutCrudController extends CrudController
 
         $this->crud->setFromDb();
 
-
         $this->crud->addField([ // image
-            'label' => "Image",
-            'name' => "image",
-            'type' => 'image',
-            'upload' => true,
-            'crop' => true, // set to true to allow cropping, false to disable
-            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
-            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
-        ]);
+            'label' => "Event Date",
+            'name' => "date",
+            'type' => 'date_picker',
+            'date_picker_options' => [
+          'todayBtn' => true,
+          'format' => 'dd-mm-yyyy'],
+            ]);
+
 
         $this->crud->addField([
-           'label' => "Speciality_masters_id",
-           'type' => 'select2',
-           'name' => 'speciality_masters_id', // the db column for the foreign key
-           'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-           'attribute' => 'speciality', // foreign key attribute that is shown to user
-           'model' => "App\Models\Speciality_masters" // foreign key model
+            'label'=>'Image',
+            'name'=>'image',
+            'type'=>'image',
+            'upload'=>true,
+            'crop'=>true,
+            'aspect_ratio'=>1,
+            'prefix'=>'uploads'
             ]);
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -64,8 +75,7 @@ class AboutCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-
-        $this->crud->setColumnsDetails('image', ['type'=>'image']);
+         $this->crud->setColumnsDetails('image',['type'=>'image']);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

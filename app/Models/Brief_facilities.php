@@ -19,7 +19,7 @@ class Brief_facilities extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['image','description','speciality_masters_id'];
+     protected $fillable = ['image','description','speciality_masters_id','page'];
     // protected $hidden = [];
     // protected $dates = [];
 
