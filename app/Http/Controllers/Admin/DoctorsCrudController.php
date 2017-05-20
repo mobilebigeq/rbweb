@@ -20,7 +20,7 @@ class DoctorsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Doctors');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/doctors');
-        $this->crud->setEntityNameStrings('doctors', 'doctors');
+        $this->crud->setEntityNameStrings('doctor', 'doctors');
 
         /*
         |--------------------------------------------------------------------------

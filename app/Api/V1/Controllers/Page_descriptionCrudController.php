@@ -16,11 +16,18 @@ use App\Http\Requests\Page_descriptionRequest as UpdateRequest;
 class Page_descriptionCrudController extends CrudController
 {
 
+    use Helpers;
+
     public function index() 
     {
 
-    return Page_description::get();
+        return Page_description::get();
 
+
+        // return $currentuser
+        // ->Page_description()
+        // ->get()
+        // ->toArray();
     }
 
 

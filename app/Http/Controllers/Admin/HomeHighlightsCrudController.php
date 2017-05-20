@@ -21,7 +21,7 @@ class HomeHighlightsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\HomeHighlights');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/homehighlights');
-        $this->crud->setEntityNameStrings('homehighlights', 'home_highlights');
+        $this->crud->setEntityNameStrings('home_highlight', 'home_highlights');
 
         /*
         |--------------------------------------------------------------------------

@@ -22,7 +22,7 @@ class AboutCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\About');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/about');
-        $this->crud->setEntityNameStrings('about', 'abouts');
+        $this->crud->setEntityNameStrings('about', 'about');
 
         /*
         |--------------------------------------------------------------------------

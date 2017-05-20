@@ -20,7 +20,7 @@ class RightHighlightsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\RightHighlights');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/righthighlights');
-        $this->crud->setEntityNameStrings('righthighlights', 'right_highlights');
+        $this->crud->setEntityNameStrings('right_highlight', 'right_highlights');
 
         /*
         |--------------------------------------------------------------------------

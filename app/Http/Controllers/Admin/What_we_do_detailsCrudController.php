@@ -23,7 +23,7 @@ class What_we_do_detailsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\What_we_do_details');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/what_we_do_details');
-        $this->crud->setEntityNameStrings('what_we_do_details', 'what_we_do_details');
+        $this->crud->setEntityNameStrings('what_we_do_detail', 'what_we_do_details');
 
         /*
         |--------------------------------------------------------------------------

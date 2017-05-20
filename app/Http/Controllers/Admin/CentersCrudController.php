@@ -20,7 +20,7 @@ class CentersCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Centers');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/centers');
-        $this->crud->setEntityNameStrings('centers', 'centers');
+        $this->crud->setEntityNameStrings('center', 'centers');
 
         /*
         |--------------------------------------------------------------------------

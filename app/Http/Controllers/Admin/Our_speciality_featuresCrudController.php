@@ -25,7 +25,7 @@ class Our_speciality_featuresCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Our_speciality_features');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/our_speciality_features');
-        $this->crud->setEntityNameStrings('our_speciality_features', 'our_speciality_features');
+        $this->crud->setEntityNameStrings('our_speciality_feature', 'our_speciality_features');
 
         /*
         |--------------------------------------------------------------------------

@@ -22,7 +22,7 @@ class Brief_facilitiesCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Brief_facilities');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/brief_facilities');
-        $this->crud->setEntityNameStrings('brief_facilities', 'brief_facilities');
+        $this->crud->setEntityNameStrings('brief_facility', 'brief_facilities');
 
         /*
         |--------------------------------------------------------------------------
