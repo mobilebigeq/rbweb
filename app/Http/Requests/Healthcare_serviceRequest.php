@@ -25,7 +25,9 @@ class Healthcare_serviceRequest extends \Backpack\CRUD\app\Http\Requests\CrudReq
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required',
+            'image' => 'required',
+            'page' => 'required',
         ];
     }
 
@@ -49,7 +51,7 @@ class Healthcare_serviceRequest extends \Backpack\CRUD\app\Http\Requests\CrudReq
     public function messages()
     {
         return [
-            //
+           // 'image'=>'The image field is required.'
         ];
     }
 }

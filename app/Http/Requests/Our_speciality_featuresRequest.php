@@ -25,7 +25,8 @@ class Our_speciality_featuresRequest extends \Backpack\CRUD\app\Http\Requests\Cr
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required',
+            'image' => 'required',
         ];
     }
 
@@ -49,7 +50,7 @@ class Our_speciality_featuresRequest extends \Backpack\CRUD\app\Http\Requests\Cr
     public function messages()
     {
         return [
-            //
+           // 'required'=>'The field is required.'
         ];
     }
 }

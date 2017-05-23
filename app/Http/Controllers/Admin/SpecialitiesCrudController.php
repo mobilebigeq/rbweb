@@ -35,7 +35,7 @@ class SpecialitiesCrudController extends CrudController
             'name' => "icon",
             'type' => 'image',
             'upload' => true,
-            'crop' => true, // set to true to allow cropping, false to disable
+         //   'crop' => true, // set to true to allow cropping, false to disable
             'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
             'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);

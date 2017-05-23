@@ -25,7 +25,10 @@ class Md_messageRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+           'title' => 'required',
+           'name' => 'required',
+           'image' => 'required',
+           'designation' => 'required',
         ];
     }
 
@@ -49,7 +52,7 @@ class Md_messageRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function messages()
     {
         return [
-            //
+           // 'image'=>'The image field is required.'
         ];
     }
 }

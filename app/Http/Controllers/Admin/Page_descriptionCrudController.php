@@ -39,7 +39,6 @@ class Page_descriptionCrudController extends CrudController
             'name'=>'image',
             'type'=>'image',
             'upload'=>true,
-          //  'disk' => 'uploads'
           //  'crop'=>true,
             'aspect_ratio'=>1,
             'prefix'=>'uploads'

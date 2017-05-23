@@ -25,7 +25,11 @@ class SpecialitiesRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required|min:5|max:255',
+            'description' => 'required',
+            'link' => 'required',
+            'page' => 'required',
+            'icon' => 'required|image',
         ];
     }
 
@@ -49,7 +53,7 @@ class SpecialitiesRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function messages()
     {
         return [
-            //
+          //  'image'=>'The image field is required.'
         ];
     }
 }

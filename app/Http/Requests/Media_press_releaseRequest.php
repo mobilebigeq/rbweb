@@ -25,7 +25,7 @@ class Media_press_releaseRequest extends \Backpack\CRUD\app\Http\Requests\CrudRe
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+           'title' => 'required',
         ];
     }
 

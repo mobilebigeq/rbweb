@@ -2,6 +2,7 @@
 
 return [
 
+    
     /*
     |--------------------------------------------------------------------------
     | Backpack\CRUD preferences
@@ -22,6 +23,7 @@ return [
     // How would you like the validation errors to be shown?
     'show_grouped_errors' => true,
     'show_inline_errors' => true,
+
 
     /*
     |------------
