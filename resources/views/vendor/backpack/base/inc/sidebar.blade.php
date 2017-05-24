@@ -26,7 +26,7 @@
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/righthighlights') }}"><i class="fa fa-cog"></i> <span>Right Highlights</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/specialities') }}"><i class="fa fa-cog"></i> <span>Specialities</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/homeevents') }}"><i class="fa fa-cog"></i> <span>Events</span></a></li>
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/homeawards') }}"><i class="fa fa-cog"></i> <span>Awards</span></a></li>
+                 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/rainbowguide') }}"><i class="fa fa-cog"></i> <span>Rainbow Guide</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/centers') }}"><i class="fa fa-cog"></i> <span>Centers</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/categories') }}"><i class="fa fa-cog"></i> <span>Categories</span></a></li>
