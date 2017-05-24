@@ -27,3 +27,4 @@ CRUD::resource('md_message', 'Md_messageCrudController');
 CRUD::resource('history_details', 'History_detailsCrudController');
 CRUD::resource('awards_history', 'Awards_historyCrudController');
 CRUD::resource('media_press_release', 'Media_press_releaseCrudController');
+CRUD::resource('testimonial_details', 'Testimonial_detailsCrudController');

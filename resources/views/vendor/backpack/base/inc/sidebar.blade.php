@@ -32,6 +32,11 @@
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/categories') }}"><i class="fa fa-cog"></i> <span>Categories</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/aboutus') }}"><i class="fa fa-cog"></i> <span>About Us</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors') }}"><i class="fa fa-cog"></i> <span>Doctors</span></a></li>
+
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/testimonial_details') }}"><i class="fa fa-cog"></i> <span>Testimonial_details</span></a></li>
+
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/hospitals') }}"><i class="fa fa-cog"></i> <span>Hospitals</span></a></li>
+
               </ul>
           </li>
 
@@ -81,6 +86,8 @@
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/awards_history') }}"><i class="fa fa-cog"></i> <span>Awards_history</span></a></li>
 
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/media_press_release') }}"><i class="fa fa-cog"></i> <span>Media_press_releases</span></a></li>
+
+                
                   
               </ul>
           </li>
