@@ -42,6 +42,7 @@ $api->version('v1', function (Router $api) {
             $api->get('healthcare_service/{id}','App\Api\V1\Controllers\Healthcare_serviceCrudController@show');
 
             $api->get('brief_facilities','App\Api\V1\Controllers\Brief_facilitiesCrudController@index');
+            $api->get('brief_facilities/{id}','App\Api\V1\Controllers\Brief_facilitiesCrudController@show');
 
             $api->get('our_specialities','App\Api\V1\Controllers\Our_specialitiesCrudController@index');
 
