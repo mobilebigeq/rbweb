@@ -2,7 +2,7 @@
 
 namespace App\Api\V1\Controllers;
 
-use Backpack\CRUD\app\Http\Controllers\CrudController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
 use App\Models\Page_description;

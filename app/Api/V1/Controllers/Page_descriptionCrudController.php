@@ -18,4 +18,14 @@ class Page_descriptionCrudController extends Controller
         return Page_description::get();
 
     }
+
+    public function show($id)
+    {
+        $descriptions = Page_description::where('page', $id)->get();
+
+        if(!$descriptions)
+            throw new NotFoundHttpException; 
+
+        return $descriptions;
+    }
 }
