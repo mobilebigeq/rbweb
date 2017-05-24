@@ -31,7 +31,8 @@ $api->version('v1', function (Router $api) {
     		$api->get('board', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
 
 
-            $api->get('page_decription','App\Api\V1\Controllers\Page_descriptionCrudController@index');
+            $api->get('page_description','App\Api\V1\Controllers\Page_descriptionCrudController@index');
+            $api->get('page_description/{id}','App\Api\V1\Controllers\Page_descriptionCrudController@show');
 
             $api->get('speciality_masters','App\Api\V1\Controllers\Speciality_mastersCrudController@index');
 
