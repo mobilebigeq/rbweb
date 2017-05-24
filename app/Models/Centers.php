@@ -19,7 +19,7 @@ class Centers extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['center_name', 'address', 'telephone'];
     // protected $hidden = [];
     // protected $dates = [];
 
