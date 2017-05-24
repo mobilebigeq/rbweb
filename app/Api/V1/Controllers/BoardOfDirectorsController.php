@@ -1,20 +1,18 @@
 <?php
-
 namespace App\Api\V1\Controllers;
 
 use Illuminate\Http\Request;
 use JWTAuth;
-use App\Models\Doctors;
+use App\Models\BoardOfDirectors;
 use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 
-class DoctorsController extends Controller
+class BoardOfDirectorsController extends Controller
 {
-    //
-	use Helpers;
+    use Helpers;
 
     public function index()
 	{
-	    return Doctors::with('hospitals')->get();
+	    return BoardOfDirectors::get();
 	}
 }

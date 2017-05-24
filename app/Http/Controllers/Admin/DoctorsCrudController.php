@@ -39,6 +39,16 @@ class DoctorsCrudController extends CrudController
             'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);
 
+        $this->crud->addField([
+            'label' => 'Hospitals',
+            'type' => 'checklist',
+            'name' => 'hospitals',
+            'entity' => 'hospitals',
+            'attribute' => 'title',
+            'model' => 'App\Models\Hospitals',
+            'pivot' => true
+        ]);
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -53,6 +63,20 @@ class DoctorsCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
         $this->crud->setColumnsDetails('photo', ['type'=>'image']);
+        // $this->crud->addColumn([
+        //     'type' => 'model_function',
+        //    'name' => 'Hospitals',
+        //    'function_name' => 'getHospitals'
+        //    ]);
+
+        $this->crud->addColumn([ // n-n relationship (with pivot table)
+        'label' => "Hospitals", // Table column heading
+        'type' => "select_multiple",
+        'name' => 'hospitals', // the method that defines the relationship in your Model
+        'entity' => 'hospitals', // the method that defines the relationship in your Model
+        'attribute' => "title", // foreign key attribute that is shown to user
+        'model' => "App\Models\Hospitals", // foreign key model
+        ]);
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;

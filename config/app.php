@@ -193,6 +193,10 @@ return [
         * Dingo API Service Provider
         */
         Dingo\Api\Provider\LaravelServiceProvider::class,
+        /*
+        *   Cors Service Provider
+        */
+        Barryvdh\Cors\ServiceProvider::class,
 
     ],
 

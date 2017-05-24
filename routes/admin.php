@@ -11,6 +11,10 @@ CRUD::resource('categories', 'CategoriesCrudController');
 CRUD::resource('aboutus', 'AboutUsCrudController');
 CRUD::resource('centers', 'CentersCrudController');
 
+CRUD::resource('hospitals', 'HospitalsCrudController');
+CRUD::resource('careers', 'CareersCrudController');
+CRUD::resource('boardofdirectors', 'BoardOfDirectorsCrudController');
+
 CRUD::resource('speciality_masters', 'Speciality_mastersCrudController');
 CRUD::resource('about', 'AboutCrudController');
 CRUD::resource('healthcare_service', 'Healthcare_serviceCrudController');
