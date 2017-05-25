@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class Page_descriptionRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
+class Centre_panelRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,7 @@ class Page_descriptionRequest extends \Backpack\CRUD\app\Http\Requests\CrudReque
     public function rules()
     {
         return [
-             'title' => 'required',
-             //'image' => 'nullable|image',
-             'page' => 'required'
-
+            // 'name' => 'required|min:5|max:255'
         ];
     }
 
@@ -40,7 +37,7 @@ class Page_descriptionRequest extends \Backpack\CRUD\app\Http\Requests\CrudReque
     public function attributes()
     {
         return [
-             
+            //
         ];
     }
 
@@ -52,7 +49,7 @@ class Page_descriptionRequest extends \Backpack\CRUD\app\Http\Requests\CrudReque
     public function messages()
     {
         return [
-          // 'image'=>'The image field is required.'
+            //
         ];
     }
 }
