@@ -20,4 +20,14 @@ class Brief_facilitiesController extends Controller
 
     }
 
+    public function show($id)
+    {
+        $facilities = Brief_facilities::where('page', $id)->get();
+
+        if(!$facilities)
+            throw new NotFoundHttpException; 
+
+        return $facilities;
+    }
+
 }

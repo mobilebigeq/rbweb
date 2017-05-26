@@ -39,6 +39,7 @@ class Brief_facilitiesCrudController extends CrudController
             'type'=>'image',
             'upload'=>true,
           //  'crop'=>true,
+
             'aspect_ratio'=>1,
             'prefix'=>'uploads'
             ]);

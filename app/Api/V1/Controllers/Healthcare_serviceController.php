@@ -20,4 +20,14 @@ class Healthcare_serviceController extends Controller
 
     }
 
+    public function show($id)
+    {
+        $services = Healthcare_service::where('page', $id)->get();
+
+        if(!$services)
+            throw new NotFoundHttpException; 
+
+        return $services;
+    }
+
 }
