@@ -29,6 +29,7 @@ class DoctorsCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
+        
         $this->crud->addField([ // image
             'label' => "Photo",
             'name' => "photo",

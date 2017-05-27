@@ -68,6 +68,8 @@
 
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/media_press_release') }}"><i class="fa fa-cog"></i> <span>Media_press_releases</span></a></li>
 
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/careers') }}"><i class="fa fa-cog"></i> <span>Careers</span></a></li>
+
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/homeevents') }}"><i class="fa fa-cog"></i> <span>Events</span></a></li>
                   
               </ul>

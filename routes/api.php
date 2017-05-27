@@ -21,17 +21,26 @@ $api->version('v1', function (Router $api) {
     			return response()->json(["message"=>"Getting Highlights"]);
     		});
     		$api->get('highlights', 'App\Api\V1\Controllers\HighlightsController@index');
+
             $api->get('events', 'App\Api\V1\Controllers\EventsController@index');
+           
             $api->get('specialities', 'App\Api\V1\Controllers\SpecialitiesController@index');
+
             $api->get('doctors', 'App\Api\V1\Controllers\DoctorsController@index');
+
+            $api->get('hospitals', 'App\Api\V1\Controllers\HospitalsController@index');
+
             $api->get('categories', 'App\Api\V1\Controllers\CategoriesController@index');
 
             $api->get('centers', 'App\Api\V1\Controllers\CentersController@index');
+
             $api->get('careers', 'App\Api\V1\Controllers\CareersController@index');
-    		$api->get('board', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
+    		
+            $api->get('board', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
 
 
             $api->get('page_description','App\Api\V1\Controllers\Page_descriptionController@index');
+
             $api->get('page_description/{id}','App\Api\V1\Controllers\Page_descriptionController@show');
 
             $api->get('speciality_masters','App\Api\V1\Controllers\Speciality_mastersController@index');
@@ -39,8 +48,11 @@ $api->version('v1', function (Router $api) {
             $api->get('about','App\Api\V1\Controllers\AboutController@index');
 
             $api->get('healthcare_service','App\Api\V1\Controllers\Healthcare_serviceController@index');
+            
             $api->get('healthcare_service/{id}','App\Api\V1\Controllers\Healthcare_serviceController@show');
+            
             $api->get('brief_facilities','App\Api\V1\Controllers\Brief_facilitiesController@index');
+            
             $api->get('brief_facilities/{id}','App\Api\V1\Controllers\Brief_facilitiesController@show');
 
             $api->get('our_specialities','App\Api\V1\Controllers\Our_specialitiesController@index');

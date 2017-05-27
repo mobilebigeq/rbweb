@@ -29,7 +29,7 @@ class SpecialitiesRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
             'description' => 'required',
             'link' => 'required',
             'page' => 'required',
-            'icon' => 'required|image',
+           
         ];
     }
 

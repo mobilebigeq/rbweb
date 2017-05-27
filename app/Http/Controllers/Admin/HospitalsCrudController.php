@@ -67,16 +67,16 @@ class HospitalsCrudController extends CrudController
 
 // <<<<<<< HEAD
 // =======
-        $this->crud->setColumnsDetails('specialities', [
-           // n-n relationship (with pivot table)
-           'label' => "Specialities", // Table column heading
-           'type' => "select_multiple",
-           'name' => 'specialities', // the method that defines the relationship in your Model
-           'entity' => 'specialities', // the method that defines the relationship in your Model
-           'attribute' => "title", // foreign key attribute that is shown to user
-           'model' => "App\Models\Specialities", // foreign key model
-           'pivot'=>true
-        ]);
+        // $this->crud->setColumnsDetails('specialities', [
+        //    // n-n relationship (with pivot table)
+        //    'label' => "Specialities", // Table column heading
+        //    'type' => "select_multiple",
+        //    'name' => 'specialities', // the method that defines the relationship in your Model
+        //    'entity' => 'specialities', // the method that defines the relationship in your Model
+        //    'attribute' => "title", // foreign key attribute that is shown to user
+        //    'model' => "App\Models\Specialities", // foreign key model
+        //    'pivot'=>true
+        // ]);
 
 // >>>>>>> 258dac561037e9f621abfad2c07b292c32e676de
         // ------ CRUD BUTTONS
