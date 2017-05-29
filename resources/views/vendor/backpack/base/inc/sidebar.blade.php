@@ -83,6 +83,10 @@
 
                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors') }}"><i class="fa fa-cog"></i> <span>Doctors</span></a></li>
 
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk') }}"><i class="fa fa-cog"></i> <span>Doctors_desk</span></a></li>
+
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk_questions') }}"><i class="fa fa-cog"></i> <span>Doctors_desk_questions</span></a></li>
+
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_specialities') }}"><i class="fa fa-cog"></i> <span>Our_Specialities</span></a></li>
 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_speciality_features') }}"><i class="fa fa-cog"></i> <span>Our_Speciality_Features</span></a></li>

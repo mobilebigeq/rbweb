@@ -73,6 +73,11 @@ $api->version('v1', function (Router $api) {
 
 
               $api->get('centre_panel','App\Api\V1\Controllers\Centre_panelController@index');
+
+              $api->get('doctors_desk','App\Api\V1\Controllers\Doctors_deskController@index');
+
+              $api->get('doctors_desk_questions','App\Api\V1\Controllers\Doctors_desk_questionsController@index');
+
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');
     //     $api->put('movie/{id}', 'App\Api\V1\Controllers\MovieController@update');
     //     $api->delete('movie/{id}', 'App\Api\V1\Controllers\MovieController@destroy');
