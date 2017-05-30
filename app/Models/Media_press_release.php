@@ -19,7 +19,7 @@ class Media_press_release extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['date','title','location','description','link'];
+     protected $fillable = ['date','title','location','short_description','long_description','link'];
     // protected $hidden = [];
     // protected $dates = [];
 

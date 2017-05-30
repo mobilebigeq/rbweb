@@ -47,6 +47,7 @@
                   
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare_service</span></a></li>
 
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief_Facilities</span></a></li>
                   
 
               </ul>
@@ -61,6 +62,8 @@
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/what_we_do_details') }}"><i class="fa fa-cog"></i> <span>What_We_Do_Details</span></a></li>
 
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/md_message') }}"><i class="fa fa-cog"></i> <span>MD_Messages</span></a></li>
+
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/boardofdirectors') }}"><i class="fa fa-cog"></i> <span>Board_of_directors</span></a></li>
 
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/history_details') }}"><i class="fa fa-cog"></i> <span>History_Details</span></a></li>
 
@@ -96,7 +99,7 @@
 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/centers') }}"><i class="fa fa-cog"></i> <span>Centers</span></a></li>
 
-                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief_Facilities</span></a></li>
+                   
 
 
               </ul>
