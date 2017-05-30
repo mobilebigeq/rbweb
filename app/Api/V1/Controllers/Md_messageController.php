@@ -2,26 +2,22 @@
 
 namespace App\Api\V1\Controllers;
 
-use Backpack\CRUD\app\Http\Controllers\CrudController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
-use App\Models\Page_description;
+use App\Models\Md_message;
 use Dingo\Api\Routing\Helpers;
-
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\History_detailsRequest as StoreRequest;
-use App\Http\Requests\History_detailsRequest as UpdateRequest;
 
-class History_detailsCrudController extends CrudController
+class Md_messageController extends Controller
 {
 
     public function index() 
     {
 
-    return History_details::get();
+    return Md_message::get();
 
     }
-
 
     public function setup()
     {
@@ -31,9 +27,9 @@ class History_detailsCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\History_details');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/history_details');
-        $this->crud->setEntityNameStrings('history_details', 'history_details');
+        $this->crud->setModel('App\Models\Md_message');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/md_message');
+        $this->crud->setEntityNameStrings('md_message', 'md_messages');
 
         /*
         |--------------------------------------------------------------------------
@@ -43,15 +39,11 @@ class History_detailsCrudController extends CrudController
 
         $this->crud->setFromDb();
 
-        $this->crud->addField([ // image
-            'label' => "Event Date",
-            'name' => "date",
-            'type' => 'date_picker',
-            'date_picker_options' => [
-          'todayBtn' => true,
-          'format' => 'dd-mm-yyyy'],
-            ]);
-
+        // ------ CRUD FIELDS
+        // $this->crud->addField($options, 'update/create/both');
+        // $this->crud->addFields($array_of_arrays, 'update/create/both');
+        // $this->crud->removeField('name', 'update/create/both');
+        // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         $this->crud->addField([
             'label'=>'Image',
@@ -62,12 +54,6 @@ class History_detailsCrudController extends CrudController
             'aspect_ratio'=>1,
             'prefix'=>'uploads'
             ]);
-        // ------ CRUD FIELDS
-        // $this->crud->addField($options, 'update/create/both');
-        // $this->crud->addFields($array_of_arrays, 'update/create/both');
-        // $this->crud->removeField('name', 'update/create/both');
-        // $this->crud->removeFields($array_of_names, 'update/create/both');
-
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
@@ -75,7 +61,7 @@ class History_detailsCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-         $this->crud->setColumnsDetails('image',['type'=>'image']);
+        $this->crud->setColumnsDetails('image',['type'=>'image']);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

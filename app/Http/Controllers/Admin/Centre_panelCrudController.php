@@ -1,28 +1,16 @@
 <?php
 
-namespace App\Api\V1\Controllers;
+namespace App\Http\Controllers\Admin;
+
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Illuminate\Http\Request;
-use JWTAuth;
-use App\Models\Page_description;
-use Dingo\Api\Routing\Helpers;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\Awards_historyRequest as StoreRequest;
-use App\Http\Requests\Awards_historyRequest as UpdateRequest;
+use App\Http\Requests\Centre_panelRequest as StoreRequest;
+use App\Http\Requests\Centre_panelRequest as UpdateRequest;
 
-class Awards_historyCrudController extends CrudController
+class Centre_panelCrudController extends CrudController
 {
-
-    public function index() 
-    {
-
-    return Awards_history::get();
-
-    }
-
-
     public function setup()
     {
 
@@ -31,9 +19,9 @@ class Awards_historyCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Awards_history');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/awards_history');
-        $this->crud->setEntityNameStrings('awards_history', 'awards_histories');
+        $this->crud->setModel('App\Models\Centre_panel');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/centre_panel');
+        $this->crud->setEntityNameStrings('centre_panel', 'centre_panels');
 
         /*
         |--------------------------------------------------------------------------
@@ -43,14 +31,12 @@ class Awards_historyCrudController extends CrudController
 
         $this->crud->setFromDb();
 
-        
-//This is for adding Image.....
+
         $this->crud->addField([
             'label'=>'Image',
             'name'=>'image',
             'type'=>'image',
             'upload'=>true,
-            'crop'=>true,
             'aspect_ratio'=>1,
             'prefix'=>'uploads'
             ]);
@@ -67,7 +53,8 @@ class Awards_historyCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-         $this->crud->setColumnsDetails('image',['type'=>'image']);
+
+        $this->crud->setColumnDetails('image',['type'=>'image']);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
@@ -130,14 +117,7 @@ class Awards_historyCrudController extends CrudController
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
+
     }
 
-    public function update(UpdateRequest $request)
-    {
-        // your additional operations before save here
-        $redirect_location = parent::updateCrud();
-        // your additional operations after save here
-        // use $this->data['entry'] or $this->crud->entry
-        return $redirect_location;
-    }
 }

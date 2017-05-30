@@ -25,7 +25,9 @@ class HomeEventsRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required',
+            'description' => 'required',
+            'event_date' => 'required',
         ];
     }
 

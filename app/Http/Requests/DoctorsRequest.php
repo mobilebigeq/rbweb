@@ -25,7 +25,10 @@ class DoctorsRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required',
+            'qualification' => 'required|min:5|max:255',
+            'designation' => 'required|min:5|max:255',
+            'photo' => 'required',
         ];
     }
 
@@ -49,7 +52,7 @@ class DoctorsRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function messages()
     {
         return [
-            //
+          //  'image'=>'The image field is required.'
         ];
     }
 }

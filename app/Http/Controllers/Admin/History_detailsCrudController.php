@@ -22,7 +22,7 @@ class History_detailsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\History_details');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/history_details');
-        $this->crud->setEntityNameStrings('history_details', 'history_details');
+        $this->crud->setEntityNameStrings('history_detail', 'history_details');
 
         /*
         |--------------------------------------------------------------------------
@@ -47,7 +47,7 @@ class History_detailsCrudController extends CrudController
             'name'=>'image',
             'type'=>'image',
             'upload'=>true,
-            'crop'=>true,
+          //  'crop'=>true,
             'aspect_ratio'=>1,
             'prefix'=>'uploads'
             ]);

@@ -20,7 +20,7 @@ class RainbowGuideCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\RainbowGuide');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/rainbowguide');
-        $this->crud->setEntityNameStrings('rainbowguide', 'rainbow_guides');
+        $this->crud->setEntityNameStrings('rainbow_guide', 'rainbow_guides');
 
         /*
         |--------------------------------------------------------------------------

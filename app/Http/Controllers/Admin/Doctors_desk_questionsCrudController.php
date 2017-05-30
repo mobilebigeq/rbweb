@@ -1,28 +1,15 @@
 <?php
 
-namespace App\Api\V1\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Illuminate\Http\Request;
-use JWTAuth;
-use App\Models\Page_description;
-use Dingo\Api\Routing\Helpers;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\Our_specialitiesRequest as StoreRequest;
-use App\Http\Requests\Our_specialitiesRequest as UpdateRequest;
+use App\Http\Requests\Doctors_desk_questionsRequest as StoreRequest;
+use App\Http\Requests\Doctors_desk_questionsRequest as UpdateRequest;
 
-class Our_specialitiesCrudController extends CrudController
+class Doctors_desk_questionsCrudController extends CrudController
 {
-
-    public function index() 
-    {
-
-    return Our_specialities::get();
-
-    }
-
-
     public function setup()
     {
 
@@ -31,9 +18,9 @@ class Our_specialitiesCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Our_specialities');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/our_specialities');
-        $this->crud->setEntityNameStrings('our_specialities', 'our_specialities');
+        $this->crud->setModel('App\Models\Doctors_desk_questions');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/doctors_desk_questions');
+        $this->crud->setEntityNameStrings('doctors_desk_questions', 'doctors_desk_questions');
 
         /*
         |--------------------------------------------------------------------------
@@ -43,43 +30,21 @@ class Our_specialitiesCrudController extends CrudController
 
         $this->crud->setFromDb();
 
-        $this->crud->addField([
-            'label'=>'Image',
-            'name'=>'image',
-            'type'=>'image',
-            'upload'=>true,
-            'crop'=>true,
-            'aspect_ratio'=>1,
-            'prefix'=>'uploads'
-            ]);
-
-
-        $this->crud->addField([
-            'label'=>'Icon',
-            'name'=>'icon',
-            'type'=>'image',
-            'upload'=>true,
-            'crop'=>true,
-            'aspect_ratio'=>1,
-            'prefix'=>'uploads'
-            ]);
-
-
- 
-         $this->crud->addField([
-            'label'=>'Speciality_masters_id',
-            'name'=>'speciality_masters_id',
-            'type'=>'select2',
-            'entity'=>'speciality_masters',
-            'attribute'=>'speciality',
-            'model'=>'App\Models\Speciality_masters'
-            ]);       
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
+        $this->crud->addField([
+            'label'=>'Doctors_desk_questions',
+            'name'=>'doctors_desk_id',
+            'type'=>'select2',
+            'entity'=>'doctors_desk_questions',
+            'attribute'=>'title',
+            'model'=>'App\Models\Doctors_desk'
+
+            ]);
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
@@ -88,8 +53,6 @@ class Our_specialitiesCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
 
-         $this->crud->setColumnsDetails('image',['type'=>'image']);
-         $this->crud->setColumnsDetails('icon',['type'=>'image']);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

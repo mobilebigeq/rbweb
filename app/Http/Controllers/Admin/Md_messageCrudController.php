@@ -44,7 +44,7 @@ class Md_messageCrudController extends CrudController
             'name'=>'image',
             'type'=>'image',
             'upload'=>true,
-            'crop'=>true,
+          //  'crop'=>true,
             'aspect_ratio'=>1,
             'prefix'=>'uploads'
             ]);

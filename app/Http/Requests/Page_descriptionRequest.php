@@ -25,7 +25,10 @@ class Page_descriptionRequest extends \Backpack\CRUD\app\Http\Requests\CrudReque
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+             'title' => 'required',
+             //'image' => 'nullable|image',
+             'page' => 'required'
+
         ];
     }
 
@@ -37,7 +40,7 @@ class Page_descriptionRequest extends \Backpack\CRUD\app\Http\Requests\CrudReque
     public function attributes()
     {
         return [
-            //
+             
         ];
     }
 
@@ -49,7 +52,7 @@ class Page_descriptionRequest extends \Backpack\CRUD\app\Http\Requests\CrudReque
     public function messages()
     {
         return [
-            //
+          // 'image'=>'The image field is required.'
         ];
     }
 }

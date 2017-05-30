@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Api\V1\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -7,13 +8,17 @@ use JWTAuth;
 use App\Models\Healthcare_service;
 use Dingo\Api\Routing\Helpers;
 
-class Healthcare_serviceCrudController extends Controller
+// VALIDATION: change the requests to match your own file names if you need form validation
+
+class Healthcare_serviceController extends Controller
 {
+
     public function index() 
     {
-        return Healthcare_service::get();
-    }
 
+    return Healthcare_service::get();
+
+    }
 
     public function show($id)
     {
@@ -24,4 +29,5 @@ class Healthcare_serviceCrudController extends Controller
 
         return $services;
     }
+
 }

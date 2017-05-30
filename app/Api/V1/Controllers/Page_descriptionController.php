@@ -2,21 +2,25 @@
 
 namespace App\Api\V1\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
 use App\Models\Page_description;
+use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 
 
-class Page_descriptionCrudController extends Controller
+// VALIDATION: change the requests to match your own file names if you need form validation
+
+
+class Page_descriptionController extends Controller
 {
+
+   // use Helpers;
 
     public function index() 
     {
 
         return Page_description::get();
-
     }
 
     public function show($id)
@@ -28,4 +32,5 @@ class Page_descriptionCrudController extends Controller
 
         return $descriptions;
     }
+    
 }

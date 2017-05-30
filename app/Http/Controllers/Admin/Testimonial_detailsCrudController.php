@@ -1,28 +1,15 @@
 <?php
 
-namespace App\Api\V1\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Illuminate\Http\Request;
-use JWTAuth;
-use App\Models\Page_description;
-use Dingo\Api\Routing\Helpers;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\Media_press_releaseRequest as StoreRequest;
-use App\Http\Requests\Media_press_releaseRequest as UpdateRequest;
+use App\Http\Requests\Testimonial_detailsRequest as StoreRequest;
+use App\Http\Requests\Testimonial_detailsRequest as UpdateRequest;
 
-class Media_press_releaseCrudController extends CrudController
+class Testimonial_detailsCrudController extends CrudController
 {
-
-    public function index() 
-    {
-
-    return Media_press_release::get();
-
-    }
-
-
     public function setup()
     {
 
@@ -31,9 +18,9 @@ class Media_press_releaseCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Media_press_release');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/media_press_release');
-        $this->crud->setEntityNameStrings('media_press_release', 'media_press_releases');
+        $this->crud->setModel('App\Models\Testimonial_details');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/testimonial_details');
+        $this->crud->setEntityNameStrings('testimonial_details', 'testimonial_details');
 
         /*
         |--------------------------------------------------------------------------
@@ -43,15 +30,30 @@ class Media_press_releaseCrudController extends CrudController
 
         $this->crud->setFromDb();
 
-        $this->crud->addField([
-            'label'=>'Date',
-            'name'=>'date',
-            'type'=>'date_picker',
-            'date_picker_options' => [
-            'todayBtn' => true,
-            'format' => 'dd-mm-yyyy']
 
-            ]);
+        $this->crud->addField([ // image
+            'label' => "Icon",
+            'name' => "icon",
+            'type' => 'image',
+            'upload' => true,
+         //   'crop' => true, // set to true to allow cropping, false to disable
+            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
+        ]);
+
+
+
+        $this->crud->addField([ // image
+            'label' => "Image",
+            'name' => "image",
+            'type' => 'image',
+            'upload' => true,
+         //   'crop' => true, // set to true to allow cropping, false to disable
+            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
+        ]);
+
+    
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -65,7 +67,9 @@ class Media_press_releaseCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-
+        $this->crud->setColumnDetails('icon', ['type'=>'image']);
+        $this->crud->setColumnDetails('image', ['type'=>'image']);
+       
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

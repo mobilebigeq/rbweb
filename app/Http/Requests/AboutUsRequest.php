@@ -25,7 +25,9 @@ class AboutUsRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required',
+            'subtitle' => 'required|min:5|max:255',
+            'category' => 'required',
         ];
     }
 

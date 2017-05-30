@@ -21,41 +21,63 @@ $api->version('v1', function (Router $api) {
     			return response()->json(["message"=>"Getting Highlights"]);
     		});
     		$api->get('highlights', 'App\Api\V1\Controllers\HighlightsController@index');
+
             $api->get('events', 'App\Api\V1\Controllers\EventsController@index');
+           
             $api->get('specialities', 'App\Api\V1\Controllers\SpecialitiesController@index');
+
             $api->get('doctors', 'App\Api\V1\Controllers\DoctorsController@index');
+
+            $api->get('hospitals', 'App\Api\V1\Controllers\HospitalsController@index');
+
             $api->get('categories', 'App\Api\V1\Controllers\CategoriesController@index');
 
             $api->get('centers', 'App\Api\V1\Controllers\CentersController@index');
+
             $api->get('careers', 'App\Api\V1\Controllers\CareersController@index');
-    		$api->get('board', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
+    		
+            $api->get('board', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
 
 
-            $api->get('page_description','App\Api\V1\Controllers\Page_descriptionCrudController@index');
-            $api->get('page_description/{id}','App\Api\V1\Controllers\Page_descriptionCrudController@show');
+            $api->get('page_description','App\Api\V1\Controllers\Page_descriptionController@index');
 
-            $api->get('speciality_masters','App\Api\V1\Controllers\Speciality_mastersCrudController@index');
+            $api->get('page_description/{id}','App\Api\V1\Controllers\Page_descriptionController@show');
 
-            $api->get('about','App\Api\V1\Controllers\AboutCrudController@index');
+            $api->get('speciality_masters','App\Api\V1\Controllers\Speciality_mastersController@index');
 
-            $api->get('healthcare_service','App\Api\V1\Controllers\Healthcare_serviceCrudController@index');
-            $api->get('healthcare_service/{id}','App\Api\V1\Controllers\Healthcare_serviceCrudController@show');
+            $api->get('about','App\Api\V1\Controllers\AboutController@index');
 
-            $api->get('brief_facilities','App\Api\V1\Controllers\Brief_facilitiesCrudController@index');
-            $api->get('brief_facilities/{id}','App\Api\V1\Controllers\Brief_facilitiesCrudController@show');
+            $api->get('healthcare_service','App\Api\V1\Controllers\Healthcare_serviceController@index');
+            
+            $api->get('healthcare_service/{id}','App\Api\V1\Controllers\Healthcare_serviceController@show');
+            
+            $api->get('brief_facilities','App\Api\V1\Controllers\Brief_facilitiesController@index');
+            
+            $api->get('brief_facilities/{id}','App\Api\V1\Controllers\Brief_facilitiesController@show');
 
-            $api->get('our_specialities','App\Api\V1\Controllers\Our_specialitiesCrudController@index');
+            $api->get('our_specialities','App\Api\V1\Controllers\Our_specialitiesController@index');
 
-            $api->get('our_speciality_features','App\Api\V1\Controllers\Our_speciality_featuresCrudController@index');
+            $api->get('our_speciality_features','App\Api\V1\Controllers\Our_speciality_featuresController@index');
 
-            $api->get('what_we_do_details','App\Api\V1\Controllers\What_we_do_detailsCrudController@index');
+            $api->get('what_we_do_details','App\Api\V1\Controllers\What_we_do_detailsController@index');
 
-            $api->get('md_message','App\Api\V1\Controllers\Md_messageCrudController@index');
+            $api->get('md_message','App\Api\V1\Controllers\Md_messageController@index');
 
-             $api->get('history_details','App\Api\V1\Controllers\History_detailsCrudController@index');
+             $api->get('history_details','App\Api\V1\Controllers\History_detailsController@index');
 
-              $api->get('awards_history','App\Api\V1\Controllers\Awards_historyCrudController@index');
-              $api->get('media_press_release','App\Api\V1\Controllers\Media_press_releaseCrudController@index');
+              $api->get('awards_history','App\Api\V1\Controllers\Awards_historyController@index');
+
+              $api->get('media_press_release','App\Api\V1\Controllers\Media_press_releaseController@index');
+
+              $api->get('testimonial_details','App\Api\V1\Controllers\testimonial_detailsController@index');
+
+
+              $api->get('centre_panel','App\Api\V1\Controllers\Centre_panelController@index');
+
+              $api->get('doctors_desk','App\Api\V1\Controllers\Doctors_deskController@index');
+
+              $api->get('doctors_desk_questions','App\Api\V1\Controllers\Doctors_desk_questionsController@index');
+
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');
     //     $api->put('movie/{id}', 'App\Api\V1\Controllers\MovieController@update');
     //     $api->delete('movie/{id}', 'App\Api\V1\Controllers\MovieController@destroy');

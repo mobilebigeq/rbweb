@@ -1,26 +1,15 @@
 <?php
 
-namespace App\Api\V1\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Illuminate\Http\Request;
-use JWTAuth;
-use App\Models\Page_description;
-use Dingo\Api\Routing\Helpers;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\Speciality_mastersRequest as StoreRequest;
-use App\Http\Requests\Speciality_mastersRequest as UpdateRequest;
+use App\Http\Requests\Doctors_deskRequest as StoreRequest;
+use App\Http\Requests\Doctors_deskRequest as UpdateRequest;
 
-class Speciality_mastersCrudController extends CrudController
+class Doctors_deskCrudController extends CrudController
 {
-
-    public function index() 
-    {
-
-    return Speciality_masters::get();
-
-    }
     public function setup()
     {
 
@@ -29,9 +18,9 @@ class Speciality_mastersCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Speciality_masters');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/speciality_masters');
-        $this->crud->setEntityNameStrings('speciality_masters', 'speciality_masters');
+        $this->crud->setModel('App\Models\Doctors_desk');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/doctors_desk');
+        $this->crud->setEntityNameStrings('doctors_desk', 'doctors_desks');
 
         /*
         |--------------------------------------------------------------------------
@@ -47,6 +36,15 @@ class Speciality_mastersCrudController extends CrudController
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
+        $this->crud->addField([
+            'label'=>'Doctors_id',
+            'name'=>'doctors_id',
+            'type'=>'select2',
+            'entity'=>'doctors_id',
+            'attribute'=>'name',
+            'model'=>'App\Models\Doctors'
+
+            ]);
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack

@@ -21,7 +21,7 @@ class HomeEventsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\HomeEvents');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/homeevents');
-        $this->crud->setEntityNameStrings('homeevents', 'home_events');
+        $this->crud->setEntityNameStrings('home_event', 'home_events');
 
         /*
         |--------------------------------------------------------------------------

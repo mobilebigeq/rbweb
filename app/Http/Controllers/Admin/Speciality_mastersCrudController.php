@@ -23,7 +23,7 @@ class Speciality_mastersCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Speciality_masters');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/speciality_masters');
-        $this->crud->setEntityNameStrings('speciality_masters', 'speciality_masters');
+        $this->crud->setEntityNameStrings('speciality_master', 'speciality_masters');
 
         /*
         |--------------------------------------------------------------------------

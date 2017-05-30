@@ -21,7 +21,7 @@ class HomeHighlightsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\HomeHighlights');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/homehighlights');
-        $this->crud->setEntityNameStrings('homehighlights', 'home_highlights');
+        $this->crud->setEntityNameStrings('home_highlight', 'home_highlights');
 
         /*
         |--------------------------------------------------------------------------
@@ -36,7 +36,7 @@ class HomeHighlightsCrudController extends CrudController
             'name' => "image",
             'type' => 'image',
             'upload' => true,
-            'crop' => true, // set to true to allow cropping, false to disable
+         //   'crop' => true, // set to true to allow cropping, false to disable
             'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
             'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);

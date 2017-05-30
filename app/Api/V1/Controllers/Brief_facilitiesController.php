@@ -8,12 +8,16 @@ use JWTAuth;
 use App\Models\Brief_facilities;
 use Dingo\Api\Routing\Helpers;
 
-class Brief_facilitiesCrudController extends Controller
+// VALIDATION: change the requests to match your own file names if you need form validation
+
+class Brief_facilitiesController extends Controller
 {
 
     public function index() 
     {
-        return Brief_facilities::get();
+
+    return Brief_facilities::get();
+
     }
 
     public function show($id)

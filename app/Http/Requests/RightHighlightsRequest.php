@@ -25,7 +25,8 @@ class RightHighlightsRequest extends \Backpack\CRUD\app\Http\Requests\CrudReques
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'title' => 'required',
+            'description' => 'required',
         ];
     }
 

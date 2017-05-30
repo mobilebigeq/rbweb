@@ -25,7 +25,9 @@ class Brief_facilitiesRequest extends \Backpack\CRUD\app\Http\Requests\CrudReque
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'description' => 'required',
+            'image' => 'required',
+            'page' => 'required',
         ];
     }
 
@@ -49,7 +51,7 @@ class Brief_facilitiesRequest extends \Backpack\CRUD\app\Http\Requests\CrudReque
     public function messages()
     {
         return [
-            //
+           // 'image'=>'The image field is required.'
         ];
     }
 }
