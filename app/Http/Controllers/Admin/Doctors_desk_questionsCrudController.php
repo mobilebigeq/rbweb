@@ -37,7 +37,7 @@ class Doctors_desk_questionsCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
         $this->crud->addField([
-            'label'=>'Doctors_desk_questions',
+            'label'=>'Doctors_desk_id',
             'name'=>'doctors_desk_id',
             'type'=>'select2',
             'entity'=>'doctors_desk_questions',

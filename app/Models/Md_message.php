@@ -19,7 +19,7 @@ class Md_message extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['title','name','designation','description','image','link'];
+     protected $fillable = ['title','name','designation','description','image','link','page'];
     // protected $hidden = [];
     // protected $dates = [];
 
