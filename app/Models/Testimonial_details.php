@@ -19,7 +19,7 @@ class Testimonial_details extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['icon','name','designation','image','description','link','type'];
+     protected $fillable = ['icon','name','designation','image','description','link','type','page'];
     // protected $hidden = [];
     // protected $dates = [];
 
