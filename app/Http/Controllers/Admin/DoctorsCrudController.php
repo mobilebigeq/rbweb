@@ -50,6 +50,27 @@ class DoctorsCrudController extends CrudController
             'pivot' => true
         ]);
 
+
+        $this->crud->addField([
+            'label' => 'Doctors_Specialization',
+            'type' => 'checklist',
+            'name' => 'doctor_specializations',
+            'entity' => 'doctor_specializations',
+            'attribute' => 'specialization',
+            'model' => 'App\Models\DoctorSpecialization',
+            'pivot' => true
+        ]);
+
+
+        $this->crud->addField([
+            'label' => 'Speciality_masters',
+            'type' => 'checklist',
+            'name' => 'speciality_masters',
+            'entity' => 'speciality_masters',
+            'attribute' => 'speciality',
+            'model' => 'App\Models\Speciality_masters',
+            'pivot' => true
+        ]);
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -79,6 +100,26 @@ class DoctorsCrudController extends CrudController
         'model' => "App\Models\Hospitals", // foreign key model
         ]);
 
+
+
+        $this->crud->addColumn([ // n-n relationship (with pivot table)
+        'label' => "Doctor_Specialization", // Table column heading
+        'type' => "select_multiple",
+        'name' => 'doctor_specializations', // the method that defines the relationship in your Model
+        'entity' => 'doctor_specializations', // the method that defines the relationship in your Model
+        'attribute' => "specialization", // foreign key attribute that is shown to user
+        'model' => "App\Models\DoctorSpecialization", // foreign key model
+        ]);
+
+
+         $this->crud->addColumn([ // n-n relationship (with pivot table)
+        'label' => "Speciality_Masters", // Table column heading
+        'type' => "select_multiple",
+        'name' => 'speciality_masters', // the method that defines the relationship in your Model
+        'entity' => 'speciality_masters', // the method that defines the relationship in your Model
+        'attribute' => "speciality", // foreign key attribute that is shown to user
+        'model' => "App\Models\Speciality_masters", // foreign key model
+        ]);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
