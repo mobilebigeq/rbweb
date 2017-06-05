@@ -19,7 +19,7 @@ class Doctors_desk_questions extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['title','question','answer','doctors_desk_id'];
+     protected $fillable = ['title','question','answer','doctors_desk_id','page'];
     // protected $hidden = [];
     // protected $dates = [];
 

@@ -18,7 +18,8 @@ class CreateMediaPressRelease extends Migration
             $table->date('date');
             $table->text('title');
             $table->string('location');
-            $table->text('description');
+            $table->text('short_description');
+            $table->text('long_description');
             $table->string('link');
             $table->timestamps();
         });

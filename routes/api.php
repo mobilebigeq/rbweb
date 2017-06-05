@@ -36,7 +36,7 @@ $api->version('v1', function (Router $api) {
 
             $api->get('careers', 'App\Api\V1\Controllers\CareersController@index');
     		
-            $api->get('board', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
+            $api->get('boardofDirectors', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
 
 
             $api->get('page_description','App\Api\V1\Controllers\Page_descriptionController@index');

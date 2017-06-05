@@ -2,13 +2,17 @@ var wth = $(window).width();
 var baseUrl = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
 $(document).scroll(function() {
+	
 	  var y = $(this).scrollTop();
 	  if (y > 0) {
 		$('.headerwrp').addClass("fixed");
 		$('.slidenavwrp').addClass("fixed");
+		$('.slidenavwrp').addClass("fixed");
+		$('.logowrp img').css('margin-top', '0px');
 	  } else {
 		$('.headerwrp').removeClass("fixed");
 		$('.slidenavwrp').removeClass("fixed");
+		$('.logowrp img').css('margin-top', '9px');
 	  }
 	  
 	  if(wth < 1000){
@@ -30,15 +34,15 @@ $(document).scroll(function() {
 			setTimeout(function(){ $('.osbox1').stop().removeClass("anim"); }, 500);
 			setTimeout(function(){ $('.osbox2').stop().removeClass("anim"); }, 1000);
 			setTimeout(function(){ $('.osbox3').stop().removeClass("anim"); }, 2000);
-			setTimeout(function(){ $('.osbox4').stop().removeClass("anim"); anlr('.ourSpecialitieswrp .hanginganim .text');  }, 3000);		
-			setTimeout(function(){$('.oursslider .sitem').removeClass('hanginganim'); $('.oursslider .sitem .text').removeAttr('style'); }, 4000);
+			setTimeout(function(){ $('.osbox4').stop().removeClass("anim"); /*anlr('.ourSpecialitieswrp .hanginganim .text');  */}, 3000);		
+			//setTimeout(function(){$('.oursslider .sitem').removeClass('hanginganim'); $('.oursslider .sitem .text').removeAttr('style'); }, 4000);
 		  }
 		  
 		  var rainbow_offsetop = $('.kaleidoscopewrp').offset().top - 100;
 		  if(y > rainbow_offsetop){
 			setTimeout(function(){ $('.rbbox1').stop().removeClass("anim"); }, 500);
-			setTimeout(function(){ $('.rbbox2').stop().removeClass("anim"); anlr('.kaleidoscopewrp .hanginganim .text'); }, 1000);
-			setTimeout(function(){$('.kaleidoscopewrp .sitem').removeClass('hanginganim'); $('.kaleidoscopewrp .sitem .text').removeAttr('style'); }, 3000);
+			setTimeout(function(){ $('.rbbox2').stop().removeClass("anim"); /*anlr('.kaleidoscopewrp .hanginganim .text');*/ }, 1000);
+			//setTimeout(function(){$('.kaleidoscopewrp .sitem').removeClass('hanginganim'); $('.kaleidoscopewrp .sitem .text').removeAttr('style'); }, 3000);
 		  }
 		  
 		  var about_offsetop = $('.aboutuswrp').offset().top - 100;
@@ -52,7 +56,22 @@ $(document).scroll(function() {
 
 
 $(window).on('load', function(){
-	$('.circuleframe, .circuleframe2, .aboutbannimg').addClass('active');
+	$('.circuleframe, .circuleframe2, .aboutbannimg, .otherbannimg').addClass('active');
+	$('.logowrp img').css('margin-top', '9px');
+});
+$(document).ready(function(e) {
+  	
+	
+  $(".tableAccordion").each(function(index, element) {
+  $(".TAContant:first").slideDown()
+  $(".TAHead:first").addClass("active");
+        $(this).find(".TAHead").each(function(index, element) {
+            	$(this).click(function(e) {
+    			$(this).addClass("active").siblings(".TAHead").removeClass("active")
+                $(this).next(".TAContant").slideDown().siblings(".TAContant").slideUp()
+            });
+        });
+    });
 });
 $(document).ready(function(e) {	
 	
@@ -341,7 +360,7 @@ $(document).ready(function(e) {
 		});
 	});
 		
-	$('#snext').click(function () {
+	/*$('#snext').click(function () {
         var $el = $('#snav li a.navSelected').removeClass('navSelected');
         var $next = $el.parent().next();
         $('#snav li').removeClass('active');
@@ -363,7 +382,7 @@ $(document).ready(function(e) {
         $prev.find('a.nav-button').parent().addClass('active');
         window.location.href = $prev.find('a.nav-button').attr('href');
 
-    });
+    });*/
 	if($(window).width() <= 980){
 		$("#bg-video").remove('#bg-video');
 	}
@@ -413,6 +432,19 @@ $(document).ready(function(e) {
 	$(window).resize(function(e) {
 		setHeight($('.eqhlist'));
 	});*/
+	
+	
+	
+	$('.startquiz').each(function(index, element) {
+        $(this).click(function(e) {
+			e.preventDefault();
+			$(this).parents('.quizwrp').find('.quzsinfo').slideUp();
+            $(this).parents('.quizwrp').find('.startquizwrp').slideDown();
+        });
+    });
+	
+	quizaq(".quizform > li", "#quzfprev", "#quzfnext");
+	
 	
 });
 $(function() {
@@ -726,15 +758,15 @@ $(document).ready(function () {
         if($(this).hasClass("sel")){
 			$(this).next(".infotext").slideDown();
 		}
-    });
-	
- 	$(".DoctorDesk-aco").click(function(){
-		
-        $(this).toggleClass("sel");
-		$(this).siblings().removeClass("sel");
-		$(this).next(".infotext").slideToggle();
-		$(".infotext").not($(this).next()).slideUp()	
-	});
+    }); 
+	$(".aco-wapper .DoctorDesk-aco").each(function(index, element) {
+		$(this).click(function(){
+			$(this).toggleClass("sel");
+			$(this).siblings().removeClass("sel");
+			$(this).next(".infotext").slideToggle();
+			$(this).parents('.aco-wapper').find(".infotext").not($(this).next()).slideUp()	
+		});
+	}); 
 	
 	$(".uploadfile").each(function(index, element) {
         $(this).find(".inputfile").on("change",function(){
@@ -854,11 +886,13 @@ var currentTallest = 0,
 }
 
 $(window).load(function() {
+  headernav('#snav', '#sprev', '#snext');
   equalheight('.eqhlist');
   equalheight('.eqhlist2');
   equalheight('.PressReleasesBox');
   equalheight('.pressrelease-sec');
-    equalheight('.pediat-text');
+  equalheight('.pediat-text');
+  equalheight('.contactWapper');
 	//equalheight('.ablpcell');
 	
 });
@@ -870,11 +904,122 @@ $(window).resize(function(){
   equalheight('.PressReleasesBox');
   equalheight('.pressrelease-sec');
   equalheight('.pediat-text');
+  equalheight('.contactWapper');
   //equalheight('.ablpcell');	
 });
 
-
-
+function headernav(sslide, sprev, snext){
+	var $slider = $(sslide),
+        $prev = $(sprev),
+        $next = $(snext),
+        $slide = $slider.find('li');
+  
+    var currentSlide = 0,
+        allSlides = $slider.find('li').length - 1; // index start from 0                  
+  
+    $slider.find('li').eq(0).addClass('active'); 
+    if(currentSlide == 0){
+			$prev.css({'opacity':'.5'});  
+	}
+    function nextSlide() {
+      if(currentSlide < allSlides) {        
+          $slide.eq(currentSlide).removeClass('active');      
+          $slide.eq(currentSlide + 1).addClass('active');        
+          currentSlide+=1;  
+		  $prev.css({'opacity':'1'});  
+      }	  
+	  if(currentSlide == allSlides){
+			$next.css({'opacity':'.5'});  
+		}
+    }    
+    function prevSlide() { 
+      if(currentSlide > 0) {
+          $slide.eq(currentSlide).removeClass('active');      
+          $slide.eq(currentSlide - 1).addClass('active');      
+          currentSlide-=1;  
+		  $next.css({'opacity':'1'}); 
+      }
+	  if(currentSlide == 0){
+		  $prev.css({'opacity':'.5'});  
+	  }
+    }
+  $next.on('click', nextSlide);
+  $prev.on('click', prevSlide);
+}
+function quizaq(qzid, qzprev, qznext){	
+	$(qzid).each(function(e) {			
+        if (e != 0)
+            $(this).slideUp();
+    });
+	$(qzid+":first").addClass('active');
+	$(qznext).click(function(){	
+		$(".quizform").find("li").each(function(index, element) {
+			if($(this).hasClass("active")){
+					if($(this).find('.custom-radio').hasClass('selected')){
+						if ($(qzid+":visible").next().length != 0){
+							$(qzid+":visible").next().slideDown().addClass('active').prev().slideUp().removeClass('active');
+							
+							if($(qzid+":visible").next().length == 0){
+								$(qznext, qzprev).slideUp().removeClass('active');
+								var divs = $(qzid+":visible").prevAll().clone();
+								divs.slideDown().removeClass('active');
+								var divs = jQuery.makeArray(divs);
+								divs.reverse(); 				             
+							}		
+							if($(qzid+":last").hasClass("active")){				
+								$(qzprev).hide();
+								$(qznext).hide();
+							}
+						}
+						return false;
+					}
+				}
+		});
+	});	
+	
+    $(qzprev).click(function(){
+        if ($(qzid+":visible").prev().length != 0){
+            console.log("There are still elements");
+            $(qzid+":visible").prev().slideDown().addClass('active').next().slideUp().removeClass('active');
+        }
+        else {            
+            //$(qzid+":visible").hide();
+            //$(qzid+":last").show();
+        }
+        return false;
+    });	
+}
+function customRadio(radioName){
+        var radioButton = $('input[class="'+ radioName +'"]');
+        $(radioButton).each(function(){
+            $(this).wrap( "<span class='custom-radio '></span>" );
+            if($(this).is(':checked')){
+                $(this).parent().addClass("selected");
+            }
+        });
+        $(radioButton).click(function(){
+            if($(this).is(':checked')){
+                $(this).parent().addClass("selected");
+            }
+            $(radioButton).not(this).each(function(){
+                $(this).parent().removeClass("selected");
+            });
+        });
+}
+$(document).ready(function (){
+	
+	$('.quizform > li').each(function(index, element) {
+		 var qzlenth= index+1;
+		 customRadio("question"+qzlenth);		 
+	});
+	customRadio("fcategory");
+	
+});
+/*function header(){
+	$( "#result" ).load( "header.html", function() {
+	  	alert( "Load was performed." );
+	});
+}*/
 /*$("button").click(function() {
     $('html,body').animate({
         scrollTop: $(".second").offset().top},
