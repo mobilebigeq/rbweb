@@ -29,17 +29,40 @@ class Doctors extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function getHospitals() {
-        //$hospitals = array();
-        $hl = $this->hospitals;
-        var_dump($hl);
-        die();
-        foreach($hl as $h) {
-            $hospitals[] = $h->title;
-        }
-        return implode(',', $hospitals);
-    }
+    // public function getHospitals() {
+    //     //$hospitals = array();
+    //     $hl = $this->hospitals;
+    //     var_dump($hl);
+    //     die();
+    //     foreach($hl as $h) {
+    //         $hospitals[] = $h->title;
+    //     }
+    //     return implode(',', $hospitals);
+    // }
 
+
+    // public function getDoctor_specializations() {
+    //     //$hospitals = array();
+    //     $hl = $this->doctor_specializations;
+    //     var_dump($hl);
+    //     die();
+    //     foreach($hl as $h) {
+    //         $doctor_specializations[] = $h->specialization;
+    //     }
+    //     return implode(',', $doctor_specializations);
+    // }
+
+
+    //  public function getspeciality_masters() {
+    //     //$hospitals = array();
+    //     $hl = $this->speciality_masters;
+    //     var_dump($hl);
+    //     die();
+    //     foreach($hl as $h) {
+    //         $speciality_masters[] = $h->speciality;
+    //     }
+    //     return implode(',', $speciality_masters);
+    // }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
@@ -50,6 +73,16 @@ class Doctors extends Model
         return $this->belongsToMany('App\Models\Hospitals', 'doctor_hospitals', 'doctor_id', 'hospital_id');
     }
 
+
+
+    public function doctor_specializations() {
+        return $this->belongsToMany('App\Models\DoctorSpecialization', 'doctors_specialization_mapping', 'doctors_id', 'doctor_specializations_id');
+    }
+
+
+     public function speciality_masters() {
+        return $this->belongsToMany('App\Models\Speciality_masters', 'doctor_speciality_masters', 'doctors_id', 'doctor_specialization_masters_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

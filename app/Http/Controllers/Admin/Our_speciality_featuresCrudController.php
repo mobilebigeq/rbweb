@@ -63,6 +63,8 @@ class Our_speciality_featuresCrudController extends CrudController
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
+
+
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
@@ -71,6 +73,18 @@ class Our_speciality_featuresCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
           $this->crud->setColumnsDetails('image',['type'=>'image']);
+
+          // $this->crud->setColumnDetails('speciality_masters_id',['type'=>'name']);
+
+
+          //   $this->crud->addColumn([
+          //   'label' => 'Speciality',
+          //  'type' => 'select2',
+          //  'name' => 'speciality_masters_id', // the db column for the foreign key
+          //  'entity' => 'speciality_masters', // the method that defines the relationship in your Model
+          //  'attribute' => 'speciality', // foreign key attribute that is shown to user
+          //  'model' => "App\Models\Speciality_masters", // foreign key model
+          //   ]); 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

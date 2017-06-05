@@ -73,14 +73,14 @@ class Brief_facilitiesCrudController extends CrudController
         $this->crud->setColumnsDetails('image',['type'=>'image']);
         // $this->crud->removeColumn('speciality_masters_id');
 
-        //  $this->crud->addColumn([
-        //     'label' => 'Speciality',
-        //    'type' => 'select2',
-        //    'name' => 'speciality_masters_id', // the db column for the foreign key
-        //    'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-        //    'attribute' => 'speciality', // foreign key attribute that is shown to user
-        //    'model' => "App\Models\Speciality_masters", // foreign key model
-        //     ]); 
+         // $this->crud->addColumn([
+         //    'label' => 'Speciality',
+         //   'type' => 'select2',
+         //   'name' => 'speciality_masters_id', // the db column for the foreign key
+         //   'entity' => 'speciality_masters', // the method that defines the relationship in your Model
+         //   'attribute' => 'speciality', // foreign key attribute that is shown to user
+         //   'model' => "App\Models\Speciality_masters", // foreign key model
+         //    ]); 
        // $this->crud->setColumnsDetails('speciality_masters_id',['type'=>'name']);
 
         // ------ CRUD BUTTONS

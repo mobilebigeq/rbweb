@@ -23,8 +23,8 @@
           <li><a><i class="fa fa-cog"></i> <span>General</span></a>
               <ul class="treeview-menu">
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/cities') }}"><i class="fa fa-cog"></i> <span>City Master</span></a></li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctorspecialization') }}"><i class="fa fa-cog"></i> <span>Doctor's - Specializations Master</span></a></li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/specialities') }}"><i class="fa fa-cog"></i> <span>Specialities</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctorspecialization') }}"><i class="fa fa-cog"></i> <span>Doctor's - Specializations</span></a></li>
+                
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/hospitals') }}"><i class="fa fa-cog"></i> <span>Hospitals</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page_description') }}"><i class="fa fa-cog"></i> <span>Page Description</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality_Masters</span></a></li>
@@ -94,7 +94,7 @@
 
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk_questions') }}"><i class="fa fa-cog"></i> <span>Doctors_desk_questions</span></a></li>
 
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_specialities') }}"><i class="fa fa-cog"></i> <span>Our_Specialities</span></a></li>
+                
 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_speciality_features') }}"><i class="fa fa-cog"></i> <span>Our_Speciality_Features</span></a></li>
 

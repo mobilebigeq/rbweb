@@ -13,11 +13,11 @@ class CreateDoctorSpecializationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('doctor_specializations', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('specialization');
-            $table->timestamps();
-        });
+        // Schema::create('doctor_specializations', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('specialization');
+        //     $table->timestamps();
+        // });
     }
 
     /**
