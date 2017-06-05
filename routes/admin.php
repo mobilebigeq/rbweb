@@ -34,3 +34,4 @@ CRUD::resource('doctors_desk', 'Doctors_deskCrudController');
 CRUD::resource('doctors_desk_questions', 'Doctors_desk_questionsCrudController');
 CRUD::resource('cities', 'CitiesCrudController');
 CRUD::resource('doctorspecialization', 'DoctorSpecializationCrudController');
+CRUD::resource('pagemetadata', 'PageMetadataCrudController');

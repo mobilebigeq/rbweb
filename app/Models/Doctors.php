@@ -69,8 +69,8 @@ class Doctors extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function hospitals() {
-        return $this->belongsToMany('App\Models\Hospitals', 'doctor_hospitals', 'doctor_id', 'hospital_id');
+    public function centers() {
+        return $this->belongsToMany('App\Models\Centers', 'doctor_hospitals', 'doctor_id', 'hospital_id');
     }
 
 

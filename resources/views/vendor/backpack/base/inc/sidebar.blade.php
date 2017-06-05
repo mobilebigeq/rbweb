@@ -20,27 +20,23 @@
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
-          <li><a><i class="fa fa-cog"></i> <span>General</span></a>
+          <li><a><i class="fa fa-cog"></i> <span>Masters</span></a>
               <ul class="treeview-menu">
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/cities') }}"><i class="fa fa-cog"></i> <span>City Master</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctorspecialization') }}"><i class="fa fa-cog"></i> <span>Doctor's - Specializations</span></a></li>
-                
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/hospitals') }}"><i class="fa fa-cog"></i> <span>Hospitals</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page_description') }}"><i class="fa fa-cog"></i> <span>Page Description</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality_Masters</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare_service</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief_Facilities</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page_metadata') }}"><i class="fa fa-cog"></i> <span>Page Metadata</span></a></li>
               </ul>
           </li>
           <li><a><i class="fa fa-cog"></i> <span>Home</span></a>
               <ul class="treeview-menu">
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/homehighlights') }}"><i class="fa fa-cog"></i> <span>Highlights</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/righthighlights') }}"><i class="fa fa-cog"></i> <span>Right Highlights</span></a></li>
-                  
-                 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/rainbowguide') }}"><i class="fa fa-cog"></i> <span>Rainbow Guide</span></a></li>
-
-
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/centre_panel') }}"><i class="fa fa-cog"></i> <span>Centre Panel</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/categories') }}"><i class="fa fa-cog"></i> <span>Categories</span></a></li>
               </ul>
@@ -49,24 +45,14 @@
 
           <li><a><i class="fa fa-cog"></i> <span>About Us</span></a>
               <ul class="treeview-menu">
-
-                 
-
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/what_we_do_details') }}"><i class="fa fa-cog"></i> <span>What We Do Details</span></a></li>
-
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/md_message') }}"><i class="fa fa-cog"></i> <span>MD Messages</span></a></li>
-
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/boardofdirectors') }}"><i class="fa fa-cog"></i> <span>Board Of Directors</span></a></li>
-
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/history_details') }}"><i class="fa fa-cog"></i> <span>History Details</span></a></li>
-
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/awards_history') }}"><i class="fa fa-cog"></i> <span>Awards History</span></a></li>
-
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/media_press_release') }}"><i class="fa fa-cog"></i> <span>Media Press Releases</span></a></li>
-
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/careers') }}"><i class="fa fa-cog"></i> <span>Careers</span></a></li>
-
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/homeevents') }}"><i class="fa fa-cog"></i> <span>Events</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/what_we_do_details') }}"><i class="fa fa-cog"></i> <span>What We Do Details</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/md_message') }}"><i class="fa fa-cog"></i> <span>MD Messages</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/boardofdirectors') }}"><i class="fa fa-cog"></i> <span>Board Of Directors</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/history_details') }}"><i class="fa fa-cog"></i> <span>History Details</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/awards_history') }}"><i class="fa fa-cog"></i> <span>Awards History</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/media_press_release') }}"><i class="fa fa-cog"></i> <span>Media Press Releases</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/careers') }}"><i class="fa fa-cog"></i> <span>Careers</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/homeevents') }}"><i class="fa fa-cog"></i> <span>Events</span></a></li>
                   
               </ul>
           </li>
