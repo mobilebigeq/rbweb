@@ -14,7 +14,7 @@ class CreateTestimonialDetailsTable extends Migration
     public function up()
     {
 
-        $platform->registerDoctrineTypeMapping('enum', 'string');
+        // $platform->registerDoctrineTypeMapping('enum', 'string');
         Schema::create('testimonial_details', function (Blueprint $table) {
             $table->increments('id');
             $table->string('icon');

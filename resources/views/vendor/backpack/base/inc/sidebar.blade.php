@@ -20,12 +20,23 @@
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
+          <li><a><i class="fa fa-cog"></i> <span>General</span></a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/cities') }}"><i class="fa fa-cog"></i> <span>City Master</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctorspecialization') }}"><i class="fa fa-cog"></i> <span>Doctor's - Specializations Master</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/specialities') }}"><i class="fa fa-cog"></i> <span>Specialities</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/hospitals') }}"><i class="fa fa-cog"></i> <span>Hospitals</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page_description') }}"><i class="fa fa-cog"></i> <span>Page Description</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality_Masters</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare_service</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief_Facilities</span></a></li>
+              </ul>
+          </li>
           <li><a><i class="fa fa-cog"></i> <span>Home</span></a>
               <ul class="treeview-menu">
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/homehighlights') }}"><i class="fa fa-cog"></i> <span>Highlights</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/righthighlights') }}"><i class="fa fa-cog"></i> <span>Right Highlights</span></a></li>
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/specialities') }}"><i class="fa fa-cog"></i> <span>Specialities</span></a></li>
-                 
+                  
                  
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/rainbowguide') }}"><i class="fa fa-cog"></i> <span>Rainbow Guide</span></a></li>
 
@@ -39,15 +50,8 @@
 
                   
 
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/hospitals') }}"><i class="fa fa-cog"></i> <span>Hospitals</span></a></li>
-
-                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page_description') }}"><i class="fa fa-cog"></i> <span>Page Description</span></a></li>
-
-                    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality_Masters</span></a></li>
                   
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare_service</span></a></li>
-
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief_Facilities</span></a></li>
+                  
                   
 
               </ul>

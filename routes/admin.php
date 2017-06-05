@@ -32,3 +32,5 @@ CRUD::resource('testimonial_details', 'Testimonial_detailsCrudController');
 CRUD::resource('centre_panel', 'Centre_panelCrudController');
 CRUD::resource('doctors_desk', 'Doctors_deskCrudController');
 CRUD::resource('doctors_desk_questions', 'Doctors_desk_questionsCrudController');
+CRUD::resource('cities', 'CitiesCrudController');
+CRUD::resource('doctorspecialization', 'DoctorSpecializationCrudController');

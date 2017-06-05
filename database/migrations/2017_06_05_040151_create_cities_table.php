@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpecialityMasterTable extends Migration
+class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateSpecialityMasterTable extends Migration
      */
     public function up()
     {
-        Schema::create('speciality_master', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('speciality');
+            $table->string('city');
+            $table->string('state');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateSpecialityMasterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('speciality_master');
+        Schema::dropIfExists('cities');
     }
 }
