@@ -45,7 +45,7 @@
 
                     <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality Masters</span></a></li>
                   
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare service</span></a></li>
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare Service</span></a></li>
 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief Facilities</span></a></li>
                   
@@ -63,13 +63,13 @@
 
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/md_message') }}"><i class="fa fa-cog"></i> <span>MD Messages</span></a></li>
 
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/boardofdirectors') }}"><i class="fa fa-cog"></i> <span>Board of directors</span></a></li>
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/boardofdirectors') }}"><i class="fa fa-cog"></i> <span>Board Of Directors</span></a></li>
 
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/history_details') }}"><i class="fa fa-cog"></i> <span>History Details</span></a></li>
 
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/awards_history') }}"><i class="fa fa-cog"></i> <span>Awards history</span></a></li>
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/awards_history') }}"><i class="fa fa-cog"></i> <span>Awards History</span></a></li>
 
-                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/media_press_release') }}"><i class="fa fa-cog"></i> <span>Media press releases</span></a></li>
+                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/media_press_release') }}"><i class="fa fa-cog"></i> <span>Media Press Releases</span></a></li>
 
                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/careers') }}"><i class="fa fa-cog"></i> <span>Careers</span></a></li>
 
@@ -86,15 +86,15 @@
 
                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors') }}"><i class="fa fa-cog"></i> <span>Doctors</span></a></li>
 
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk') }}"><i class="fa fa-cog"></i> <span>Doctors desk</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk') }}"><i class="fa fa-cog"></i> <span>Doctors Desk</span></a></li>
 
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk_questions') }}"><i class="fa fa-cog"></i> <span>Doctors desk questions</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk_questions') }}"><i class="fa fa-cog"></i> <span>Doctors Desk Questions</span></a></li>
 
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_specialities') }}"><i class="fa fa-cog"></i> <span>Our Specialities</span></a></li>
 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_speciality_features') }}"><i class="fa fa-cog"></i> <span>Our Speciality Features</span></a></li>
 
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/testimonial_details') }}"><i class="fa fa-cog"></i> <span>Testimonial details</span></a></li>
+                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/testimonial_details') }}"><i class="fa fa-cog"></i> <span>Testimonial Details</span></a></li>
 
 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/centers') }}"><i class="fa fa-cog"></i> <span>Centers</span></a></li>
