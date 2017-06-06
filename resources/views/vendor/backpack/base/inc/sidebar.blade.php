@@ -76,7 +76,19 @@
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/testimonial_details') }}"><i class="fa fa-cog"></i> <span>Testimonial Details</span></a></li>
 
 
+                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/vaccination_details') }}"><i class="fa fa-cog"></i> <span>Vaccination Details</span></a></li>
+                   
+
+
+
+
+                 
+
+
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/centers') }}"><i class="fa fa-cog"></i> <span>Centers</span></a></li>
+
+
+
 
                    
 

@@ -13,3 +13,15 @@ CREATE TABLE `doctor_speciality_features` (
 ) ENGINE=InnoDB;
  
 
+
+CREATE TABLE `vaccination_details` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `age_display` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `age_in_weeks` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `oral` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `injection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB

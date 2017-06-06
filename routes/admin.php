@@ -35,3 +35,5 @@ CRUD::resource('doctors_desk_questions', 'Doctors_desk_questionsCrudController')
 CRUD::resource('cities', 'CitiesCrudController');
 CRUD::resource('doctorspecialization', 'DoctorSpecializationCrudController');
 CRUD::resource('pagemetadata', 'PageMetadataCrudController');
+
+CRUD::resource('vaccination_details', 'Vaccination_detailsCrudController');
