@@ -15,8 +15,16 @@ class Our_speciality_featuresController extends Controller
 
     public function index() 
     {
+    	return Our_speciality_features::get();
+    }
 
-    return Our_speciality_features::get();
+    public function show($page)
+    {
+        $features = Our_speciality_features::where('page', $page)->get();
 
+        if(!$features)
+            throw new NotFoundHttpException; 
+
+        return $features;
     }
 }

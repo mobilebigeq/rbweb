@@ -7,7 +7,6 @@ use JWTAuth;
 use App\Models\Doctors;
 use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
-
 class DoctorsController extends Controller
 {
     //
@@ -15,6 +14,6 @@ class DoctorsController extends Controller
 
     public function index()
 	{
-	    return Doctors::with('hospitals')->get();
+	    return Doctors::with('centers')->get();
 	}
 }
