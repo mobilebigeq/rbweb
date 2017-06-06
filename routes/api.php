@@ -68,6 +68,7 @@ $api->version('v1', function (Router $api) {
             $api->get('md_message/{title}','App\Api\V1\Controllers\Md_messageController@show');
 
              $api->get('history_details','App\Api\V1\Controllers\History_detailsController@index');
+             $api->get('history_details/{page}','App\Api\V1\Controllers\History_detailsController@show');
 
               $api->get('awards_history','App\Api\V1\Controllers\Awards_historyController@index');
 
