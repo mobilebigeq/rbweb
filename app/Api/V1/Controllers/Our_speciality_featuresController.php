@@ -22,7 +22,7 @@ class Our_speciality_featuresController extends Controller
     {
         $features = Our_speciality_features::where('page', $page)->get();
 
-        if(!$descriptions)
+        if(!$features)
             throw new NotFoundHttpException; 
 
         return $features;
