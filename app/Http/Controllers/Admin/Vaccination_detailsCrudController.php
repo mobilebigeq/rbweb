@@ -40,6 +40,12 @@ class Vaccination_detailsCrudController extends CrudController
             'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
             'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);
+
+
+
+        
+
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
