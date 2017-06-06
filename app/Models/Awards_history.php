@@ -19,7 +19,7 @@ class Awards_history extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['title','image','year','subtitle','description'];
+     protected $fillable = ['title','image','year','subtitle','description','awards_type'];
     // protected $hidden = [];
     // protected $dates = [];
 

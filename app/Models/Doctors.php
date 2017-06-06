@@ -88,6 +88,11 @@ class Doctors extends Model
     public function our_speciality_features() {
         return $this->belongsToMany('App\Models\Our_speciality_features', 'doctor_speciality_features', 'doctors_id', 'our_speciality_features_id');
     }
+
+
+     public function awards_history() {
+        return $this->belongsToMany('App\Models\Awards_history', 'doctor_awards_history', 'doctors_id', 'awards_history_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

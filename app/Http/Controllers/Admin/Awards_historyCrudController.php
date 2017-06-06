@@ -43,6 +43,15 @@ class Awards_historyCrudController extends CrudController
             'aspect_ratio'=>1,
             'prefix'=>'uploads'
             ]);
+
+
+         $this->crud->addField([ // select_from_array
+            'name' => 'awards_type',
+            'label' => "Awards_type",
+            'type' => 'select_from_array',
+            'options' => ['hospital' => 'Hospital Awards', 'doctors' => 'Doctors Awards'],
+            'allows_null' => false
+        ]);
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

@@ -25,3 +25,17 @@ CREATE TABLE `vaccination_details` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB
+
+
+CREATE TABLE `doctor_awards_history` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `doctors_id` int(10) unsigned NOT NULL,
+  `awards_history_id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `doctor_awards_history_doctors_id_foreign` (`doctors_id`),
+  KEY `doctor_awards_history_awards_history_id_foreign` (`awards_history_id`),
+  CONSTRAINT `doctor_awards_history_awards_history_id_foreign` FOREIGN KEY (`awards_history_id`) REFERENCES `awards_history` (`id`),
+  CONSTRAINT `doctor_awards_history_doctors_id_foreign` FOREIGN KEY (`doctors_id`) REFERENCES `doctors` (`id`)
+) ENGINE=InnoDB;
