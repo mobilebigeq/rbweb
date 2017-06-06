@@ -80,6 +80,12 @@ $api->version('v1', function (Router $api) {
 
               $api->get('doctors_desk_questions','App\Api\V1\Controllers\Doctors_desk_questionsController@index');
 
+              
+              $api->get('description_section','App\Api\V1\Controllers\Description_SectionController@index');
+              $api->get('description_section/{page}','App\Api\V1\Controllers\Description_SectionController@show');
+
+              
+
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');
     //     $api->put('movie/{id}', 'App\Api\V1\Controllers\MovieController@update');
     //     $api->delete('movie/{id}', 'App\Api\V1\Controllers\MovieController@destroy');

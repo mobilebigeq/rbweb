@@ -4,14 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
-
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\Healthcare_serviceRequest as StoreRequest;
-use App\Http\Requests\Healthcare_serviceRequest as UpdateRequest;
+use App\Http\Requests\DescriptionSectionRequest as StoreRequest;
+use App\Http\Requests\DescriptionSectionRequest as UpdateRequest;
 
-class Healthcare_serviceCrudController extends CrudController
+class DescriptionSectionCrudController extends CrudController
 {
-
     public function setup()
     {
 
@@ -20,9 +18,9 @@ class Healthcare_serviceCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Healthcare_service');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/healthcare_service');
-        $this->crud->setEntityNameStrings('healthcare_service', 'healthcare_services');
+        $this->crud->setModel('App\Models\DescriptionSection');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/description_section');
+        $this->crud->setEntityNameStrings('Description Section', 'Description Section');
 
         /*
         |--------------------------------------------------------------------------
@@ -43,20 +41,26 @@ class Healthcare_serviceCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-           'label' => "Speciality Master",
-           'type' => 'select2',
-           'name' => 'speciality_masters_id', // the db column for the foreign key
-           'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-           'attribute' => 'speciality', // foreign key attribute that is shown to user
-           'model' => "App\Models\Speciality_masters" // foreign key model
-            ]);
+            'name' => 'title',
+            'label' => "Title",
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'description',
+            'label' => "Description",
+            'type' => 'ckeditor',
+        ]);
+
 
         $this->crud->addField([
             'name' => 'page',
             'label' => "Page",
             'type' => 'text',
+        ]);
 
-            ]);
+
+        $this->crud->setColumnsDetails('image', ['type'=>'image']);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -64,7 +68,6 @@ class Healthcare_serviceCrudController extends CrudController
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
-         $this->crud->setColumnsDetails('image', ['type'=>'image']);
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
