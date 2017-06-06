@@ -39,3 +39,9 @@ CRUD::resource('pagemetadata', 'PageMetadataCrudController');
 CRUD::resource('vaccination_details', 'Vaccination_detailsCrudController');
 
 CRUD::resource('vaccination_contacts', 'Vaccination_contactsCrudController');
+
+CRUD::resource('press_clips', 'PressClipsCrudController');
+
+CRUD::resource('description_section', 'DescriptionSectionCrudController');
+
+

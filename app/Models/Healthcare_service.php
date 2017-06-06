@@ -28,10 +28,6 @@ class Healthcare_service extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-    public function speciality_masters()
-    {
-        return $this->hasMany('App\Speciality_masters');
-    }
     
 
     /*
@@ -39,6 +35,11 @@ class Healthcare_service extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+
+    public function speciality_masters()
+    {
+        return $this->hasMany('App\Speciality_masters');
+    }
 
     /*
     |--------------------------------------------------------------------------
