@@ -13,8 +13,19 @@ class EventsController extends Controller
     //
 	use Helpers;
 
-    public function index()
+  public function index()
 	{
 	    return HomeEvents::get();
 	}
+
+	public function events($type)
+	{
+		$events = HomeEvents::where('type','=',$type)->get();
+		
+		if(!$events)
+				throw new NotFoundHttpException;
+
+		return $events;
+	}
+
 }
