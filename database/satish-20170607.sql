@@ -1,0 +1,2 @@
+ALTER TABLE `home_events` ADD `image` VARCHAR(255) NOT NULL AFTER `event_date`, ADD `page` VARCHAR(255) NOT NULL AFTER `image`, ADD `description_two` LONGTEXT NOT NULL AFTER `page`, ADD `summery` LONGTEXT NOT NULL AFTER `description_two`, ADD `type` VARCHAR(20) NOT NULL AFTER `summery`;
+ALTER TABLE `home_events` CHANGE `image` `image` VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
