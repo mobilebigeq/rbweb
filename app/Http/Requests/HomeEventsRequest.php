@@ -26,6 +26,7 @@ class HomeEventsRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     {
         return [
             'name' => 'required',
+            'image' => 'required',
             'description' => 'required',
             'event_date' => 'required',
         ];

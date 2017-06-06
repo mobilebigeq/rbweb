@@ -21,7 +21,7 @@ class HomeEventsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\HomeEvents');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/homeevents');
-        $this->crud->setEntityNameStrings('home_event', 'home_events');
+        $this->crud->setEntityNameStrings('Home Event', 'Home Events');
 
         /*
         |--------------------------------------------------------------------------
@@ -30,6 +30,48 @@ class HomeEventsCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
+
+        $this->crud->addField([ // image
+           'label' => "Image",
+           'name' => "image",
+           'type' => 'image',
+           'upload' => true,
+           'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+           'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
+       ]);
+
+       $this->crud->addField([
+         'name' => 'type',
+         'label' => "Event Type",
+         'type' => 'select_from_array',
+         'options' => ['news' => 'News', 'events' => 'Events', 'media' => 'Media'],
+         'allows_null' => false
+       ]);
+
+        $this->crud->addField([
+           'name' => 'page',
+           'label' => "Page",
+           'type' => 'text',
+        ]);
+
+        $this->crud->addField([   // TinyMCE
+          'name' => 'description',
+          'label' => 'Description',
+          'type' => 'tinymce'
+        ]);
+
+        $this->crud->addField([   // TinyMCE
+          'name' => 'description_two',
+          'label' => 'Description Two',
+          'type' => 'tinymce'
+        ]);
+
+        $this->crud->addField([   // TinyMCE
+          'name' => 'summery',
+          'label' => 'Summery',
+          'type' => 'tinymce'
+        ]);
+
         $this->crud->addField([ // image
             'label' => "Event Date",
             'name' => "event_date",
@@ -37,12 +79,24 @@ class HomeEventsCrudController extends CrudController
             'datetime_picker_options' => ['format' => 'DD/MM/YYYY HH:mm']
             ]);
 
+        // $this->crud->setColumnDetails('image', ['type'=>'image']);
+        // $this->crud->setColumnDetails('image', ['type'=>'image']);
+        // $this->crud->setColumnDetails('image', ['type'=>'image']);
+        // $this->crud->setColumnDetails('image', ['type'=>'image']);
+
+
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
         // $this->crud->removeField('name', 'update/create/both');
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
+        $this->crud->removeColumns(['name','description','description_two','event_date','image','page','summery','type']);
+        $this->crud->addColumns(['image','name','event_date','type','page','description']);
+        // $this->crud->addColumn('image');
+        $this->crud->setColumnDetails('image', ['type'=>'image']);
+        $this->crud->setColumnDetails('name', ['type'=>'value']);
         // ------ CRUD COLUMNS
         // $this->crud->addColumn(); // add a single column, at the end of the stack
         // $this->crud->addColumns(); // add multiple columns, at the end of the stack
