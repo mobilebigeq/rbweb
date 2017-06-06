@@ -60,6 +60,7 @@ $api->version('v1', function (Router $api) {
             $api->get('our_specialities','App\Api\V1\Controllers\Our_specialitiesController@index');
 
             $api->get('our_speciality_features','App\Api\V1\Controllers\Our_speciality_featuresController@index');
+            $api->get('our_speciality_features/{page}','App\Api\V1\Controllers\Our_speciality_featuresController@show');
 
             $api->get('what_we_do_details','App\Api\V1\Controllers\What_we_do_detailsController@index');
 
@@ -73,6 +74,7 @@ $api->version('v1', function (Router $api) {
               $api->get('media_press_release','App\Api\V1\Controllers\Media_press_releaseController@index');
 
               $api->get('testimonial_details','App\Api\V1\Controllers\testimonial_detailsController@index');
+              $api->get('testimonial_details/{page}','App\Api\V1\Controllers\testimonial_detailsController@show');
 
 
               $api->get('centre_panel','App\Api\V1\Controllers\Centre_panelController@index');
@@ -80,6 +82,15 @@ $api->version('v1', function (Router $api) {
               $api->get('doctors_desk','App\Api\V1\Controllers\Doctors_deskController@index');
 
               $api->get('doctors_desk_questions','App\Api\V1\Controllers\Doctors_desk_questionsController@index');
+
+              
+              $api->get('description_section','App\Api\V1\Controllers\Description_SectionController@index');
+              $api->get('description_section/{page}','App\Api\V1\Controllers\Description_SectionController@show');
+
+              $api->get('video_section','App\Api\V1\Controllers\Video_sectionController@index');
+              $api->get('video_section/{page}','App\Api\V1\Controllers\Video_sectionController@show');
+
+              
 
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');
     //     $api->put('movie/{id}', 'App\Api\V1\Controllers\MovieController@update');

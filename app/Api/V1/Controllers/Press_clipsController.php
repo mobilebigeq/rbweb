@@ -1,22 +1,27 @@
 <?php
+
 namespace App\Api\V1\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
-use App\Models\Testimonial_details;
+use App\Models\PressClips;
+use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 
-class testimonial_detailsController extends Controller
+
+class Press_clipsController extends Controller
 {
-    public function index()
+    // use Helpers;
+
+    public function index() 
     {
-    	return Testimonial_details::get();
+
+        return PressClips::get();
     }
 
     public function show($page)
     {
-        $descriptions = Testimonial_details::where('page', $page)->get();
+        $descriptions = PressClips::where('page', $page)->get();
 
         if(!$descriptions)
             throw new NotFoundHttpException; 

@@ -32,7 +32,7 @@ class Healthcare_serviceCrudController extends CrudController
 
         $this->crud->setFromDb();
 
-         $this->crud->addField([ // image
+        $this->crud->addField([ // image
             'label' => "Image",
             'name' => "image",
             'type' => 'image',
@@ -43,7 +43,7 @@ class Healthcare_serviceCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-           'label' => "Speciality_masters_id",
+           'label' => "Speciality Master",
            'type' => 'select2',
            'name' => 'speciality_masters_id', // the db column for the foreign key
            'entity' => 'speciality_masters', // the method that defines the relationship in your Model
