@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\DoctorsRequest as StoreRequest;
-use App\Http\Requests\DoctorsRequest as UpdateRequest;
+use App\Http\Requests\PageMetadataRequest as StoreRequest;
+use App\Http\Requests\PageMetadataRequest as UpdateRequest;
 
-class DoctorsCrudController extends CrudController
+class PageMetadataCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class DoctorsCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Doctors');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/doctors');
-        $this->crud->setEntityNameStrings('doctor', 'doctors');
+        $this->crud->setModel('App\Models\PageMetadata');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/pagemetadata');
+        $this->crud->setEntityNameStrings('pagemetadata', 'page_metadatas');
 
         /*
         |--------------------------------------------------------------------------
@@ -29,59 +29,7 @@ class DoctorsCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
-        
-        $this->crud->addField([ // image
-            'label' => "Photo",
-            'name' => "photo",
-            'type' => 'image',
-            'upload' => true,
-        //    'crop' => true, // set to true to allow cropping, false to disable
-            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
-            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
-        ]);
 
-        $this->crud->addField([
-            'label' => 'Hospitals',
-            'type' => 'checklist',
-            'name' => 'centers',
-            'entity' => 'centers',
-            'attribute' => 'center_name',
-            'model' => 'App\Models\Centers',
-            'pivot' => true
-        ]);
-
-
-        $this->crud->addField([
-            'label' => 'Doctors_Specialization',
-            'type' => 'checklist',
-            'name' => 'doctor_specializations',
-            'entity' => 'doctor_specializations',
-            'attribute' => 'specialization',
-            'model' => 'App\Models\DoctorSpecialization',
-            'pivot' => true
-        ]);
-
-
-        $this->crud->addField([
-            'label' => 'Speciality_masters',
-            'type' => 'checklist',
-            'name' => 'speciality_masters',
-            'entity' => 'speciality_masters',
-            'attribute' => 'speciality',
-            'model' => 'App\Models\Speciality_masters',
-            'pivot' => true
-        ]);
-
-
-        $this->crud->addField([
-            'label' => 'Our_speciality_features',
-            'type' => 'checklist',
-            'name' => 'our_speciality_features',
-            'entity' => 'our_speciality_features',
-            'attribute' => 'title',
-            'model' => 'App\Models\Our_speciality_features',
-            'pivot' => true
-        ]);
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -95,52 +43,7 @@ class DoctorsCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-        $this->crud->setColumnsDetails('photo', ['type'=>'image']);
-        // $this->crud->addColumn([
-        //     'type' => 'model_function',
-        //    'name' => 'Hospitals',
-        //    'function_name' => 'getHospitals'
-        //    ]);
 
-        $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Hospitals", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'centers', // the method that defines the relationship in your Model
-        'entity' => 'centers', // the method that defines the relationship in your Model
-        'attribute' => "center_name", // foreign key attribute that is shown to user
-        'model' => "App\Models\Centers", // foreign key model
-        ]);
-
-
-
-        $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Doctor_Specialization", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'doctor_specializations', // the method that defines the relationship in your Model
-        'entity' => 'doctor_specializations', // the method that defines the relationship in your Model
-        'attribute' => "specialization", // foreign key attribute that is shown to user
-        'model' => "App\Models\DoctorSpecialization", // foreign key model
-        ]);
-
-
-         $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Speciality_Masters", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'speciality_masters', // the method that defines the relationship in your Model
-        'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-        'attribute' => "speciality", // foreign key attribute that is shown to user
-        'model' => "App\Models\Speciality_masters", // foreign key model
-        ]);
-
-
-          $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Our_speciality_features", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'our_speciality_features', // the method that defines the relationship in your Model
-        'entity' => 'our_speciality_features', // the method that defines the relationship in your Model
-        'attribute' => "title", // foreign key attribute that is shown to user
-        'model' => "App\Models\Our_speciality_features", // foreign key model
-        ]);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function
