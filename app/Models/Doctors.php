@@ -83,6 +83,11 @@ class Doctors extends Model
      public function speciality_masters() {
         return $this->belongsToMany('App\Models\Speciality_masters', 'doctor_speciality_masters', 'doctors_id', 'doctor_specialization_masters_id');
     }
+
+
+    public function our_speciality_features() {
+        return $this->belongsToMany('App\Models\Our_speciality_features', 'doctor_speciality_features', 'doctors_id', 'our_speciality_features_id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
