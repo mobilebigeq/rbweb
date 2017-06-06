@@ -43,5 +43,6 @@ CRUD::resource('vaccination_contacts', 'Vaccination_contactsCrudController');
 CRUD::resource('press_clips', 'PressClipsCrudController');
 
 CRUD::resource('description_section', 'DescriptionSectionCrudController');
+CRUD::resource('video_section', 'VideoSectionCrudController');
 
 

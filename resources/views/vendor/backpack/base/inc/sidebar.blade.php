@@ -55,6 +55,7 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/homeevents') }}"><i class="fa fa-cog"></i> <span>Events</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/press_clips')}}"><i class="fa fa-cog"></i> <span>Press Clips</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/description_section')}}"><i class="fa fa-cog"></i> <span>Description Section</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/video_section')}}"><i class="fa fa-cog"></i> <span>Video Section</span></a></li>
 
               </ul>
           </li>
