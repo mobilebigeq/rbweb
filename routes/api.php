@@ -72,6 +72,7 @@ $api->version('v1', function (Router $api) {
               $api->get('media_press_release','App\Api\V1\Controllers\Media_press_releaseController@index');
 
               $api->get('testimonial_details','App\Api\V1\Controllers\testimonial_detailsController@index');
+              $api->get('testimonial_details/{page}','App\Api\V1\Controllers\testimonial_detailsController@show');
 
 
               $api->get('centre_panel','App\Api\V1\Controllers\Centre_panelController@index');

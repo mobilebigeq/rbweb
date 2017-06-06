@@ -25,7 +25,12 @@ class Testimonial_detailsRequest extends \Backpack\CRUD\app\Http\Requests\CrudRe
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required',
+            'designation' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+            'type' => 'required',
+            'page' => 'required'
         ];
     }
 

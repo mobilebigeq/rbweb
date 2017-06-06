@@ -20,7 +20,7 @@ class Testimonial_detailsCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Testimonial_details');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/testimonial_details');
-        $this->crud->setEntityNameStrings('testimonial_details', 'testimonial_details');
+        $this->crud->setEntityNameStrings('Testimonial', 'testimonials');
 
         /*
         |--------------------------------------------------------------------------

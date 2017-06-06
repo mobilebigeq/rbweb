@@ -28,6 +28,7 @@ class CentersRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
             'center_name' => 'required|min:5|max:255',
             'address' => 'required',
             'telephone' => 'required',
+            'lat_long' => 'required',
         ];
     }
 

@@ -13,4 +13,14 @@ class testimonial_detailsController extends Controller
     {
     	return Testimonial_details::get();
     }
+
+    public function show($page)
+    {
+        $descriptions = Testimonial_details::where('page', $page)->get();
+
+        if(!$descriptions)
+            throw new NotFoundHttpException; 
+
+        return $descriptions;
+    }
 }

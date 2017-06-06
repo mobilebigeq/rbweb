@@ -37,17 +37,28 @@ class CentersCrudController extends CrudController
         // $this->crud->removeFields($array_of_names, 'update/create/both');
 
 
-     $this->crud->addField([   // Upload
+        /*$this->crud->addField([   // Upload
             'name' => 'image',
             'label' => 'Image',
             'type' => 'upload',
             'upload' => true,
             'disk' => 'uploads' // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
+        ]);*/
+
+
+        $this->crud->addField([ // image
+            'label' => "Image",
+            'name' => "image",
+            'type' => 'image',
+            'upload' => true,
+         //   'crop' => true, // set to true to allow cropping, false to disable
+            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);
 
 
 
-     $this->crud->addField([   // TinyMCE
+        $this->crud->addField([   // TinyMCE
             'name' => 'description',
             'label' => 'Description',
             'type' => 'tinymce'
@@ -56,7 +67,7 @@ class CentersCrudController extends CrudController
 
 
         $this->crud->addField([
-            'label' => 'Speciality_masters',
+            'label' => 'Speciality Masters',
             'type' => 'checklist',
             'name' => 'speciality_masters',
             'entity' => 'center_speciality_master',
@@ -67,7 +78,7 @@ class CentersCrudController extends CrudController
 
 
         $this->crud->addField([
-            'label' => 'Brief_facilities',
+            'label' => 'Brief Facilities',
             'type' => 'checklist',
             'name' => 'brief_facilities',
             'entity' => 'center_brief_facilities',
@@ -78,7 +89,7 @@ class CentersCrudController extends CrudController
 
 
         $this->crud->addField([
-            'label' => 'Our_speciality_features',
+            'label' => 'Our Speciality Features',
             'type' => 'checklist',
             'name' => 'our_speciality_features',
             'entity' => 'our_speciality_features',
@@ -88,6 +99,14 @@ class CentersCrudController extends CrudController
         ]);
 
 
+        $this->crud->addField([   // TinyMCE
+            'name' => 'lat_long',
+            'label' => 'Latitude Logitude',
+            'type' => 'text'
+        ]);
+
+
+        $this->crud->setColumnDetails('image', ['type'=>'image']);
 
         // $this->crud->addField([
         //     'label' => 'Doctors',

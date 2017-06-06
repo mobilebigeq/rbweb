@@ -22,15 +22,3 @@ CREATE TABLE press_clips (
   updated_at timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
-
-
-CREATE TABLE `video_section` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(191) NOT NULL,
-  `description` LONGTEXT NOT NULL,
-  `image` VARCHAR(191) NOT NULL,
-  `youtube_url` VARCHAR(191) NOT NULL,
-  `page` VARCHAR(191) NOT NULL,
-   created_at timestamp NULL DEFAULT NULL,
-   updated_at timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`));

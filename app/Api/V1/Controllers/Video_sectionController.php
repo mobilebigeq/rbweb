@@ -4,8 +4,8 @@ namespace App\Api\V1\Controllers;
 
 use Illuminate\Http\Request;
 use JWTAuth;
-use App\Models\PressClips;
-use App\Http\Controllers\VideoSection;
+use App\Models\VideoSection;
+use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 
 
