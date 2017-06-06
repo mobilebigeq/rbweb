@@ -39,3 +39,6 @@ CREATE TABLE `doctor_awards_history` (
   CONSTRAINT `doctor_awards_history_awards_history_id_foreign` FOREIGN KEY (`awards_history_id`) REFERENCES `awards_history` (`id`),
   CONSTRAINT `doctor_awards_history_doctors_id_foreign` FOREIGN KEY (`doctors_id`) REFERENCES `doctors` (`id`)
 ) ENGINE=InnoDB;
+
+
+
