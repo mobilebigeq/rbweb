@@ -29,7 +29,7 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality_Masters</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare_service</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief_Facilities</span></a></li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page_metadata') }}"><i class="fa fa-cog"></i> <span>Page Metadata</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/pagemetadata') }}"><i class="fa fa-cog"></i> <span>Page Metadata</span></a></li>
               </ul>
           </li>
           <li><a><i class="fa fa-cog"></i> <span>Home</span></a>
