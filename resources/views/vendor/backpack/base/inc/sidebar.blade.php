@@ -98,10 +98,22 @@
 
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_speciality_features') }}"><i class="fa fa-cog"></i> <span>Our_Speciality_Features</span></a></li>
 
+
+
+                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/vaccination_details') }}"><i class="fa fa-cog"></i> <span>Vaccination_details</span></a></li>
+                   
+
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/testimonial_details') }}"><i class="fa fa-cog"></i> <span>Testimonial_details</span></a></li>
 
 
+
+                 
+
+
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/centers') }}"><i class="fa fa-cog"></i> <span>Centers</span></a></li>
+
+
+
 
                    
 
