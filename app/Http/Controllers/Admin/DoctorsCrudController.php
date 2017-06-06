@@ -71,6 +71,17 @@ class DoctorsCrudController extends CrudController
             'model' => 'App\Models\Speciality_masters',
             'pivot' => true
         ]);
+
+
+        $this->crud->addField([
+            'label' => 'Our_speciality_features',
+            'type' => 'checklist',
+            'name' => 'our_speciality_features',
+            'entity' => 'our_speciality_features',
+            'attribute' => 'title',
+            'model' => 'App\Models\Our_speciality_features',
+            'pivot' => true
+        ]);
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -119,6 +130,16 @@ class DoctorsCrudController extends CrudController
         'entity' => 'speciality_masters', // the method that defines the relationship in your Model
         'attribute' => "speciality", // foreign key attribute that is shown to user
         'model' => "App\Models\Speciality_masters", // foreign key model
+        ]);
+
+
+          $this->crud->addColumn([ // n-n relationship (with pivot table)
+        'label' => "Our_speciality_features", // Table column heading
+        'type' => "select_multiple",
+        'name' => 'our_speciality_features', // the method that defines the relationship in your Model
+        'entity' => 'our_speciality_features', // the method that defines the relationship in your Model
+        'attribute' => "title", // foreign key attribute that is shown to user
+        'model' => "App\Models\Our_speciality_features", // foreign key model
         ]);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;

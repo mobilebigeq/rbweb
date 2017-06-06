@@ -68,9 +68,9 @@ class Centers extends Model
     }
 
 
-     public function doctors() {
-        return $this->belongsToMany('App\Models\Doctors', 'center_doctors', 'centers_id', 'doctors_id');
-    }
+    //  public function doctors() {
+    //     return $this->belongsToMany('App\Models\Doctors', 'center_doctors', 'centers_id', 'doctors_id');
+    // }
 
 
     public function setImageAttribute($value)

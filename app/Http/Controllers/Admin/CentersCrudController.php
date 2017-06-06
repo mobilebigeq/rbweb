@@ -89,15 +89,15 @@ class CentersCrudController extends CrudController
 
 
 
-        $this->crud->addField([
-            'label' => 'Doctors',
-            'type' => 'checklist',
-            'name' => 'doctors',
-            'entity' => 'doctors',
-            'attribute' => 'name',
-            'model' => 'App\Models\Doctors',
-            'pivot' => true
-        ]);
+        // $this->crud->addField([
+        //     'label' => 'Doctors',
+        //     'type' => 'checklist',
+        //     'name' => 'doctors',
+        //     'entity' => 'doctors',
+        //     'attribute' => 'name',
+        //     'model' => 'App\Models\Doctors',
+        //     'pivot' => true
+        // ]);
 
           
         // ------ CRUD COLUMNS
@@ -149,14 +149,14 @@ class CentersCrudController extends CrudController
         ]);
 
 
-            $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Doctors", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'doctors', // the method that defines the relationship in your Model
-        'entity' => 'doctors', // the method that defines the relationship in your Model
-        'attribute' => "name", // foreign key attribute that is shown to user
-        'model' => "App\Models\Doctors", // foreign key model
-        ]);
+        //     $this->crud->addColumn([ // n-n relationship (with pivot table)
+        // 'label' => "Doctors", // Table column heading
+        // 'type' => "select_multiple",
+        // 'name' => 'doctors', // the method that defines the relationship in your Model
+        // 'entity' => 'doctors', // the method that defines the relationship in your Model
+        // 'attribute' => "name", // foreign key attribute that is shown to user
+        // 'model' => "App\Models\Doctors", // foreign key model
+        // ]);
 
         // ------ CRUD ACCESS
         // $this->crud->allowAccess(['list', 'create', 'update', 'reorder', 'delete']);
