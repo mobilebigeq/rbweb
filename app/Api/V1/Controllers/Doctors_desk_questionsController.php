@@ -15,5 +15,17 @@ class Doctors_desk_questionsController extends Controller
 	{
 		return Doctors_desk_questions::get();
 	}
+
+	
+
+	public function show($page)
+    {
+        $Doctors_desk_questions = Doctors_desk_questions::where('page', $page)->get();
+
+        if(!$Doctors_desk_questions)
+            throw new NotFoundHttpException; 
+
+        return $Doctors_desk_questions;
+    }
     
 }

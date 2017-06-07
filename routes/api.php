@@ -83,6 +83,16 @@ $api->version('v1', function (Router $api) {
               $api->get('doctors_desk','App\Api\V1\Controllers\Doctors_deskController@index');
 
               $api->get('doctors_desk_questions','App\Api\V1\Controllers\Doctors_desk_questionsController@index');
+              $api->get('doctors_desk_questions/{page}','App\Api\V1\Controllers\Doctors_desk_questionsController@show');
+              
+
+
+
+              $api->get('vaccination_details','App\Api\V1\Controllers\Vaccination_detailsController@index');
+
+              $api->get('vaccination_contacts','App\Api\V1\Controllers\Vaccination_contactsController@index');
+
+
 
               
               $api->get('description_section','App\Api\V1\Controllers\Description_SectionController@index');
@@ -94,6 +104,8 @@ $api->version('v1', function (Router $api) {
 
               $api->get('faq_section','App\Api\V1\Controllers\FaqController@index');
               $api->get('faq_section/{page}','App\Api\V1\Controllers\FaqController@show');
+
+
 
               
 
