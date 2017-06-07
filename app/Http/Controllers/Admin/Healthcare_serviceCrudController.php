@@ -22,7 +22,7 @@ class Healthcare_serviceCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Healthcare_service');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/healthcare_service');
-        $this->crud->setEntityNameStrings('healthcare_service', 'healthcare_services');
+        $this->crud->setEntityNameStrings('Healthcare Service', 'healthcare services');
 
         /*
         |--------------------------------------------------------------------------
@@ -72,6 +72,19 @@ class Healthcare_serviceCrudController extends CrudController
             'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
         ]);
 
+
+        $this->crud->addField([
+            'name' => 'title',
+            'label' => "Title",
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'description',
+            'label' => "Description",
+            'type' => 'ckeditor',
+        ]);
+
         $this->crud->addField([
            'label' => "Speciality Master",
            'type' => 'select2',
@@ -86,7 +99,7 @@ class Healthcare_serviceCrudController extends CrudController
             'label' => "Page",
             'type' => 'text',
 
-            ]);
+        ]);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');

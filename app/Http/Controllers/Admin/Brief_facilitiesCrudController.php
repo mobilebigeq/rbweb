@@ -22,7 +22,7 @@ class Brief_facilitiesCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Brief_facilities');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/brief_facilities');
-        $this->crud->setEntityNameStrings('brief_facility', 'brief_facilities');
+        $this->crud->setEntityNameStrings('Brief Facility', 'brief facilities');
 
         /*
         |--------------------------------------------------------------------------
@@ -69,9 +69,15 @@ class Brief_facilitiesCrudController extends CrudController
         ]);
 
 
+        $this->crud->addField([
+            'label'=>'Description',
+            'name'=>'description',
+            'type'=>'ckeditor',
+        ]);
+
 // This is for the One to Many Relationship..........
        $this->crud->addField([
-           'label' => "Speciality_masters_id",
+           'label' => "Speciality Master",
            'type' => 'select2',
            'name' => 'speciality_masters_id', // the db column for the foreign key
            'entity' => 'speciality_masters', // the method that defines the relationship in your Model
