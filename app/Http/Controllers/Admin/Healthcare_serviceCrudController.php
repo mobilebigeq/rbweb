@@ -30,7 +30,37 @@ class Healthcare_serviceCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        //$this->crud->setFromDb();
+
+        $this->crud->addColumn([ // image
+            'label' => "Image",
+            'name' => "image",
+            'type' => 'image'
+        ]);
+
+        $this->crud->addColumn([ // title
+            'label' => "Title",
+            'name' => "title",
+        ]);
+
+        $this->crud->addColumn([ // description
+            'label' => "Description",
+            'name' => "description",
+        ]);
+
+        $this->crud->addColumn([
+           'label' => "Speciality Master",
+           'type' => 'select',
+           'name' => 'speciality_masters_id', // the db column for the foreign key
+           'entity' => 'speciality_masters', // the method that defines the relationship in your Model
+           'attribute' => 'speciality', // foreign key attribute that is shown to user
+           'model' => "App\Models\Speciality_masters" // foreign key model
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'page',
+            'label' => "Page",
+        ]);
 
         $this->crud->addField([ // image
             'label' => "Image",
@@ -126,6 +156,9 @@ class Healthcare_serviceCrudController extends CrudController
         // $this->crud->orderBy();
         // $this->crud->groupBy();
         // $this->crud->limit();
+
+
+        $this->crud->enableAjaxTable();
     }
 
     public function store(StoreRequest $request)

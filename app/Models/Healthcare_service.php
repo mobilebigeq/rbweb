@@ -38,7 +38,7 @@ class Healthcare_service extends Model
 
     public function speciality_masters()
     {
-        return $this->hasMany('App\Speciality_masters');
+        return $this->belongsTo('App\Models\Speciality_masters', 'speciality_masters_id');
     }
 
     /*

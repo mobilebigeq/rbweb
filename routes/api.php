@@ -91,6 +91,10 @@ $api->version('v1', function (Router $api) {
               $api->get('video_section','App\Api\V1\Controllers\Video_sectionController@index');
               $api->get('video_section/{page}','App\Api\V1\Controllers\Video_sectionController@show');
 
+
+              $api->get('faq_section','App\Api\V1\Controllers\FaqController@index');
+              $api->get('faq_section/{page}','App\Api\V1\Controllers\FaqController@show');
+
               
 
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');
