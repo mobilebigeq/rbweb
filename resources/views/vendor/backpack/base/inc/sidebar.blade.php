@@ -26,9 +26,9 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctorspecialization') }}"><i class="fa fa-cog"></i> <span>Doctor's - Specializations</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/hospitals') }}"><i class="fa fa-cog"></i> <span>Hospitals</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page_description') }}"><i class="fa fa-cog"></i> <span>Page Description</span></a></li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality_Masters</span></a></li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare_service</span></a></li>
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief_Facilities</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/speciality_masters') }}"><i class="fa fa-cog"></i> <span>Speciality Masters</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/healthcare_service') }}"><i class="fa fa-cog"></i> <span>HealthCare Service</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/brief_facilities') }}"><i class="fa fa-cog"></i> <span>Brief Facilities</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/pagemetadata') }}"><i class="fa fa-cog"></i> <span>Page Metadata</span></a></li>
               </ul>
           </li>
@@ -56,6 +56,8 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/press_clips')}}"><i class="fa fa-cog"></i> <span>Press Clips</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/description_section')}}"><i class="fa fa-cog"></i> <span>Description Section</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/video_section')}}"><i class="fa fa-cog"></i> <span>Video Section</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/group_section')}}"><i class="fa fa-cog"></i> <span>Group Section</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/question_section')}}"><i class="fa fa-cog"></i> <span>Question Section</span></a></li>
 
               </ul>
           </li>

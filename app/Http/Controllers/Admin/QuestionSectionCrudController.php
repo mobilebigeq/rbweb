@@ -4,14 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
-
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\Brief_facilitiesRequest as StoreRequest;
-use App\Http\Requests\Brief_facilitiesRequest as UpdateRequest;
+use App\Http\Requests\QuestionSectionRequest as StoreRequest;
+use App\Http\Requests\QuestionSectionRequest as UpdateRequest;
 
-class Brief_facilitiesCrudController extends CrudController
+class QuestionSectionCrudController extends CrudController
 {
-
     public function setup()
     {
 
@@ -20,9 +18,9 @@ class Brief_facilitiesCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Brief_facilities');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/brief_facilities');
-        $this->crud->setEntityNameStrings('brief_facility', 'brief_facilities');
+        $this->crud->setModel('App\Models\QuestionSection');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/question_section');
+        $this->crud->setEntityNameStrings('Question Section', 'question sections');
 
         /*
         |--------------------------------------------------------------------------
@@ -32,52 +30,62 @@ class Brief_facilitiesCrudController extends CrudController
 
         //$this->crud->setFromDb();
 
-        $this->crud->addColumn([
-            'label'=>'Image',
-            'name'=>'image',
-            'type'=>'image'
+        $this->crud->addColumn([   // text
+            'name' => 'question',
+            'label' => 'Question'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'answer',
+            'label' => 'Answer'
         ]);
 
         $this->crud->addColumn([
-            'label'=>'Description',
-            'name'=>'description',
+           'label' => "Group",
+           'type' => 'select',
+           'name' => 'group_section_id', // the db column for the foreign key
+           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
+           'attribute' => 'title', // foreign key attribute that is shown to user
+           'model' => "App\Models\GroupSection" // foreign key model
         ]);
 
-        $this->crud->addColumn([
-            'label' => "Speciality Masters",
-            'type' => 'select',
-            'name' => 'speciality_masters_id', // the db column for the foreign key
-            'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-            'attribute' => 'speciality', // foreign key attribute that is shown to user
-            'model' => "App\Models\Speciality_masters" // foreign key model
-        ]);
-
-        $this->crud->addColumn([
-            'label'=>'Page',
-            'name'=>'page',
+        $this->crud->addColumn([   // text
+            'name' => 'page',
+            'label' => 'Page'
         ]);
 
 
-//This is for adding Image.....
+        $this->crud->addField([   // text
+            'name' => 'question',
+            'label' => 'Question',
+            'type' => 'text'
+        ]);
+
+        $this->crud->addField([   // TinyMCE
+            'name' => 'answer',
+            'label' => 'Answer',
+            'type' => 'tinymce'
+        ]);
+
+
         $this->crud->addField([
-            'label'=>'Image',
-            'name'=>'image',
-            'type'=>'image',
-            'upload'=>true,
-            'aspect_ratio'=>1,
-            'prefix'=>'uploads'
+           'label' => "Select Group",
+           'type' => 'select2',
+           'name' => 'group_section_id', // the db column for the foreign key
+           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
+           'attribute' => 'title', // foreign key attribute that is shown to user
+           'model' => "App\Models\GroupSection" // foreign key model
+        ]);
+
+        $this->crud->addField([   // text
+            'name' => 'page',
+            'label' => 'Page',
+            'type' => 'text'
         ]);
 
 
-// This is for the One to Many Relationship..........
-       $this->crud->addField([
-           'label' => "Speciality_masters_id",
-           'type' => 'select2',
-           'name' => 'speciality_masters_id', // the db column for the foreign key
-           'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-           'attribute' => 'speciality', // foreign key attribute that is shown to user
-           'model' => "App\Models\Speciality_masters" // foreign key model
-        ]);  
+        
+        $this->crud->enableAjaxTable();
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -91,21 +99,6 @@ class Brief_facilitiesCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
-
-
-        //This is for the image column
-        $this->crud->setColumnsDetails('image',['type'=>'image']);
-        // $this->crud->removeColumn('speciality_masters_id');
-
-         // $this->crud->addColumn([
-         //    'label' => 'Speciality',
-         //   'type' => 'select2',
-         //   'name' => 'speciality_masters_id', // the db column for the foreign key
-         //   'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-         //   'attribute' => 'speciality', // foreign key attribute that is shown to user
-         //   'model' => "App\Models\Speciality_masters", // foreign key model
-         //    ]); 
-       // $this->crud->setColumnsDetails('speciality_masters_id',['type'=>'name']);
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
@@ -160,8 +153,6 @@ class Brief_facilitiesCrudController extends CrudController
         // $this->crud->orderBy();
         // $this->crud->groupBy();
         // $this->crud->limit();
-
-        $this->crud->enableAjaxTable();
     }
 
     public function store(StoreRequest $request)
