@@ -59,6 +59,13 @@ class Brief_facilitiesCrudController extends CrudController
 
 
 //This is for adding Image.....
+
+        $this->crud->addField([
+            'label'=>'Page',
+            'name'=>'page',
+            'type'=>'text',
+        ]);  
+        
         $this->crud->addField([
             'label'=>'Image',
             'name'=>'image',

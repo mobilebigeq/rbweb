@@ -8,7 +8,7 @@ use App\Models\DescriptionSection;
 use App\Http\Controllers\Controller;
 use Dingo\Api\Routing\Helpers;
 
-class Description_sectionController extends Controller
+class Description_SectionController extends Controller
 {
     public function index() 
     {
