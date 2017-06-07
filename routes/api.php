@@ -23,6 +23,8 @@ $api->version('v1', function (Router $api) {
     		$api->get('highlights', 'App\Api\V1\Controllers\HighlightsController@index');
 
             $api->get('events', 'App\Api\V1\Controllers\EventsController@index');
+
+            $api->get('events/{type}', 'App\Api\V1\Controllers\EventsController@events');
            
             $api->get('specialities', 'App\Api\V1\Controllers\SpecialitiesController@index');
 

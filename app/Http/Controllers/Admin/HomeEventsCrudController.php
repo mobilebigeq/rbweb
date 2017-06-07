@@ -31,6 +31,7 @@ class HomeEventsCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+        $this->crud->removeField('image');
         $this->crud->addField([ // image
            'label' => "Image",
            'name' => "image",
@@ -40,44 +41,52 @@ class HomeEventsCrudController extends CrudController
            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
        ]);
 
-       $this->crud->addField([
-         'name' => 'type',
-         'label' => "Event Type",
-         'type' => 'select_from_array',
-         'options' => ['news' => 'News', 'events' => 'Events', 'media' => 'Media'],
-         'allows_null' => false
-       ]);
+       $this->crud->removeField('event_date');
+       $this->crud->addField([ // image
+           'label' => "Event Date",
+           'name' => "event_date",
+           'type' => 'datetime_picker',
+           'datetime_picker_options' => ['format' => 'DD/MM/YYYY HH:mm']
+           ]);
 
-        $this->crud->addField([
-           'name' => 'page',
-           'label' => "Page",
-           'type' => 'text',
-        ]);
+        $this->crud->removeField('description');
+          $this->crud->addField([   // TinyMCE
+            'name' => 'description',
+            'label' => 'Description',
+            'type' => 'tinymce'
+          ]);
 
-        $this->crud->addField([   // TinyMCE
-          'name' => 'description',
-          'label' => 'Description',
-          'type' => 'tinymce'
-        ]);
-
+      $this->crud->removeField('description_two');
         $this->crud->addField([   // TinyMCE
           'name' => 'description_two',
           'label' => 'Description Two',
           'type' => 'tinymce'
         ]);
 
+        $this->crud->removeField('summery');
         $this->crud->addField([   // TinyMCE
           'name' => 'summery',
           'label' => 'Summery',
           'type' => 'tinymce'
         ]);
 
-        $this->crud->addField([ // image
-            'label' => "Event Date",
-            'name' => "event_date",
-            'type' => 'datetime_picker',
-            'datetime_picker_options' => ['format' => 'DD/MM/YYYY HH:mm']
+
+
+            $this->crud->removeField('type');
+            $this->crud->addField([
+              'name' => 'type',
+              'label' => "Event Type",
+              'type' => 'select_from_array',
+              'options' => ['news' => 'News', 'events' => 'Events', 'media' => 'Media'],
+              'allows_null' => false
             ]);
+
+            $this->crud->removeField('page');
+            $this->crud->addField([
+                'name' => 'page',
+                'label' => "Page",
+                'type' => 'text',
+           ]);
 
         // $this->crud->setColumnDetails('image', ['type'=>'image']);
         // $this->crud->setColumnDetails('image', ['type'=>'image']);
