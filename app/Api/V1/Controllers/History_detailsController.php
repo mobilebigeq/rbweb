@@ -20,4 +20,12 @@ class History_detailsController extends Controller
 
     }
 
+    public function show($page)
+    {
+    	$history = History_details::where('page', $page)->get();
+    	if(!$history)
+            throw new NotFoundHttpException; 
+    	return $history;
+    }
+
 }
