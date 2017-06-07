@@ -83,6 +83,12 @@ class Brief_facilitiesCrudController extends CrudController
            'entity' => 'speciality_masters', // the method that defines the relationship in your Model
            'attribute' => 'speciality', // foreign key attribute that is shown to user
            'model' => "App\Models\Speciality_masters" // foreign key model
+        ]);
+
+        $this->crud->addField([
+            'label'=>'Page',
+            'name'=>'page',
+            'type'=>'text',
         ]);  
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
