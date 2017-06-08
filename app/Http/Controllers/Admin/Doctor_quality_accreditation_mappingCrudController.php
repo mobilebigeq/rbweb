@@ -40,6 +40,11 @@ class Doctor_quality_accreditation_mappingCrudController extends CrudController
            'model' => "App\Models\Doctors" // foreign key model
         ]);
 
+        $this->crud->addColumn([
+           'label' => "Page",
+           'name' => 'page'
+        ]);
+
 
          $this->crud->addField([
            'label' => "Doctor",
@@ -48,6 +53,11 @@ class Doctor_quality_accreditation_mappingCrudController extends CrudController
            'entity' => 'doctors', // the method that defines the relationship in your Model
            'attribute' => 'name', // foreign key attribute that is shown to user
            'model' => "App\Models\Doctors" // foreign key model
+        ]);
+
+        $this->crud->addField([
+           'label' => "Page",
+           'name' => 'page'
         ]);
 
         $this->crud->enableAjaxTable();

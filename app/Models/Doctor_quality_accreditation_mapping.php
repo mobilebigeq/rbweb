@@ -15,11 +15,11 @@ class Doctor_quality_accreditation_mapping extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'doctor_quality_accreditation_mapping';
+    protected $table = 'doctors_quality_accreditation_mapping';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['doctors_id'];
+    protected $fillable = ['doctors_id', 'page'];
     // protected $hidden = [];
     // protected $dates = [];
 

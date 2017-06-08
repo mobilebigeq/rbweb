@@ -25,7 +25,8 @@ class Doctor_quality_accreditation_mappingRequest extends \Backpack\CRUD\app\Htt
     public function rules()
     {
         return [
-            'doctors_id' => 'required'
+            'doctors_id' => 'required',
+            'page'  => 'required'
         ];
     }
 
