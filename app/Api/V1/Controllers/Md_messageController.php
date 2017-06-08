@@ -19,9 +19,9 @@ class Md_messageController extends Controller
 
     }
 
-    public function show($title)
+    public function show($page)
     {
-        $messages = Md_message::where('title', $title)->get();
+        $messages = Md_message::where('page', $page)->get();
 
         if(!$messages)
             throw new NotFoundHttpException; 

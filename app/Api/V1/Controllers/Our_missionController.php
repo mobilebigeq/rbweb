@@ -5,29 +5,28 @@ namespace App\Api\V1\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
-use App\Models\Awards_history;
+use App\Models\Our_mission;
 use Dingo\Api\Routing\Helpers;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-
-class Awards_historyController extends Controller
+class Our_missionController extends Controller
 {
-
+	
     public function index() 
     {
 
-    return Awards_history::get();
+    return Our_mission::get();
 
     }
 
     public function show($page)
     {
-    	$awards_history = Awards_history::where('awards_type', $page)->get();
+        $Our_mission = Our_mission::where('page', $page)->get();
 
-    	if(!$awards_history)
+        if(!$Our_mission)
             throw new NotFoundHttpException; 
-        
-    	return $awards_history;
+
+        return $Our_mission;
     }
 
 

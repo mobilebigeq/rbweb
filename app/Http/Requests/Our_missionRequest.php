@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class What_we_do_detailsRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
+class Our_missionRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
 {
     /**
      * Determine if the user is authorized to make this request.

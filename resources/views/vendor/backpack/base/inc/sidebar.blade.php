@@ -45,7 +45,7 @@
 
           <li><a><i class="fa fa-cog"></i> <span>About Us</span></a>
               <ul class="treeview-menu">
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/what_we_do_details') }}"><i class="fa fa-cog"></i> <span>What We Do Details</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_mission') }}"><i class="fa fa-cog"></i> <span>Our Mission</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/md_message') }}"><i class="fa fa-cog"></i> <span>MD Messages</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/boardofdirectors') }}"><i class="fa fa-cog"></i> <span>Board Of Directors</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/history_details') }}"><i class="fa fa-cog"></i> <span>History Details</span></a></li>
