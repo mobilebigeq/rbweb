@@ -62,10 +62,13 @@ $api->version('v1', function (Router $api) {
             $api->get('our_speciality_features','App\Api\V1\Controllers\Our_speciality_featuresController@index');
             $api->get('our_speciality_features/{page}','App\Api\V1\Controllers\Our_speciality_featuresController@show');
 
-            $api->get('what_we_do_details','App\Api\V1\Controllers\What_we_do_detailsController@index');
+            $api->get('our_mission','App\Api\V1\Controllers\Our_missionController@index');
+            $api->get('our_mission/{page}','App\Api\V1\Controllers\Our_missionController@show');
+
+
 
             $api->get('md_message','App\Api\V1\Controllers\Md_messageController@index');
-            $api->get('md_message/{title}','App\Api\V1\Controllers\Md_messageController@show');
+            $api->get('md_message/{page}','App\Api\V1\Controllers\Md_messageController@show');
 
              $api->get('history_details','App\Api\V1\Controllers\History_detailsController@index');
              $api->get('history_details/{page}','App\Api\V1\Controllers\History_detailsController@show');

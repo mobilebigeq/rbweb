@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class What_we_do_details extends Model
+class Our_mission extends Model
 {
     use CrudTrait;
 
@@ -15,11 +15,11 @@ class What_we_do_details extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'what_we_do_details';
+    protected $table = 'our_mission';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['title','description'];
+     protected $fillable = ['title','description','page'];
     // protected $hidden = [];
     // protected $dates = [];
 

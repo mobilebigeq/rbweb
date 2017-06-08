@@ -6,10 +6,10 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\What_we_do_detailsRequest as StoreRequest;
-use App\Http\Requests\What_we_do_detailsRequest as UpdateRequest;
+use App\Http\Requests\Our_missionRequest as StoreRequest;
+use App\Http\Requests\Our_missionRequest as UpdateRequest;
 
-class What_we_do_detailsCrudController extends CrudController
+class Our_missionCrudController extends CrudController
 {
 
 
@@ -21,9 +21,9 @@ class What_we_do_detailsCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\What_we_do_details');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/what_we_do_details');
-        $this->crud->setEntityNameStrings('what_we_do_detail', 'what_we_do_details');
+        $this->crud->setModel('App\Models\Our_mission');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/our_mission');
+        $this->crud->setEntityNameStrings('our_mission', 'our_missions');
 
         /*
         |--------------------------------------------------------------------------
@@ -33,6 +33,12 @@ class What_we_do_detailsCrudController extends CrudController
 
         $this->crud->setFromDb();
 
+
+         $this->crud->addField([   // TinyMCE
+    'name' => 'description',
+    'label' => 'Description',
+    'type' => 'tinymce'
+]);
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

@@ -22,7 +22,7 @@ CRUD::resource('brief_facilities', 'Brief_facilitiesCrudController');
 CRUD::resource('our_specialities', 'Our_specialitiesCrudController');
 CRUD::resource('our_speciality_features', 'Our_speciality_featuresCrudController');
 CRUD::resource('page_description', 'Page_descriptionCrudController');
-CRUD::resource('what_we_do_details', 'What_we_do_detailsCrudController');
+CRUD::resource('our_mission', 'Our_missionCrudController');
 CRUD::resource('md_message', 'Md_messageCrudController');
 CRUD::resource('history_details', 'History_detailsCrudController');
 CRUD::resource('awards_history', 'Awards_historyCrudController');
