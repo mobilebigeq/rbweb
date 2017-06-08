@@ -91,9 +91,6 @@ $api->version('v1', function (Router $api) {
               $api->get('vaccination_details','App\Api\V1\Controllers\Vaccination_detailsController@index');
 
               $api->get('vaccination_contacts','App\Api\V1\Controllers\Vaccination_contactsController@index');
-
-
-
               
               $api->get('description_section','App\Api\V1\Controllers\Description_SectionController@index');
               $api->get('description_section/{page}','App\Api\V1\Controllers\Description_SectionController@show');
@@ -105,8 +102,18 @@ $api->version('v1', function (Router $api) {
               $api->get('faq_section','App\Api\V1\Controllers\FaqController@index');
               $api->get('faq_section/{page}','App\Api\V1\Controllers\FaqController@show');
 
+              //Doctor Speciality Master By Name & By ID
+            
+              $api->get('doctors_speciality_master/{name}', 'App\Api\V1\Controllers\Speciality_mastersController@DoctorSpecialityMasterByName');
+              $api->get('doctors_speciality_master_id/{id}', 'App\Api\V1\Controllers\Speciality_mastersController@DoctorSpecialityMasterByID');
 
+              //Doctor Center By ID
+              $api->get('doctors_centers/{id}', 'App\Api\V1\Controllers\CentersController@DoctorsCenterByID');
 
+              //Doctor Our Specility Features
+              $api->get('doctors_specility_features/{id}', 'App\Api\V1\Controllers\Our_speciality_featuresController@DoctorSpecialityFeaturesByID');
+
+            
               
 
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');

@@ -80,7 +80,7 @@ class Doctors extends Model
     }
 
 
-     public function speciality_masters() {
+    public function speciality_masters() {
         return $this->belongsToMany('App\Models\Speciality_masters', 'doctor_speciality_masters', 'doctors_id', 'doctor_specialization_masters_id');
     }
 

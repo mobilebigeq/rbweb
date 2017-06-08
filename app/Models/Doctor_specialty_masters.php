@@ -15,7 +15,7 @@ class Doctor_specialty_masters extends Model
     |--------------------------------------------------------------------------
     */
 
-    //protected $table = 'doctor_specialty_masterss';
+    protected $table = 'doctor_speciality_masters';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];

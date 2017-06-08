@@ -16,4 +16,10 @@ class DoctorsController extends Controller
 	{
 	    return Doctors::with('centers')->get();
 	}
+
+
+	public function DoctorSpecialityMasterByName()
+	{
+	    return Doctors::with('speciality_masters')->get();
+	}
 }

@@ -67,6 +67,10 @@ class Centers extends Model
         return $this->belongsToMany('App\Models\Our_speciality_features', 'center_speciality_features', 'centers_id', 'our_speciality_features_id');
     }
 
+    public function doctors() {
+        return $this->belongsToMany('App\Models\Doctors', 'doctor_hospitals', 'hospital_id', 'doctor_id');
+    }
+
 
     //  public function doctors() {
     //     return $this->belongsToMany('App\Models\Doctors', 'center_doctors', 'centers_id', 'doctors_id');

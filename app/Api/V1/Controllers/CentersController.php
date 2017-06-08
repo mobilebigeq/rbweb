@@ -17,4 +17,8 @@ class CentersController extends Controller
 	{
 	    return Centers::get();
 	}
+
+    public function DoctorsCenterByID($id){
+        return Centers::with('doctors')->where('id', $id)->get();
+    }
 }

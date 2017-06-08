@@ -39,6 +39,10 @@ class Our_speciality_features extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function doctors() {
+        return $this->belongsToMany('App\Models\Doctors', 'doctor_speciality_features', 'our_speciality_features_id', 'doctors_id');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

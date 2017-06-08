@@ -27,4 +27,9 @@ class Our_speciality_featuresController extends Controller
 
         return $features;
     }
+
+
+    public function DoctorSpecialityFeaturesByID($id){
+        return Our_speciality_features::with('doctors')->where('id', $id)->get();
+    }
 }

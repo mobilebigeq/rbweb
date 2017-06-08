@@ -35,6 +35,10 @@ class Speciality_masters extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function doctors() {
+        return $this->belongsToMany('App\Models\Doctors', 'doctor_speciality_masters', 'doctor_specialization_masters_id', 'doctors_id');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
