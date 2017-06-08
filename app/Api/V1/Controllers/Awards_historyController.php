@@ -20,5 +20,15 @@ class Awards_historyController extends Controller
 
     }
 
+    public function show($page)
+    {
+    	$awards_history = Awards_history::where('awards_type', $page)->get();
+
+    	if(!$awards_history)
+            throw new NotFoundHttpException; 
+        
+    	return $awards_history;
+    }
+
 
 }

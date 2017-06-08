@@ -71,6 +71,7 @@ $api->version('v1', function (Router $api) {
              $api->get('history_details/{page}','App\Api\V1\Controllers\History_detailsController@show');
 
               $api->get('awards_history','App\Api\V1\Controllers\Awards_historyController@index');
+               $api->get('awards_history/{page}','App\Api\V1\Controllers\Awards_historyController@index');
 
               $api->get('media_press_release','App\Api\V1\Controllers\Media_press_releaseController@index');
 

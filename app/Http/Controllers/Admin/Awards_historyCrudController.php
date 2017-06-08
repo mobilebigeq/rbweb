@@ -49,7 +49,7 @@ class Awards_historyCrudController extends CrudController
             'name' => 'awards_type',
             'label' => "Awards_type",
             'type' => 'select_from_array',
-            'options' => ['hospital' => 'Hospital Awards', 'doctors' => 'Doctors Awards'],
+            'options' => ['hospital-awards' => 'Hospital Awards', 'doctors-awards' => 'Doctors Awards'],
             'allows_null' => false
         ]);
         // ------ CRUD FIELDS
