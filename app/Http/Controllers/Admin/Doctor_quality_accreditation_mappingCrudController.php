@@ -4,14 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
-
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\AboutRequest as StoreRequest;
-use App\Http\Requests\AboutRequest as UpdateRequest;
+use App\Http\Requests\Doctor_quality_accreditation_mappingRequest as StoreRequest;
+use App\Http\Requests\Doctor_quality_accreditation_mappingRequest as UpdateRequest;
 
-class AboutCrudController extends CrudController
+class Doctor_quality_accreditation_mappingCrudController extends CrudController
 {
-
     public function setup()
     {
 
@@ -20,9 +18,9 @@ class AboutCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\About');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/about');
-        $this->crud->setEntityNameStrings('about', 'about');
+        $this->crud->setModel('App\Models\Doctor_quality_accreditation_mapping');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/doctor_quality_accreditation');
+        $this->crud->setEntityNameStrings('Doctor Quality Accreditation Mapping', 'doctor quality accreditation mappings');
 
         /*
         |--------------------------------------------------------------------------
@@ -30,81 +28,30 @@ class AboutCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        ///$this->crud->setFromDb();
+        //$this->crud->setFromDb();
 
-        $this->crud->addColumn([ // title
-            'label' => "Title",
-            'name' => "title",
-        ]);
-
-        $this->crud->addColumn([ // title
-            'label' => "Subtitle",
-            'name' => "subtitle",
-        ]);
-
-        $this->crud->addColumn([ // image
-            'label' => "Image",
-            'name' => "image",
-            'type' => 'image'
-        ]);
-
-        $this->crud->addColumn([ // description
-            'label' => "Description",
-            'name' => "description",
-        ]);
 
         $this->crud->addColumn([
-           'label' => "Speciality Master",
+           'label' => "Doctor",
            'type' => 'select',
-           'name' => 'speciality_masters_id', // the db column for the foreign key
-           'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-           'attribute' => 'speciality', // foreign key attribute that is shown to user
-           'model' => "App\Models\Speciality_masters" // foreign key model
-        ]);
-
-        $this->crud->addField([
-            'name' => 'title',
-            'label' => "Title",
-            'type' => 'text',
-        ]);
-
-        $this->crud->addField([
-            'name' => 'subtitle',
-            'label' => "Subtitle",
-            'type' => 'text',
-        ]);
-
-        $this->crud->addField([
-            'name' => 'description',
-            'label' => "Description",
-            'type' => 'ckeditor',
+           'name' => 'doctors_id', // the db column for the foreign key
+           'entity' => 'doctors', // the method that defines the relationship in your Model
+           'attribute' => 'name', // foreign key attribute that is shown to user
+           'model' => "App\Models\Doctors" // foreign key model
         ]);
 
 
-        $this->crud->addField([ // image
-            'label' => "Image",
-            'name' => "image",
-            'type' => 'image',
-            'upload' => true,
-           // 'crop' => true, // set to true to allow cropping, false to disable
-            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
-            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
-        ]);
-
-        $this->crud->addField([
-            'name' => 'additional_info',
-            'label' => "Additional Information",
-            'type' => 'textarea',
-        ]);
-
-        $this->crud->addField([
-           'label' => "Speciality Masters",
+         $this->crud->addField([
+           'label' => "Doctor",
            'type' => 'select2',
-           'name' => 'speciality_masters_id', // the db column for the foreign key
-           'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-           'attribute' => 'speciality', // foreign key attribute that is shown to user
-           'model' => "App\Models\Speciality_masters" // foreign key model
-            ]);
+           'name' => 'doctors_id', // the db column for the foreign key
+           'entity' => 'doctors', // the method that defines the relationship in your Model
+           'attribute' => 'name', // foreign key attribute that is shown to user
+           'model' => "App\Models\Doctors" // foreign key model
+        ]);
+
+        $this->crud->enableAjaxTable();
+
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
@@ -119,7 +66,6 @@ class AboutCrudController extends CrudController
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
 
-        $this->crud->setColumnsDetails('image', ['type'=>'image']);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
         // $this->crud->addButton($stack, $name, $type, $content, $position); // add a button; possible types are: view, model_function

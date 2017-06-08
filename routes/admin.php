@@ -46,6 +46,7 @@ CRUD::resource('description_section', 'DescriptionSectionCrudController');
 CRUD::resource('video_section', 'VideoSectionCrudController');
 CRUD::resource('group_section', 'GroupSectionCrudController');
 CRUD::resource('question_section', 'QuestionSectionCrudController');
+CRUD::resource('doctor_quality_accreditation', 'Doctor_quality_accreditation_mappingCrudController');
 
 
 

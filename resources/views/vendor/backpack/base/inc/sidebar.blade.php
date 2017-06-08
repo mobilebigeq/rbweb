@@ -58,6 +58,7 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/video_section')}}"><i class="fa fa-cog"></i> <span>Video Section</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/group_section')}}"><i class="fa fa-cog"></i> <span>Group Section</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/question_section')}}"><i class="fa fa-cog"></i> <span>Question Section</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctor_quality_accreditation')}}"><i class="fa fa-cog"></i> <span>Quality Accreditation Mapping</span></a></li>
 
               </ul>
           </li>

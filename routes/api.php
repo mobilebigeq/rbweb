@@ -107,7 +107,6 @@ $api->version('v1', function (Router $api) {
               $api->get('faq_section/{page}','App\Api\V1\Controllers\FaqController@show');
 
               //Doctor Speciality Master By Name & By ID
-            
               $api->get('doctors_speciality_master/{name}', 'App\Api\V1\Controllers\Speciality_mastersController@DoctorSpecialityMasterByName');
               $api->get('doctors_speciality_master_id/{id}', 'App\Api\V1\Controllers\Speciality_mastersController@DoctorSpecialityMasterByID');
 
@@ -116,6 +115,13 @@ $api->version('v1', function (Router $api) {
 
               //Doctor Our Specility Features
               $api->get('doctors_specility_features/{id}', 'App\Api\V1\Controllers\Our_speciality_featuresController@DoctorSpecialityFeaturesByID');
+
+
+              //About Us
+              $api->get('about_us', 'App\Api\V1\Controllers\AboutController@GetAboutUsDetails');
+
+              //Doctor Quality Accreditation Mapping
+              $api->get('doctor_quality_accreditation', 'App\Api\V1\Controllers\DoctorsController@DoctorQualityAccreditation');
 
             
               
