@@ -22,7 +22,7 @@ class Speciality_mastersController extends Controller
 
     public function DoctorSpecialityMasterByName($name)
 	{
-	    return Speciality_masters::with('doctors')->where('speciality', $name)->get();
+	    return Speciality_masters::with('doctors', 'doctors.centers')->where('speciality', $name)->get();
 	}
 
     public function DoctorSpecialityMasterByID($id)
