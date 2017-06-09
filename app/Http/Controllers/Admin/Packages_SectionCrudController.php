@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\GroupSectionRequest as StoreRequest;
-use App\Http\Requests\GroupSectionRequest as UpdateRequest;
+use App\Http\Requests\Packages_SectionRequest as StoreRequest;
+use App\Http\Requests\Packages_SectionRequest as UpdateRequest;
 
-class GroupSectionCrudController extends CrudController
+class Packages_SectionCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class GroupSectionCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\GroupSection');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/group_section');
-        $this->crud->setEntityNameStrings('Group Section', 'group sections');
+        $this->crud->setModel('App\Models\Packages_Section');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/packages_section');
+        $this->crud->setEntityNameStrings('Packages Section', 'packages sections');
 
         /*
         |--------------------------------------------------------------------------
@@ -28,12 +28,38 @@ class GroupSectionCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        //$this->crud->setFromDb();
+
+        $this->crud->addColumn([   // text
+            'name' => 'title',
+            'label' => 'Title'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'description',
+            'label' => 'Description'
+        ]);
+
+        $this->crud->addColumn([
+           'label' => "Group",
+           'type' => 'select',
+           'name' => 'group_section_id', // the db column for the foreign key
+           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
+           'attribute' => 'title', // foreign key attribute that is shown to user
+           'model' => "App\Models\GroupSection" // foreign key model
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'package_price',
+            'label' => 'Package Price'
+        ]);
+
+
+        // CRUD Fields
 
         $this->crud->addField([   // text
             'name' => 'title',
-            'label' => 'Title',
-            'type' => 'text'
+            'label' => 'Title'
         ]);
 
         $this->crud->addField([   // TinyMCE
@@ -42,21 +68,21 @@ class GroupSectionCrudController extends CrudController
             'type' => 'tinymce'
         ]);
 
-         $this->crud->addField([ // image
-            'label' => "Image",
-            'name' => "image",
-            'type' => 'image',
-            'upload' => true,
-         //   'crop' => true, // set to true to allow cropping, false to disable
-            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
-            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
+        $this->crud->addField([
+           'label' => "Group",
+           'type' => 'select2',
+           'name' => 'group_section_id', // the db column for the foreign key
+           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
+           'attribute' => 'title', // foreign key attribute that is shown to user
+           'model' => "App\Models\GroupSection" // foreign key model
         ]);
 
         $this->crud->addField([   // text
-            'name' => 'page',
-            'label' => 'Page',
-            'type' => 'text'
+            'name' => 'package_price',
+            'label' => 'Package Price'
         ]);
+
+        $this->crud->enableAjaxTable();
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
