@@ -19,4 +19,8 @@ class FaqController extends Controller
     public function show($page){
          return GroupSection::with('questions')->where('page', $page)->get();
     }
+
+    public function GroupPackages($page){
+         return GroupSection::with('packages')->where('page', $page)->get();
+    }
 }
