@@ -136,6 +136,34 @@
 
     @yield('after_scripts')
 
+
+    <script>
+      $(function(){
+          $('.answer').on('change', function(){
+            $('.custom_error_message').html('');
+            $(this).parent().removeClass('has-error');
+            var option_key = $(this).val();
+            
+            var option_value = $('input[name="option'+option_key+'"]').val();
+            
+            if(option_value == null || option_value == ''){
+                
+                $(this).parent().addClass('has-error');
+                $(this).val($(".answer option:first").val());
+
+                $('.custom_error_message').html('<div class="callout callout-danger"><h4>Please fix the following errors:</h4><ul><li>Please select proper answer</li></ul></div>');
+                return false;
+            }
+            else{
+              $(this).parent().removeClass('has-error');
+              $('.custom_error_message').html('');
+              return true;
+            }
+          });
+      });
+
+    </script>
+
     <!-- JavaScripts -->
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>

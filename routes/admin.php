@@ -54,5 +54,6 @@ CRUD::resource('packages_section', 'Packages_SectionCrudController');
 
 CRUD::resource('academic_contact', 'Academic_ContactCrudController');
 
-
+CRUD::resource('quizsection', 'QuizSectionCrudController');
+CRUD::resource('quizgroup', 'QuizGroupCrudController');
 
