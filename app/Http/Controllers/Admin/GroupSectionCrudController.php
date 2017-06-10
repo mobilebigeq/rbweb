@@ -28,7 +28,38 @@ class GroupSectionCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        //$this->crud->setFromDb();
+
+        $this->crud->addColumn([   // text
+            'name' => 'title',
+            'label' => 'Title',
+            'type' => 'text'
+        ]);
+
+        $this->crud->addColumn([   // TinyMCE
+            'name' => 'description',
+            'label' => 'Description',
+            'type' => 'tinymce'
+        ]);
+
+        $this->crud->addColumn([ // image
+            'label' => "Image",
+            'name' => "image",
+            'type' => 'image',
+            'upload' => true,
+         //   'crop' => true, // set to true to allow cropping, false to disable
+            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'page',
+            'label' => 'Page',
+            'type' => 'text'
+        ]);
+
+
+        // CRUD FIELDS
 
         $this->crud->addField([   // text
             'name' => 'title',
@@ -42,7 +73,7 @@ class GroupSectionCrudController extends CrudController
             'type' => 'tinymce'
         ]);
 
-         $this->crud->addField([ // image
+        $this->crud->addField([ // image
             'label' => "Image",
             'name' => "image",
             'type' => 'image',

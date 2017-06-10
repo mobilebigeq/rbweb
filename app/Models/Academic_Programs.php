@@ -19,7 +19,7 @@ class Academic_Programs extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['program_name', 'title', 'sub_title', 'description', 'specialities', 'number_of_seats', 'duration', 'eligibility', 'session', 'group_section_id', 'sub_group_section_id', 'page'];
+    protected $fillable = ['program_name', 'title', 'sub_title', 'description', 'specialities', 'number_of_seats', 'duration', 'eligibility', 'session', 'sub_group_section_id', 'page'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -47,6 +47,16 @@ class Academic_Programs extends Model
     public function get_all_sub_groups()
     {
         return $this->belongsTo('App\Models\SubGroupSection', 'sub_group_section_id');
+    }
+    
+    // public function academic_contact()
+    // {
+    //     return $this->hasMany('App\Models\Academic_Contact', 'id');
+    // }
+
+    public function academic_contact()
+    {
+        return $this->hasMany('App\Models\Academic_Contact','academic_programs_id');
     }
     /*
     |--------------------------------------------------------------------------

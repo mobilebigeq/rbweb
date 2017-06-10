@@ -28,7 +28,33 @@ class SubGroupSectionCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        //$this->crud->setFromDb();
+
+        $this->crud->addColumn([   // text
+            'name' => 'title',
+            'label' => 'Title'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'description',
+            'label' => 'Description'
+        ]);
+        
+        $this->crud->addColumn([
+           'label' => "Group",
+           'type' => 'select',
+           'name' => 'group_section_id', // the db column for the foreign key
+           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
+           'attribute' => 'title', // foreign key attribute that is shown to user
+           'model' => "App\Models\GroupSection" // foreign key model
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'page',
+            'label' => 'Page',
+        ]);
+
+        // CRUD FIELDS
 
         $this->crud->addField([   // text
             'name' => 'title',
@@ -44,6 +70,15 @@ class SubGroupSectionCrudController extends CrudController
         $this->crud->addField([   // text
             'name' => 'page',
             'label' => 'Page',
+        ]);
+
+        $this->crud->addField([
+           'label' => "Group",
+           'type' => 'select',
+           'name' => 'group_section_id', // the db column for the foreign key
+           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
+           'attribute' => 'title', // foreign key attribute that is shown to user
+           'model' => "App\Models\GroupSection" // foreign key model
         ]);
 
         // ------ CRUD FIELDS

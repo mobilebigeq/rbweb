@@ -52,5 +52,7 @@ CRUD::resource('academic_programs', 'Academic_ProgramsCrudController');
 CRUD::resource('sub_group_section', 'SubGroupSectionCrudController');
 CRUD::resource('packages_section', 'Packages_SectionCrudController');
 
+CRUD::resource('academic_contact', 'Academic_ContactCrudController');
+
 
 

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class SubGroupSection extends Model
+class Academic_Contact extends Model
 {
     use CrudTrait;
 
@@ -15,11 +15,11 @@ class SubGroupSection extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'sub_group_section';
+    protected $table = 'academic_contact';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['title', 'description', 'page', 'group_section_id'];
+    protected $fillable = ['academic_programs_id', 'name', 'designation', 'mobile', 'email'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -35,13 +35,11 @@ class SubGroupSection extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function get_all_groups(){
-        return $this->belongsTo('App\Models\GroupSection', 'group_section_id');
+    public function get_all_academic_programs()
+    {
+        return $this->belongsTo('App\Models\Academic_Programs', 'academic_programs_id');
     }
 
-    public function academic_programs(){
-        return $this->hasMany('App\Models\Academic_Programs');
-    }
 
     /*
     |--------------------------------------------------------------------------

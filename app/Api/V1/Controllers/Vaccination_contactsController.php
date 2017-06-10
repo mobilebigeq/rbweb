@@ -11,10 +11,8 @@ use Dingo\Api\Routing\Helpers;
 
 class Vaccination_contactsController extends Controller
 {
-     public function index() 
+    public function index() 
     {
-
-    return Vaccination_contact::get();
-
+        return Vaccination_contact::get();
     }
 }

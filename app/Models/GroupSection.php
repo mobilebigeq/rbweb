@@ -45,6 +45,9 @@ class GroupSection extends Model
         return $this->hasMany('App\Models\Packages_Section');
     }
 
+    public function sub_group(){
+        return $this->hasMany('App\Models\SubGroupSection');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

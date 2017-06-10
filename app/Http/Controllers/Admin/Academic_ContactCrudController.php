@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\Academic_ProgramsRequest as StoreRequest;
-use App\Http\Requests\Academic_ProgramsRequest as UpdateRequest;
+use App\Http\Requests\Academic_ContactRequest as StoreRequest;
+use App\Http\Requests\Academic_ContactRequest as UpdateRequest;
 
-class Academic_ProgramsCrudController extends CrudController
+class Academic_ContactCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class Academic_ProgramsCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Academic_Programs');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/academic_programs');
-        $this->crud->setEntityNameStrings('Academic Programs', 'academic programs');
+        $this->crud->setModel('App\Models\Academic_Contact');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/academic_contact');
+        $this->crud->setEntityNameStrings('Academic Contact', 'academic contacts');
 
         /*
         |--------------------------------------------------------------------------
@@ -31,148 +31,65 @@ class Academic_ProgramsCrudController extends CrudController
         //$this->crud->setFromDb();
 
         $this->crud->addColumn([   // text
-            'name' => 'program_name',
-            'label' => 'Program Name'
+            'name' => 'name',
+            'label' => 'Name'
         ]);
 
         $this->crud->addColumn([   // text
-            'name' => 'title',
-            'label' => 'Title'
+            'name' => 'designation',
+            'label' => 'Designation'
         ]);
 
         $this->crud->addColumn([   // text
-            'name' => 'sub_title',
-            'label' => 'Sub Title'
+            'name' => 'mobile',
+            'label' => 'Mobile'
         ]);
 
         $this->crud->addColumn([   // text
-            'name' => 'description',
-            'label' => 'Description'
+            'name' => 'email',
+            'label' => 'Email'
         ]);
-
-        $this->crud->addColumn([   // text
-            'name' => 'specialities',
-            'label' => 'Specialities'
-        ]);
-
-        $this->crud->addColumn([   // text
-            'name' => 'number_of_seats',
-            'label' => 'Number Of Seats'
-        ]);
-
-        $this->crud->addColumn([   // text
-            'name' => 'duration',
-            'label' => 'Duration'
-        ]);
-
-        $this->crud->addColumn([   // text
-            'name' => 'eligibility',
-            'label' => 'Eligibility'
-        ]);
-
-        $this->crud->addColumn([   // text
-            'name' => 'session',
-            'label' => 'Session'
-        ]);
-
-        /*$this->crud->addColumn([
-           'label' => "Doctor",
-           'type' => 'select_multiple',
-           'name' => 'doctors_id', // the db column for the foreign key
-           'entity' => 'doctors', // the method that defines the relationship in your Model
-           'attribute' => 'name', // foreign key attribute that is shown to user
-           'model' => "App\Models\Doctors" // foreign key model
-        ]);*/
 
         $this->crud->addColumn([
-           'label' => "Group",
+           'label' => "Academic Programs",
            'type' => 'select',
-           'name' => 'sub_group_section_id', // the db column for the foreign key
-           'entity' => 'get_all_sub_groups', // the method that defines the relationship in your Model
-           'attribute' => 'title', // foreign key attribute that is shown to user
-           'model' => "App\Models\SubGroupSection" // foreign key model
+           'name' => 'academic_programs_id', 
+           'entity' => 'get_all_academic_programs',
+           'attribute' => 'program_name', 
+           'model' => "App\Models\Academic_Programs" 
         ]);
 
-        $this->crud->addColumn([   // text
-            'name' => 'page',
-            'label' => 'Page'
-        ]);
-
-         // CRUD Fields
 
         $this->crud->addField([   // text
-            'name' => 'program_name',
-            'label' => 'Program Name'
+            'name' => 'name',
+            'label' => 'Name'
         ]);
 
         $this->crud->addField([   // text
-            'name' => 'title',
-            'label' => 'Title'
+            'name' => 'designation',
+            'label' => 'Designation'
         ]);
 
         $this->crud->addField([   // text
-            'name' => 'sub_title',
-            'label' => 'Sub Title'
+            'name' => 'mobile',
+            'label' => 'Mobile'
         ]);
 
         $this->crud->addField([   // text
-            'name' => 'description',
-            'label' => 'Description',
-            'type' => 'tinymce'
+            'name' => 'email',
+            'label' => 'Email',
+            'type' => 'email'
         ]);
-
-        $this->crud->addField([   // text
-            'name' => 'specialities',
-            'label' => 'Specialities'
-        ]);
-
-        $this->crud->addField([   // text
-            'name' => 'number_of_seats',
-            'label' => 'Number of Seats'
-        ]);
-
-        $this->crud->addField([   // text
-            'name' => 'duration',
-            'label' => 'Duration'
-        ]);
-
-        $this->crud->addField([   // text
-            'name' => 'eligibility',
-            'label' => 'Elibility'
-        ]);
-
-        $this->crud->addField([   // text
-            'name' => 'session',
-            'label' => 'Session'
-        ]);
-
-        /*$this->crud->addField([
-           'label' => "Doctor",
-           'type' => 'select2_multiple',
-           'name' => 'doctors', 
-           'entity' => 'doctors', 
-           'attribute' => 'name', 
-           'model' => "App\Models\Doctors", 
-           'pivot' => true
-        ]);*/
 
         $this->crud->addField([
-           'label' => "Group",
+           'label' => "Academic Programs",
            'type' => 'select2',
-           'name' => 'sub_group_section_id', 
-           'entity' => 'get_all_sub_groups',
-           'attribute' => 'title', 
-           'model' => "App\Models\SubGroupSection" 
+           'name' => 'academic_programs_id', 
+           'entity' => 'get_all_academic_programs',
+           'attribute' => 'program_name', 
+           'model' => "App\Models\Academic_Programs" 
         ]);
 
-        $this->crud->addField([   // text
-            'name' => 'page',
-            'label' => 'Page'
-        ]);
-
-        $this->crud->enableAjaxTable();
-
-        
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
