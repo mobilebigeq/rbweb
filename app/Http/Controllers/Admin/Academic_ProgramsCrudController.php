@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\QuestionSectionRequest as StoreRequest;
-use App\Http\Requests\QuestionSectionRequest as UpdateRequest;
+use App\Http\Requests\Academic_ProgramsRequest as StoreRequest;
+use App\Http\Requests\Academic_ProgramsRequest as UpdateRequest;
 
-class QuestionSectionCrudController extends CrudController
+class Academic_ProgramsCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class QuestionSectionCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\QuestionSection');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/question_section');
-        $this->crud->setEntityNameStrings('Question Section', 'question sections');
+        $this->crud->setModel('App\Models\Academic_Programs');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/academic_programs');
+        $this->crud->setEntityNameStrings('Academic Programs', 'academic programs');
 
         /*
         |--------------------------------------------------------------------------
@@ -31,22 +31,75 @@ class QuestionSectionCrudController extends CrudController
         //$this->crud->setFromDb();
 
         $this->crud->addColumn([   // text
-            'name' => 'question',
-            'label' => 'Question'
+            'name' => 'program_name',
+            'label' => 'Program Name'
         ]);
 
         $this->crud->addColumn([   // text
-            'name' => 'answer',
-            'label' => 'Answer'
+            'name' => 'title',
+            'label' => 'Title'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'sub_title',
+            'label' => 'Sub Title'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'description',
+            'label' => 'Description'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'specialities',
+            'label' => 'Specialities'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'number_of_seats',
+            'label' => 'Number Of Seats'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'duration',
+            'label' => 'Duration'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'eligibility',
+            'label' => 'Eligibility'
+        ]);
+
+        $this->crud->addColumn([   // text
+            'name' => 'session',
+            'label' => 'Session'
+        ]);
+
+        $this->crud->addColumn([
+           'label' => "Doctor",
+           'type' => 'select_multiple',
+           'name' => 'doctors_id', // the db column for the foreign key
+           'entity' => 'doctors', // the method that defines the relationship in your Model
+           'attribute' => 'name', // foreign key attribute that is shown to user
+           'model' => "App\Models\Doctors" // foreign key model
         ]);
 
         $this->crud->addColumn([
            'label' => "Group",
            'type' => 'select',
-           'name' => 'group_section_id', // the db column for the foreign key
-           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
+           'name' => 'group_section_id', 
+           'entity' => 'get_all_groups',
+           'attribute' => 'title', 
+           'model' => "App\Models\GroupSection" 
+        ]);
+
+        $this->crud->addColumn([
+           'label' => "Sub Group",
+           'type' => 'select',
+           'name' => 'sub_group_section_id', // the db column for the foreign key
+           'entity' => 'get_all_sub_groups', // the method that defines the relationship in your Model
            'attribute' => 'title', // foreign key attribute that is shown to user
-           'model' => "App\Models\GroupSection" // foreign key model
+           'model' => "App\Models\SubGroupSection" // foreign key model
         ]);
 
         $this->crud->addColumn([   // text
@@ -54,38 +107,90 @@ class QuestionSectionCrudController extends CrudController
             'label' => 'Page'
         ]);
 
+         // CRUD Fields
 
         $this->crud->addField([   // text
-            'name' => 'question',
-            'label' => 'Question',
-            'type' => 'text'
+            'name' => 'program_name',
+            'label' => 'Program Name'
         ]);
 
-        $this->crud->addField([   // TinyMCE
-            'name' => 'answer',
-            'label' => 'Answer',
-            'type' => 'ckeditor'
+        $this->crud->addField([   // text
+            'name' => 'title',
+            'label' => 'Title'
         ]);
 
+        $this->crud->addField([   // text
+            'name' => 'sub_title',
+            'label' => 'Sub Title'
+        ]);
+
+        $this->crud->addField([   // text
+            'name' => 'description',
+            'label' => 'Description',
+            'type' => 'tinymce'
+        ]);
+
+        $this->crud->addField([   // text
+            'name' => 'specialities',
+            'label' => 'Specialities'
+        ]);
+
+        $this->crud->addField([   // text
+            'name' => 'number_of_seats',
+            'label' => 'Number of Seats'
+        ]);
+
+        $this->crud->addField([   // text
+            'name' => 'duration',
+            'label' => 'Duration'
+        ]);
+
+        $this->crud->addField([   // text
+            'name' => 'eligibility',
+            'label' => 'Elibility'
+        ]);
+
+        $this->crud->addField([   // text
+            'name' => 'session',
+            'label' => 'Session'
+        ]);
 
         $this->crud->addField([
-           'label' => "Select Group",
+           'label' => "Doctor",
+           'type' => 'select2_multiple',
+           'name' => 'doctors', 
+           'entity' => 'doctors', 
+           'attribute' => 'name', 
+           'model' => "App\Models\Doctors", 
+           'pivot' => true
+        ]);
+
+        $this->crud->addField([
+           'label' => "Group",
            'type' => 'select2',
-           'name' => 'group_section_id', // the db column for the foreign key
-           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
-           'attribute' => 'title', // foreign key attribute that is shown to user
-           'model' => "App\Models\GroupSection" // foreign key model
+           'name' => 'group_section_id', 
+           'entity' => 'get_all_groups',
+           'attribute' => 'title', 
+           'model' => "App\Models\GroupSection" 
+        ]);
+
+        $this->crud->addField([
+           'label' => "Sub Group",
+           'type' => 'select2',
+           'name' => 'sub_group_section_id', 
+           'entity' => 'get_all_sub_groups',
+           'attribute' => 'title', 
+           'model' => "App\Models\SubGroupSection" 
         ]);
 
         $this->crud->addField([   // text
             'name' => 'page',
-            'label' => 'Page',
-            'type' => 'text'
+            'label' => 'Page'
         ]);
 
+        $this->crud->enableAjaxTable();
 
         
-        $this->crud->enableAjaxTable();
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

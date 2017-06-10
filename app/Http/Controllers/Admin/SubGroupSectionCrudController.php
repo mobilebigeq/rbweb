@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\QuestionSectionRequest as StoreRequest;
-use App\Http\Requests\QuestionSectionRequest as UpdateRequest;
+use App\Http\Requests\SubGroupSectionRequest as StoreRequest;
+use App\Http\Requests\SubGroupSectionRequest as UpdateRequest;
 
-class QuestionSectionCrudController extends CrudController
+class SubGroupSectionCrudController extends CrudController
 {
     public function setup()
     {
@@ -18,9 +18,9 @@ class QuestionSectionCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\QuestionSection');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/question_section');
-        $this->crud->setEntityNameStrings('Question Section', 'question sections');
+        $this->crud->setModel('App\Models\SubGroupSection');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/sub_group_section');
+        $this->crud->setEntityNameStrings('Sub Group Section', 'sub group sections');
 
         /*
         |--------------------------------------------------------------------------
@@ -28,64 +28,24 @@ class QuestionSectionCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        //$this->crud->setFromDb();
-
-        $this->crud->addColumn([   // text
-            'name' => 'question',
-            'label' => 'Question'
-        ]);
-
-        $this->crud->addColumn([   // text
-            'name' => 'answer',
-            'label' => 'Answer'
-        ]);
-
-        $this->crud->addColumn([
-           'label' => "Group",
-           'type' => 'select',
-           'name' => 'group_section_id', // the db column for the foreign key
-           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
-           'attribute' => 'title', // foreign key attribute that is shown to user
-           'model' => "App\Models\GroupSection" // foreign key model
-        ]);
-
-        $this->crud->addColumn([   // text
-            'name' => 'page',
-            'label' => 'Page'
-        ]);
-
+        $this->crud->setFromDb();
 
         $this->crud->addField([   // text
-            'name' => 'question',
-            'label' => 'Question',
-            'type' => 'text'
+            'name' => 'title',
+            'label' => 'Title'
         ]);
 
-        $this->crud->addField([   // TinyMCE
-            'name' => 'answer',
-            'label' => 'Answer',
+        $this->crud->addField([   // text
+            'name' => 'description',
+            'label' => 'Description',
             'type' => 'ckeditor'
-        ]);
-
-
-        $this->crud->addField([
-           'label' => "Select Group",
-           'type' => 'select2',
-           'name' => 'group_section_id', // the db column for the foreign key
-           'entity' => 'get_all_groups', // the method that defines the relationship in your Model
-           'attribute' => 'title', // foreign key attribute that is shown to user
-           'model' => "App\Models\GroupSection" // foreign key model
         ]);
 
         $this->crud->addField([   // text
             'name' => 'page',
             'label' => 'Page',
-            'type' => 'text'
         ]);
 
-
-        
-        $this->crud->enableAjaxTable();
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');
