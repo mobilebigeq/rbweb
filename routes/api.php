@@ -22,13 +22,16 @@ $api->version('v1', function (Router $api) {
     		});
     		$api->get('highlights', 'App\Api\V1\Controllers\HighlightsController@index');
 
+            $api->post('inpatientfeedback/submit', 'App\Api\V1\Controllers\InpatientFeedbackController@submit');
+
             $api->get('events', 'App\Api\V1\Controllers\EventsController@index');
 
             $api->get('events/{type}', 'App\Api\V1\Controllers\EventsController@events');
-           
+
             $api->get('specialities', 'App\Api\V1\Controllers\SpecialitiesController@index');
 
             $api->get('doctors', 'App\Api\V1\Controllers\DoctorsController@index');
+            $api->get('doctors/{id}', 'App\Api\V1\Controllers\DoctorsController@show');
 
             $api->get('hospitals', 'App\Api\V1\Controllers\HospitalsController@index');
 
@@ -37,7 +40,7 @@ $api->version('v1', function (Router $api) {
             $api->get('centers', 'App\Api\V1\Controllers\CentersController@index');
 
             $api->get('careers', 'App\Api\V1\Controllers\CareersController@index');
-    		
+
             $api->get('boardofDirectors', 'App\Api\V1\Controllers\BoardOfDirectorsController@index');
 
 
@@ -50,11 +53,11 @@ $api->version('v1', function (Router $api) {
             $api->get('about','App\Api\V1\Controllers\AboutController@index');
 
             $api->get('healthcare_service','App\Api\V1\Controllers\Healthcare_serviceController@index');
-            
+
             $api->get('healthcare_service/{id}','App\Api\V1\Controllers\Healthcare_serviceController@show');
-            
+
             $api->get('brief_facilities','App\Api\V1\Controllers\Brief_facilitiesController@index');
-            
+
             $api->get('brief_facilities/{id}','App\Api\V1\Controllers\Brief_facilitiesController@show');
 
             $api->get('our_specialities','App\Api\V1\Controllers\Our_specialitiesController@index');
@@ -88,14 +91,14 @@ $api->version('v1', function (Router $api) {
 
               $api->get('doctors_desk_questions','App\Api\V1\Controllers\Doctors_desk_questionsController@index');
               $api->get('doctors_desk_questions/{page}','App\Api\V1\Controllers\Doctors_desk_questionsController@show');
-              
+
 
 
 
               $api->get('vaccination_details','App\Api\V1\Controllers\Vaccination_detailsController@index');
 
               $api->get('vaccination_contacts','App\Api\V1\Controllers\Vaccination_contactsController@index');
-              
+
               $api->get('description_section','App\Api\V1\Controllers\Description_SectionController@index');
               $api->get('description_section/{page}','App\Api\V1\Controllers\Description_SectionController@show');
 
@@ -123,7 +126,7 @@ $api->version('v1', function (Router $api) {
               //Doctor Quality Accreditation Mapping
               $api->get('doctor_quality_accreditation', 'App\Api\V1\Controllers\DoctorsController@DoctorQualityAccreditation');
 
-              // Packages Section 
+              // Packages Section
 
               $api->get('package_section/{page}', 'App\Api\V1\Controllers\FaqController@GroupPackages');
 
@@ -136,6 +139,7 @@ $api->version('v1', function (Router $api) {
 
             
               
+
 
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');
     //     $api->put('movie/{id}', 'App\Api\V1\Controllers\MovieController@update');
