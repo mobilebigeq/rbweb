@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Speciality_masters extends Model
+class QuizSection extends Model
 {
     use CrudTrait;
 
@@ -15,11 +15,11 @@ class Speciality_masters extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'speciality_masters';
+    protected $table = 'quiz_question';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['speciality'];
+    protected $fillable = ['quiz_group_id', 'question', 'option1', 'option2', 'option3', 'option4', 'option5', 'option6', 'answer', 'page'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -35,13 +35,11 @@ class Speciality_masters extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function doctors() {
-        return $this->belongsToMany('App\Models\Doctors', 'doctor_speciality_masters', 'doctor_specialization_masters_id', 'doctors_id');
+    public function get_all_quiz_group()
+    {
+        return $this->belongsTo('App\Models\QuizGroup', 'quiz_group_id');
     }
 
-    public function groups(){
-        return $this->hasMany('App\Models\QuizGroup');
-    }
 
     /*
     |--------------------------------------------------------------------------
