@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
+use DB;
 
 class QuizGroup extends Model
 {
@@ -19,7 +20,7 @@ class QuizGroup extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['speciality_masters_id', 'title', 'image', 'page', 'description'];
+    protected $fillable = ['speciality_masters_id', 'title', 'image', 'page', 'description', 'name', 'email', 'phone', 'city', 'quiz_group_id'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,6 +35,11 @@ class QuizGroup extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+
+    protected function create($params)
+    {
+      return DB::table('submit_quiz')->insertGetId($params);
+    }
 
     public function get_all_speciality()
     {

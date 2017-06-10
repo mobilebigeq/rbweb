@@ -38,46 +38,19 @@ class FeedbackController extends Controller
     {
       // Save feedback details
       $id = Feedback::create([
-        'health_problem' => $request_data['health_problem'],
-        'experience_with_doctor' => $request_data['doctor_experience'],
-        'doctor_friendliness' => (!empty($request_data['doctorFriendliness']) ? $request_data['doctorFriendliness'] : '0' ),
-        'value_for_money' => (!empty($request_data['valueForMoney']) ? $request_data['valueForMoney'] : '0' ),
-        'explanation_of_health_issue' => (!empty($request_data['healthIssue']) ? $request_data['healthIssue'] : '0' ),
-        'treatment_satisfaction' => (!empty($request_data['treatmentSatisfaction']) ? $request_data['treatmentSatisfaction'] : '0' ),
-        'doctor_recommend' => (!empty($request_data['recommend_doctor']) ? $request_data['recommend_doctor'] : '0' ),
-        'patient_name' => $request_data['patient_name'],
-        'patient_id' => (!empty($request_data['patient_id']) ? $request_data['patient_id'] : '0' ),
-        'patient_mobile' => $request_data['mobile'],
-        'submit_as_anonymously' => (!empty($request_data['submit_as_anonymously']) ? $request_data['submit_as_anonymously'] : '0' )
+        'doctor_id' => $request->get('doctor_id'),
+        'health_problem' => $request->get('health_problem'),
+        'experience_with_doctor' => $request->get('doctor_experience'),
+        'doctor_friendliness' => (!empty($request->get('doctorFriendliness')) ? $request->get('doctorFriendliness') : '0' ),
+        'value_for_money' => (!empty($request->get('valueForMoney')) ? $request->get('valueForMoney') : '0' ),
+        'explanation_of_health_issue' => (!empty($request->get('healthIssue')) ? $request->get('healthIssue') : '0' ),
+        'treatment_satisfaction' => (!empty($request->get('treatmentSatisfaction')) ? $request->get('treatmentSatisfaction') : '0' ),
+        'doctor_recommend' => (!empty($request->get('recommend_doctor')) ? $request->get('recommend_doctor') : '0' ),
+        'patient_name' => $request->get('patient_name'),
+        'patient_id' => (!empty($request->get('patient_id')) ? $request->get('patient_id') : '0' ),
+        'patient_mobile' => $request->get('mobile'),
+        'submit_as_anonymously' => (!empty($request->get('submit_as_anonymously')) ? $request->get('submit_as_anonymously') : '0' )
       ]);
-      //
-      // if($id)
-      // {
-      //   // Save family members details
-      //   $family_member_spouse = $request_data['family_member_spouse'];
-      //   $family_member_name = $request_data['family_member_name'];
-      //   $family_member_age = $request_data['family_member_age'];
-      //   $family_member_gender = $request_data['family_member_gender'];
-      //   $family_member_spouse = $request_data['family_member_spouse'];
-      //   $family_member_uhid = $request_data['family_member_uhid'];
-      //
-      //   if(!empty($request_data['family_member_spouse']))
-      //   {
-      //     foreach($family_member_spouse as $key => $val)
-      //     {
-      //       DB::table('inpatient_family_members')->insert([
-      //         'feedback_id' => $id,
-      //         'spouse' => (!empty($family_member_spouse[$key]) ? $family_member_spouse[$key] : '' ),
-      //         'name' => (!empty($family_member_name[$key]) ? $family_member_name[$key] : '' ),
-      //         'age' => (!empty($family_member_age[$key]) ? $family_member_age[$key] : '' ),
-      //         'gender' => (!empty($family_member_gender[$key]) ? $family_member_gender[$key] : '' ),
-      //         'uhid' => (!empty($family_member_uhid[$key]) ? $family_member_uhid[$key] : '' )
-      //       ]);
-      //     }
-      //
-      //   }
-      //
-      // }
 
     }
 
