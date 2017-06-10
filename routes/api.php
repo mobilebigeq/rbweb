@@ -137,6 +137,8 @@ $api->version('v1', function (Router $api) {
 
             $api->get('academic_programs','App\Api\V1\Controllers\AcademicProgramsController@index');
 
+            //quiz question
+            $api->get('quizsection/{id}', 'App\Api\V1\Controllers\QuizSectionController@index');
             
               
 
