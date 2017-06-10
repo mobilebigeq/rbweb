@@ -22,6 +22,10 @@ $api->version('v1', function (Router $api) {
     		});
     		$api->get('highlights', 'App\Api\V1\Controllers\HighlightsController@index');
 
+            $api->post('quiz/submit', 'App\Api\V1\Controllers\QuizSectionController@submit');
+
+            $api->post('feedback/submit', 'App\Api\V1\Controllers\FeedbackController@submit');
+
             $api->post('inpatientfeedback/submit', 'App\Api\V1\Controllers\InpatientFeedbackController@submit');
 
             $api->get('events', 'App\Api\V1\Controllers\EventsController@index');
@@ -132,15 +136,13 @@ $api->version('v1', function (Router $api) {
 
 
             $api->get('mission_vision','App\Api\V1\Controllers\OurMissionController@index');
-            $api->get('mission_vision/{page}','App\Api\V1\Controllers\OurMissionController@show');
+            $api->get('our_mission/{page}','App\Api\V1\Controllers\OurMissionController@show');
             $api->get('vaccination','App\Api\V1\Controllers\VaccinationController@index');
 
-            $api->get('academic_programs/{page}','App\Api\V1\Controllers\AcademicProgramsController@index');
+            $api->get('academic_programs','App\Api\V1\Controllers\AcademicProgramsController@index');
 
-            //quiz question
-            $api->get('quizsection/{id}', 'App\Api\V1\Controllers\QuizSectionController@index');
-            
-              
+
+
 
 
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');
