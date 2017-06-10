@@ -31,6 +31,7 @@ $api->version('v1', function (Router $api) {
             $api->get('specialities', 'App\Api\V1\Controllers\SpecialitiesController@index');
 
             $api->get('doctors', 'App\Api\V1\Controllers\DoctorsController@index');
+            $api->get('doctors/{id}', 'App\Api\V1\Controllers\DoctorsController@show');
 
             $api->get('hospitals', 'App\Api\V1\Controllers\HospitalsController@index');
 

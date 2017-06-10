@@ -48,6 +48,8 @@ CRUD::resource('group_section', 'GroupSectionCrudController');
 CRUD::resource('question_section', 'QuestionSectionCrudController');
 CRUD::resource('doctor_quality_accreditation', 'Doctor_quality_accreditation_mappingCrudController');
 
+CRUD::resource('academic_programs', 'Academic_ProgramsCrudController');
+CRUD::resource('sub_group_section', 'SubGroupSectionCrudController');
 CRUD::resource('packages_section', 'Packages_SectionCrudController');
 
 

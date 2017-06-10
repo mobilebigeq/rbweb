@@ -21,4 +21,9 @@ class DoctorsController extends Controller
 	public function DoctorQualityAccreditation(){
 		return Doctor_quality_accreditation_mapping::with('doctors')->get();
 	}
+
+	public function show($id)
+	{
+		return Doctors::with('centers')->where('id', $id)->get();	
+	}
 }
