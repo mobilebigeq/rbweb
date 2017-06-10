@@ -123,6 +123,10 @@ $api->version('v1', function (Router $api) {
               //Doctor Quality Accreditation Mapping
               $api->get('doctor_quality_accreditation', 'App\Api\V1\Controllers\DoctorsController@DoctorQualityAccreditation');
 
+              // Packages Section 
+
+              $api->get('package_section/{page}', 'App\Api\V1\Controllers\FaqController@GroupPackages');
+
             
               
 

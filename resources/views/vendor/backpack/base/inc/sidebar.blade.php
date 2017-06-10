@@ -61,6 +61,7 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/question_section')}}"><i class="fa fa-cog"></i> <span>Question Section</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctor_quality_accreditation')}}"><i class="fa fa-cog"></i> <span>Quality Accreditation Mapping</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/academic_programs')}}"><i class="fa fa-cog"></i> <span>Academic Programs</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/packages_section')}}"><i class="fa fa-cog"></i> <span>Package Section</span></a></li>
 
               </ul>
           </li>
