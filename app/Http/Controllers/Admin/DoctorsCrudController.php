@@ -29,6 +29,16 @@ class DoctorsCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
+
+        $this->crud->addField([ // image
+            'label' => "Profile Pic",
+            'name' => "profile",
+            'type' => 'image',
+            'upload' => true,
+        //    'crop' => true, // set to true to allow cropping, false to disable
+            'aspect_ratio' => 1, // ommit or set to 0 to allow any aspect ratio
+            'prefix' => 'uploads' // in case you only store the filename in the database, this text will be prepended to the database value
+        ]);
         
         $this->crud->addField([ // image
             'label' => "Photo",
@@ -106,6 +116,7 @@ class DoctorsCrudController extends CrudController
         // $this->crud->removeColumns(['column_name_1', 'column_name_2']); // remove an array of columns from the stack
         // $this->crud->setColumnDetails('column_name', ['attribute' => 'value']); // adjusts the properties of the passed in column (by name)
         // $this->crud->setColumnsDetails(['column_1', 'column_2'], ['attribute' => 'value']);
+        $this->crud->setColumnsDetails('profile', ['type'=>'image']);
         $this->crud->setColumnsDetails('photo', ['type'=>'image']);
         // $this->crud->addColumn([
         //     'type' => 'model_function',
@@ -114,53 +125,53 @@ class DoctorsCrudController extends CrudController
         //    ]);
 
         $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Hospitals", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'centers', // the method that defines the relationship in your Model
-        'entity' => 'centers', // the method that defines the relationship in your Model
-        'attribute' => "center_name", // foreign key attribute that is shown to user
-        'model' => "App\Models\Centers", // foreign key model
+            'label' => "Hospitals", // Table column heading
+            'type' => "select_multiple",
+            'name' => 'centers', // the method that defines the relationship in your Model
+            'entity' => 'centers', // the method that defines the relationship in your Model
+            'attribute' => "center_name", // foreign key attribute that is shown to user
+            'model' => "App\Models\Centers", // foreign key model
         ]);
 
 
 
         $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Doctor_Specialization", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'doctor_specializations', // the method that defines the relationship in your Model
-        'entity' => 'doctor_specializations', // the method that defines the relationship in your Model
-        'attribute' => "specialization", // foreign key attribute that is shown to user
-        'model' => "App\Models\DoctorSpecialization", // foreign key model
+            'label' => "Doctor Specialization", // Table column heading
+            'type' => "select_multiple",
+            'name' => 'doctor_specializations', // the method that defines the relationship in your Model
+            'entity' => 'doctor_specializations', // the method that defines the relationship in your Model
+            'attribute' => "specialization", // foreign key attribute that is shown to user
+            'model' => "App\Models\DoctorSpecialization", // foreign key model
         ]);
 
 
          $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Speciality_Masters", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'speciality_masters', // the method that defines the relationship in your Model
-        'entity' => 'speciality_masters', // the method that defines the relationship in your Model
-        'attribute' => "speciality", // foreign key attribute that is shown to user
-        'model' => "App\Models\Speciality_masters", // foreign key model
+            'label' => "Speciality Masters", // Table column heading
+            'type' => "select_multiple",
+            'name' => 'speciality_masters', // the method that defines the relationship in your Model
+            'entity' => 'speciality_masters', // the method that defines the relationship in your Model
+            'attribute' => "speciality", // foreign key attribute that is shown to user
+            'model' => "App\Models\Speciality_masters", // foreign key model
         ]);
 
 
           $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Our_speciality_features", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'our_speciality_features', // the method that defines the relationship in your Model
-        'entity' => 'our_speciality_features', // the method that defines the relationship in your Model
-        'attribute' => "title", // foreign key attribute that is shown to user
-        'model' => "App\Models\Our_speciality_features", // foreign key model
+            'label' => "Our Speciality Features", // Table column heading
+            'type' => "select_multiple",
+            'name' => 'our_speciality_features', // the method that defines the relationship in your Model
+            'entity' => 'our_speciality_features', // the method that defines the relationship in your Model
+            'attribute' => "title", // foreign key attribute that is shown to user
+            'model' => "App\Models\Our_speciality_features", // foreign key model
         ]);
 
 
-           $this->crud->addColumn([ // n-n relationship (with pivot table)
-        'label' => "Awards_history", // Table column heading
-        'type' => "select_multiple",
-        'name' => 'awards_history', // the method that defines the relationship in your Model
-        'entity' => 'awards_history', // the method that defines the relationship in your Model
-        'attribute' => "subtitle", // foreign key attribute that is shown to user
-        'model' => "App\Models\Awards_history", // foreign key model
+        $this->crud->addColumn([ // n-n relationship (with pivot table)
+            'label' => "Awards History", // Table column heading
+            'type' => "select_multiple",
+            'name' => 'awards_history', // the method that defines the relationship in your Model
+            'entity' => 'awards_history', // the method that defines the relationship in your Model
+            'attribute' => "subtitle", // foreign key attribute that is shown to user
+            'model' => "App\Models\Awards_history", // foreign key model
         ]);
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
