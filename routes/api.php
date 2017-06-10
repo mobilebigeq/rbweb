@@ -131,6 +131,14 @@ $api->version('v1', function (Router $api) {
               $api->get('package_section/{page}', 'App\Api\V1\Controllers\FaqController@GroupPackages');
 
 
+            $api->get('mission_vision','App\Api\V1\Controllers\OurMissionController@index');
+            $api->get('our_mission/{page}','App\Api\V1\Controllers\OurMissionController@show');
+            $api->get('vaccination','App\Api\V1\Controllers\VaccinationController@index');
+
+            $api->get('academic_programs','App\Api\V1\Controllers\AcademicProgramsController@index');
+
+            
+              
 
 
     //     $api->get('movie/{id}', 'App\Api\V1\Controllers\MovieController@show');

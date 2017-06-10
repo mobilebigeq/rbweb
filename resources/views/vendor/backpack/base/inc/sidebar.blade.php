@@ -68,44 +68,18 @@
 
 
           <li><a><i class="fa fa-cog"></i> <span>Children’s Health</span></a>
-              <ul class="treeview-menu">
-
+            <ul class="treeview-menu">
               <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/about') }}"><i class="fa fa-cog"></i> <span>About Child Care</span></a></li>
-
-               <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors') }}"><i class="fa fa-cog"></i> <span>Doctors</span></a></li>
-
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk') }}"><i class="fa fa-cog"></i> <span>Doctors Desk</span></a></li>
-
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk_questions') }}"><i class="fa fa-cog"></i> <span>Doctors Desk Questions</span></a></li>
-
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_specialities') }}"><i class="fa fa-cog"></i> <span>Our Specialities</span></a></li>
-
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_speciality_features') }}"><i class="fa fa-cog"></i> <span>Our Speciality Features</span></a></li>
-
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/testimonial_details') }}"><i class="fa fa-cog"></i> <span>Testimonial Details</span></a></li>
-
-
-                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/vaccination_details') }}"><i class="fa fa-cog"></i> <span>Vaccination Details</span></a></li>
-
-
-                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/vaccination_contacts') }}"><i class="fa fa-cog"></i> <span>Vaccination_contacts</span></a></li>
-                   
-
-
-
-
-                 
-
-
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/centers') }}"><i class="fa fa-cog"></i> <span>Centers</span></a></li>
-
-
-
-
-                   
-
-
-              </ul>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors') }}"><i class="fa fa-cog"></i> <span>Doctors</span></a></li>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk') }}"><i class="fa fa-cog"></i> <span>Doctors Desk</span></a></li>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/doctors_desk_questions') }}"><i class="fa fa-cog"></i> <span>Doctors Desk Questions</span></a></li>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_specialities') }}"><i class="fa fa-cog"></i> <span>Our Specialities</span></a></li>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/our_speciality_features') }}"><i class="fa fa-cog"></i> <span>Our Speciality Features</span></a></li>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/testimonial_details') }}"><i class="fa fa-cog"></i> <span>Testimonial Details</span></a></li>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/vaccination_details') }}"><i class="fa fa-cog"></i> <span>Vaccination Details</span></a></li>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/vaccination_contacts') }}"><i class="fa fa-cog"></i> <span>Vaccination_contacts</span></a></li>
+              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/centers') }}"><i class="fa fa-cog"></i> <span>Centers</span></a></li>
+            </ul>
           </li>
 
           <!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/tag') }}"><i class="fa fa-tag"></i> <span>Manage Tags</span></a></li> -->

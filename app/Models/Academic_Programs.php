@@ -36,7 +36,7 @@ class Academic_Programs extends Model
     */
 
     public function doctors() {
-        return $this->belongsToMany('App\Models\Doctors', 'doctor_programs_mapping', 'doctors_id', 'academic_programs_id');
+        return $this->belongsToMany('App\Models\Doctors', 'doctor_programs_mapping', 'academic_programs_id', 'doctors_id');
     }
 
     public function get_all_groups()
