@@ -15,10 +15,10 @@ use DB;
 class AcademicProgramsController extends Controller
 {
 	
-    public function index() 
+    public function index($page) 
     {
         
-        $acedamic_data = GroupSection::with('sub_group','sub_group.academic_programs','sub_group.academic_programs.academic_contact','questions')->get();
+        $acedamic_data = GroupSection::with('sub_group','sub_group.academic_programs','sub_group.academic_programs.academic_contact','questions')->where('page', $page)->get();
 
         return $acedamic_data;
     }

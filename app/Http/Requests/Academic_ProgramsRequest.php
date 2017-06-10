@@ -28,7 +28,7 @@ class Academic_ProgramsRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequ
             'program_name' => 'required|min:5|max:255',
             'title' => 'required|min:5|max:255',
             'sub_title' => 'required',
-            'description' => 'required|min:5|max:255',
+            'description' => 'required',
             'specialities' => 'required',
             'number_of_seats' => 'required|numeric|min:1'
         ];

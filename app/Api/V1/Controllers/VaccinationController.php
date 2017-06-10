@@ -12,13 +12,13 @@ use Dingo\Api\Routing\Helpers;
 
 class VaccinationController extends Controller
 {
-    public function index() 
+    public function index($page) 
     {
         $data = [];
 
-        $data['vaccination_detail'] = Vaccination_details::get();
-        $data['vaccination_contact'] = Vaccination_contact::get();
-
+        $data['vaccination_detail'] = Vaccination_details::where('page', $page)->get();
+        $data['vaccination_contact'] = Vaccination_contact::where('page', $page)->get();
+        
 
         return $data;
 

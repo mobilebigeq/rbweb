@@ -132,10 +132,10 @@ $api->version('v1', function (Router $api) {
 
 
             $api->get('mission_vision','App\Api\V1\Controllers\OurMissionController@index');
-            $api->get('our_mission/{page}','App\Api\V1\Controllers\OurMissionController@show');
+            $api->get('mission_vision/{page}','App\Api\V1\Controllers\OurMissionController@show');
             $api->get('vaccination','App\Api\V1\Controllers\VaccinationController@index');
 
-            $api->get('academic_programs','App\Api\V1\Controllers\AcademicProgramsController@index');
+            $api->get('academic_programs/{page}','App\Api\V1\Controllers\AcademicProgramsController@index');
 
             
               
