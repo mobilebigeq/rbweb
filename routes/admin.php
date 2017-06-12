@@ -57,3 +57,6 @@ CRUD::resource('academic_contact', 'Academic_ContactCrudController');
 CRUD::resource('quizsection', 'QuizSectionCrudController');
 CRUD::resource('quizgroup', 'QuizGroupCrudController');
 
+CRUD::resource('knowledge_category', 'Knowledge_CategoryCrudController');
+CRUD::resource('knowledge_center', 'Knowledge_CenterCrudController');
+

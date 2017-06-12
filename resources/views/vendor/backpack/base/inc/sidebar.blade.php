@@ -66,6 +66,8 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/packages_section')}}"><i class="fa fa-cog"></i> <span>Package Section</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/quizgroup')}}"><i class="fa fa-cog"></i> <span>Quiz Group</span></a></li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/quizsection')}}"><i class="fa fa-cog"></i> <span>Quiz Section</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/knowledge_category')}}"><i class="fa fa-cog"></i> <span>Knowledge Category</span></a></li>
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/knowledge_center')}}"><i class="fa fa-cog"></i> <span>Knowledge Center</span></a></li>
               </ul>
           </li>
 

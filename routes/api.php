@@ -146,6 +146,9 @@ $api->version('v1', function (Router $api) {
             $api->get('search_events/{date}', 'App\Api\V1\Controllers\EventsController@EventsSearchByDate');
 
 
+            $api->get('knowledge_center/{speciality_id}','App\Api\V1\Controllers\Knowledge_CenterController@index');
+
+            $api->get('quiz_section/{id}','App\Api\V1\Controllers\QuizSectionController@index');
 
 
 
