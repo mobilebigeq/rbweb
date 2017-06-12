@@ -115,7 +115,7 @@ $api->version('v1', function (Router $api) {
 
               //Doctor Speciality Master By Name & By ID
               $api->get('doctors_speciality_master/{name}', 'App\Api\V1\Controllers\Speciality_mastersController@DoctorSpecialityMasterByName');
-              $api->get('doctors_speciality_master_id/{id}', 'App\Api\V1\Controllers\Speciality_mastersController@DoctorSpecialityMasterByID');
+              $api->get('doctors_speciality_master_id/{slug}', 'App\Api\V1\Controllers\Speciality_mastersController@DoctorSpecialityMasterByID');
 
               //Doctor Center By ID
               $api->get('doctors_centers/{id}', 'App\Api\V1\Controllers\CentersController@DoctorsCenterByID');
@@ -140,6 +140,12 @@ $api->version('v1', function (Router $api) {
             $api->get('vaccination','App\Api\V1\Controllers\VaccinationController@index');
 
             $api->get('academic_programs','App\Api\V1\Controllers\AcademicProgramsController@index');
+
+            //Events searching date wise
+
+            $api->get('search_events/{date}', 'App\Api\V1\Controllers\EventsController@EventsSearchByDate');
+
+
 
 
 

@@ -19,7 +19,7 @@ class Speciality_masters extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-     protected $fillable = ['speciality'];
+     protected $fillable = ['speciality','slug', 'show_status'];
     // protected $hidden = [];
     // protected $dates = [];
 

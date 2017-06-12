@@ -45,7 +45,7 @@ class Awards_historyCrudController extends CrudController
             ]);
 
 
-         $this->crud->addField([ // select_from_array
+        $this->crud->addField([ // select_from_array
             'name' => 'awards_type',
             'label' => "Awards_type",
             'type' => 'select_from_array',

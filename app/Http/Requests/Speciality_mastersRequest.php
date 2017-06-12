@@ -26,6 +26,8 @@ class Speciality_mastersRequest extends \Backpack\CRUD\app\Http\Requests\CrudReq
     {
         return [
             'speciality' => 'required',
+            'slug' => 'required',
+            'show_status' => 'required',
         ];
     }
 

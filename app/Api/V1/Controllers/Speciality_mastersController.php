@@ -17,7 +17,7 @@ class Speciality_mastersController extends Controller
 
     public function index() 
     {
-        return Speciality_masters::get();
+        return Speciality_masters::where('show_status', 'active')->get();
     }
 
     public function DoctorSpecialityMasterByName($name)
@@ -25,10 +25,10 @@ class Speciality_mastersController extends Controller
 	    return Speciality_masters::with('doctors', 'doctors.centers')->where('speciality', $name)->get();
 	}
 
-    public function DoctorSpecialityMasterByID($id)
+    public function DoctorSpecialityMasterByID($slug)
 	{
         
-	    return Speciality_masters::with('doctors')->where('id', $id)->get();
+	    return Speciality_masters::with('doctors')->where('slug', $slug)->get();
         
 	}
    

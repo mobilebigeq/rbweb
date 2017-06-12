@@ -23,7 +23,7 @@ class Speciality_mastersCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Speciality_masters');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/speciality_masters');
-        $this->crud->setEntityNameStrings('speciality_master', 'speciality_masters');
+        $this->crud->setEntityNameStrings('Speciality Master', 'speciality masters');
 
         /*
         |--------------------------------------------------------------------------
@@ -32,6 +32,14 @@ class Speciality_mastersCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
+
+        $this->crud->addField([ // select_from_array
+            'name' => 'show_status',
+            'label' => "Show on Website",
+            'type' => 'select_from_array',
+            'options' => ['active' => 'Active', 'inactive' => 'Inactive'],
+            'allows_null' => false
+        ]);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
