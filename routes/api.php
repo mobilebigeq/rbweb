@@ -141,6 +141,10 @@ $api->version('v1', function (Router $api) {
 
             $api->get('academic_programs','App\Api\V1\Controllers\AcademicProgramsController@index');
 
+            $api->get('knowledge_center/{speciality_id}','App\Api\V1\Controllers\Knowledge_CenterController@index');
+
+            $api->get('quiz_section/{id}','App\Api\V1\Controllers\QuizSectionController@index');
+
 
 
 
