@@ -18,6 +18,9 @@ class InpatientFeedbackController extends Controller
       $messages = $errors = [];
 
       $request_data = $request->all();
+
+      $userDetails = $request->get('userDetails');
+
       // echo '<pre>'; print_r($request_data); exit;
 
       $validator = Validator::make($request->all(), [
@@ -41,40 +44,41 @@ class InpatientFeedbackController extends Controller
       {
         // Save feedback details
         $id = InpatientFeedback::create([
-          'city' => $request_data['city'],
-          'health_card_no' => $request_data['health_card_no'],
-          'uhid_no' => $request_data['uhid_no'],
-          'name' => $request_data['name'],
-          'age' => $request_data['age'],
-          'mobile' => $request_data['mobile'],
-          'email' => $request_data['email'],
-          'company' => $request_data['company'],
-          'area' => $request_data['area'],
-          'zip' => $request_data['zip'],
-          'category' => $request_data['category']
+          'city' => $request->get('city'),
+          'health_card_no' => $request->get('health_card_no'),
+          'uhid_no' => $request->get('uhid_no'),
+          'name' => $request->get('name'),
+          'age' => $request->get('age'),
+          'mobile' => $request->get('mobile'),
+          'email' => $request->get('email'),
+          'company' => $request->get('company'),
+          'area' => $request->get('area'),
+          'zip' => $request->get('zip'),
+          'category' => $request->get('category')
         ]);
 
         if($id)
         {
           // Save family members details
-          $family_member_spouse = $request_data['family_member_spouse'];
-          $family_member_name = $request_data['family_member_name'];
-          $family_member_age = $request_data['family_member_age'];
-          $family_member_gender = $request_data['family_member_gender'];
-          $family_member_spouse = $request_data['family_member_spouse'];
-          $family_member_uhid = $request_data['family_member_uhid'];
+          $family_member_spouse = $request->get('family_member_spouse');
+          $family_member_name = $request->get('family_member_name');
+          $family_member_age = $request->get('family_member_age');
+          $family_member_gender = $request->get('family_member_gender');
+          $family_member_spouse = $request->get('family_member_spouse');
+          $family_member_uhid = $request->get('family_member_uhid');
 
-          if(!empty($request_data['family_member_spouse']))
+          $userDetails = $request->get('userDetails');
+          if(!empty($userDetails))
           {
-            foreach($family_member_spouse as $key => $val)
+            foreach($userDetails as $key => $val)
             {
               DB::table('inpatient_family_members')->insert([
                 'feedback_id' => $id,
-                'spouse' => (!empty($family_member_spouse[$key]) ? $family_member_spouse[$key] : '' ),
-                'name' => (!empty($family_member_name[$key]) ? $family_member_name[$key] : '' ),
-                'age' => (!empty($family_member_age[$key]) ? $family_member_age[$key] : '' ),
-                'gender' => (!empty($family_member_gender[$key]) ? $family_member_gender[$key] : '' ),
-                'uhid' => (!empty($family_member_uhid[$key]) ? $family_member_uhid[$key] : '' )
+                'spouse' => $val['family_member_spouse'],
+                'name' => $val['family_member_name'],
+                'age' => $val['family_member_age'],
+                'gender' => $val['family_member_gender'],
+                'uhid' => $val['family_member_uhid']
               ]);
             }
 
