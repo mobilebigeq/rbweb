@@ -150,6 +150,8 @@ $api->version('v1', function (Router $api) {
 
             $api->get('quiz_section/{id}','App\Api\V1\Controllers\QuizSectionController@index');
 
+            $api->get('insurance/{id}','App\Api\V1\Controllers\InsuranceController@index');
+
 
 
 
