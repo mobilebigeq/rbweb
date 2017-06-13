@@ -121,7 +121,7 @@ $api->version('v1', function (Router $api) {
               $api->get('doctors_centers/{id}', 'App\Api\V1\Controllers\CentersController@DoctorsCenterByID');
 
               //Doctor Our Specility Features
-              $api->get('doctors_specility_features/{id}', 'App\Api\V1\Controllers\Our_speciality_featuresController@DoctorSpecialityFeaturesByID');
+              $api->get('doctors_specility_features/{name}', 'App\Api\V1\Controllers\Our_speciality_featuresController@DoctorSpecialityFeaturesByID');
 
 
               //About Us
