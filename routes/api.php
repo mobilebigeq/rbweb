@@ -53,6 +53,7 @@ $api->version('v1', function (Router $api) {
             $api->get('page_description/{id}','App\Api\V1\Controllers\Page_descriptionController@show');
 
             $api->get('speciality_masters','App\Api\V1\Controllers\Speciality_mastersController@index');
+            $api->get('speciality_masters_by_name/{speciality}','App\Api\V1\Controllers\Speciality_mastersController@slugBySpeciality');
 
             $api->get('about','App\Api\V1\Controllers\AboutController@index');
 

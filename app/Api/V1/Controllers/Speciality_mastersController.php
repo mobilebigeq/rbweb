@@ -31,5 +31,10 @@ class Speciality_mastersController extends Controller
 	    return Speciality_masters::with('doctors')->where('slug', $slug)->get();
         
 	}
+
+	public function slugBySpeciality($speciality)
+	{
+		return Speciality_masters::where('speciality', $speciality)->get();
+	}
    
 }
