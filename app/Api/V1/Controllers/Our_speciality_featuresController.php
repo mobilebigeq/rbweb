@@ -32,4 +32,9 @@ class Our_speciality_featuresController extends Controller
     public function DoctorSpecialityFeaturesByID($name){
         return Our_speciality_features::with('doctors', 'doctors.centers')->where('title', $name)->get();
     }
+
+    public function specialityBySlug($slug)
+    {
+        return Our_speciality_features::where('slug',$slug)->get();
+    }
 }

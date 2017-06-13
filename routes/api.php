@@ -69,6 +69,7 @@ $api->version('v1', function (Router $api) {
 
             $api->get('our_speciality_features','App\Api\V1\Controllers\Our_speciality_featuresController@index');
             $api->get('our_speciality_features/{page}','App\Api\V1\Controllers\Our_speciality_featuresController@show');
+            $api->get('our_speciality_features/slug/{slug}','App\Api\V1\Controllers\Our_speciality_featuresController@specialityBySlug');
 
             $api->get('our_mission','App\Api\V1\Controllers\Our_missionController@index');
             $api->get('our_mission/{page}','App\Api\V1\Controllers\Our_missionController@show');

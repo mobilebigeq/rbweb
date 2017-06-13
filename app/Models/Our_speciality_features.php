@@ -19,7 +19,7 @@ class Our_speciality_features extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['image','title','description','link','page','speciality_masters_id'];
+    protected $fillable = ['image','title','description','link','page','speciality_masters_id', 'slug'];
     // protected $hidden = [];
     // protected $dates = [];
 
