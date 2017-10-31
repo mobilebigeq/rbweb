@@ -13,11 +13,11 @@ class CreateDoctorsQualityAccreditationMappingTable extends Migration
      */
     public function up()
     {
-        Schema::create('doctors_quality_accreditation_mapping', function (Blueprint $table) {
-            $table->increments('id');
-            $table->increments('doctors_id');
-            $table->timestamps();
-        });
+        // Schema::create('doctors_quality_accreditation_mapping', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->increments('doctors_id');
+        //     $table->timestamps();
+        // });
     }
 
     /**

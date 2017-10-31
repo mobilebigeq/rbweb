@@ -62,4 +62,7 @@ CRUD::resource('knowledge_center', 'Knowledge_CenterCrudController');
 
 CRUD::resource('insurance_category', 'Insurance_CategoryCrudController');
 CRUD::resource('insurance', 'InsuranceCrudController');
+CRUD::resource('dummy_questions', 'DummyQuestionCrudController');
+CRUD::resource('questions','QuestionCrudController');
+CRUD::resource('answers','AnswerCrudController');
 

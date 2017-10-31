@@ -13,14 +13,14 @@ class CreateDescriptionSectionTable extends Migration
      */
     public function up()
     {
-        Schema::create('description_section', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->longtext('description');
-            $table->string('image');
-            $table->string('page');
-            $table->timestamps();
-        });
+        // Schema::create('description_section', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('title');
+        //     $table->longtext('description');
+        //     $table->string('image');
+        //     $table->string('page');
+        //     $table->timestamps();
+        // });
     }
 
     /**

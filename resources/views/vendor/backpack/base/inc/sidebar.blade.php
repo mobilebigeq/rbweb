@@ -89,6 +89,19 @@
             </ul>
           </li>
 
+          <li><a><i class="fa fa-cog"></i> <span>API'S</span></a>
+            <ul class="treeview-menu">
+
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dummy_questions') }}"><i class="fa fa-cog"></i> <span>Dummy Question</span></a></li>
+
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/questions') }}"><i class="fa fa-cog"></i> <span>Question</span></a></li>
+
+            <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/answers') }}"><i class="fa fa-cog"></i> <span>Answer</span></a></li>
+
+
+            </ul>
+          </li>
+
           <!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/tag') }}"><i class="fa fa-tag"></i> <span>Manage Tags</span></a></li> -->
 
           <!-- ======================================= -->

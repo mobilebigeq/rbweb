@@ -13,17 +13,17 @@ class CreatePressClipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('press_clips', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('image');
-            $table->string('author');
-            $table->date('date');
-            $table->string('publish_in');
-            $table->text('short_description')->nullable();
-            $table->longtext('description')->nullable();
-            $table->string('page');
-            $table->timestamps();
-        });
+        // Schema::create('press_clips', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('image');
+        //     $table->string('author');
+        //     $table->date('date');
+        //     $table->string('publish_in');
+        //     $table->text('short_description')->nullable();
+        //     $table->longtext('description')->nullable();
+        //     $table->string('page');
+        //     $table->timestamps();
+        // });
     }
 
     /**

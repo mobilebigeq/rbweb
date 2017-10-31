@@ -154,6 +154,13 @@ $api->version('v1', function (Router $api) {
 
             $api->get('insurance/{id}','App\Api\V1\Controllers\InsuranceController@index');
 
+            $api->get('dummy_questions','App\Api\V1\Controllers\DummyQuestionController@index');
+
+            $api->post('dummy_questions/submit','App\Api\V1\Controllers\DummyQuestionController@submit');
+
+            $api->get('questions','App\Api\V1\Controllers\QuestionController@index');
+            $api->post('questions/submit','App\Api\V1\Controllers\AnswerController@submit');
+
 
 
 

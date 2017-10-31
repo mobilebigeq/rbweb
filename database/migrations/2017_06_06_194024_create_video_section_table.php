@@ -12,16 +12,16 @@ class CreateVideoSectionTable extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('video_section', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->text('description');
-            $table->string('image');
-            $table->string('youtube_url');
-            $table->string('page');
-            $table->timestamps();
-        });
+     {
+    //     Schema::create('video_section', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('title');
+    //         $table->text('description');
+    //         $table->string('image');
+    //         $table->string('youtube_url');
+    //         $table->string('page');
+    //         $table->timestamps();
+    //     });
     }
 
     /**

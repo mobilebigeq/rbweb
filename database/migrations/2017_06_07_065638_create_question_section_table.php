@@ -12,15 +12,15 @@ class CreateQuestionSectionTable extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('question_section', function (Blueprint $table) {
-            $table->increments('id');
-            $table->increments('group_id');
-            $table->string('question')->nullable();
-            $table->text('answer');
-            $table->string('page');
-            $table->timestamps();
-        });
+     {
+    //     Schema::create('question_section', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->increments('group_id');
+    //         $table->string('question')->nullable();
+    //         $table->text('answer');
+    //         $table->string('page');
+    //         $table->timestamps();
+    //     });
     }
 
     /**

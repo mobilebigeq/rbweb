@@ -12,14 +12,14 @@ class CreateGroupSectionTable extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('group_section', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->string('page');
-            $table->timestamps();
-        });
+     {
+    //     Schema::create('group_section', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('title');
+    //         $table->text('description')->nullable();
+    //         $table->string('page');
+    //         $table->timestamps();
+    //     });
     }
 
     /**
